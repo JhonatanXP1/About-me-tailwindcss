@@ -1,0 +1,22 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.css --minify",
+    "server": "npx browser-sync start --server public --files \"public/**/*.html, public/**/*.css, public/**/*.js, src/**/*.css\" --port 8080 --no-notify",
+    "modeServer": "concurrently -k -n \"🎨TAILWIND,🌐BROWSER-SYNC\" -c \"green.bold,magenta.bold\" \"npm:tw\" \"npm:server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^4.1.14"
+  }
+}
