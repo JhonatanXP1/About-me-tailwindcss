@@ -1,4 +1,14 @@
 @import "tailwindcss";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@source "./public/**/*.html";
+
+/* Opcional: tus componentes personalizados */
+@layer components {
+  /* ejemplo:
+  #tarjeta-destacada {
+    @apply bg-fondo-oscuro text-white p-6 rounded-xl;
+  }
+  */
+}
+@theme {
+  --color-fondo-oscuro: #1d1d1d;
+}

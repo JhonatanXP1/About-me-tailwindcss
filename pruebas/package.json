@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "tw": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.css --watch",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.css --minify",
-    "server": "npx browser-sync start --server public --files \"public/**/*.html, public/**/*.css, public/**/*.js, src/**/*.css\" --port 8080 --no-notify",
-    "modeServer": "concurrently -k -n \"🎨TAILWIND,🌐BROWSER-SYNC\" -c \"green.bold,magenta.bold\" \"npm:tw\" \"npm:server\""
+    "server": "browser-sync start --server public --files 'public/**/*.html,public/**/*.css'",
+    "modeServer": "concurrently -k -n '🎨TAILWIND,🌐SERVER' -c 'green.bold,magenta.bold' 'npm:tw' 'npm:server'"
   },
   "keywords": [],
   "author": "",
