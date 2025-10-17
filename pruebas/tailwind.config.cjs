@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'fondo-oscuro': '#1d1d1d',
+        
       },
     },
   },
