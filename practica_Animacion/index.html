@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Intro 3 frames (1.2s)</title>
+<style>
+  :root { --dur: 2s; --bg:#0b0d10; --ink:#c9def7; }
+  *{box-sizing:border-box}
+
+  /* Overlay que muestra los frames */
+  .splash{
+    position:fixed; inset:0; display:grid; place-items:center;
+    background:var(--bg); color:var(--ink);
+    font:14px/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    padding:32px;
+    animation: splash-exit var(--dur) steps(1,end) forwards;
+    /* (queda oculto al final) */
+  }
+  @keyframes splash-exit{
+    0%{opacity:1; visibility:visible}
+    100%{opacity:0; visibility:hidden}
+  }
+
+  /* Contenedor y estilo del "code view" */
+  .codebox{
+    position:relative; 
+    width: 100%;
+    height: 100%; 
+    overflow:auto;
+    border:1px solid #1e2a35; border-radius:14px; padding:16px 20px;
+    background:linear-gradient(180deg,#0f141a,#0c1116);
+    box-shadow:0 10px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+  .hdr{
+    position:sticky; top:0; padding:6px 0 10px; margin:-6px 0 10px;
+    background:linear-gradient(180deg,rgba(15,20,26,.9),rgba(15,20,26,0));
+    font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:#89a2bd;
+  }
+
+  /* Cada frame es un <pre> superpuesto que aparece en su intervalo */
+  .frame{position:absolute; inset:44px 20px 20px 20px; margin:0; opacity:0; white-space:pre; }
+  .f1{ animation:show1 var(--dur) steps(1,end) forwards; }
+  .f2{ animation:show2 var(--dur) steps(1,end) forwards; }
+  .f3{ animation:show3 var(--dur) steps(1,end) forwards; }
+
+  /* Ventanas temporales (0–0.4s, 0.4–0.8s, 0.8–1.2s) */
+  @keyframes show1{
+    0%{opacity:1} 33.334%{opacity:0} 100%{opacity:0}
+  }
+  @keyframes show2{
+    0%{opacity:0} 33.333%{opacity:1} 66.667%{opacity:0} 100%{opacity:0}
+  }
+  @keyframes show3{
+    0%{opacity:0} 66.666%{opacity:1} 100%{opacity:1}
+  }
+
+  /* (Opcional) ligero “glow” del borde mientras corre */
+  .codebox::after{
+    content:""; position:absolute; inset:-1px; border-radius:14px;
+    box-shadow:0 0 0 1px rgba(97,218,251,.15), 0 0 18px rgba(97,218,251,.08);
+    opacity:.75; pointer-events:none;
+    animation:pulse var(--dur) linear forwards;
+  }
+  @keyframes pulse{ 0%{opacity:.75} 100%{opacity:0} }
+
+  /* El sitio real vive debajo; al irse el overlay queda visible */
+  main{
+    min-height:100vh; display:grid; place-items:center;
+    font:16px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background:radial-gradient(1200px 600px at 10% 10%, #1f2732, #12171d);
+    color:#e9f0f8; padding:40px;
+  }
+  .card{
+    backdrop-filter: blur(6px);
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px; padding:28px 24px; max-width:760px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  .btn{
+    display:inline-block; margin-top:14px; padding:10px 16px; border-radius:10px;
+    background:#2b8be6; color:white; text-decoration:none; font-weight:600;
+  }
+</style>
+</head>
+<body>
+
+  <!-- SPLASH 1.2s (3 frames de 0.4s cada uno) -->
+  <section class="splash" aria-label="presentación de código">
+    <div class="codebox">
+      <pre class="frame f1">using System;
+
+public class EjemploAleatorio
+{
+    public static void Main(string[] args)
+    {
+        // Crear una instancia de la clase Random
+        Random random = new Random();
+
+        // Generar un número entero aleatorio entre 0 y 99
+        int numeroAleatorio = random.Next(100);
+        Console.WriteLine($"Número aleatorio entre 0 y 99: {numeroAleatorio}");
+
+        // Generar un número entero aleatorio entre 1 y 100 (inclusive)
+        int numeroAleatorioRango = random.Next(1, 101); // El segundo parámetro es exclusivo
+        Console.WriteLine($"Número aleatorio entre 1 y 100: {numeroAleatorioRango}");
+
+        // Generar un número de punto flotante aleatorio entre 0.0 y 1.0 (exclusivo)
+        double numeroDecimalAleatorio = random.NextDouble();
+        Console.WriteLine($"Número decimal aleatorio: {numeroDecimalAleatorio}");
+    }
+}</pre>
+
+      <pre class="frame f2">body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+
+/* Tarjeta con efecto neumórfico */
+.card {
+  background: #e0e5ec; padding: 30px; border-radius: 20px; max-width: 400px; margin: 50px auto;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; transition: transform .3s ease;
+}
+.card:hover { transform: translateY(-10px); }
+
+/* Botón con efecto hover */
+.btn {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: #fff; border: 0; padding: 12px 30px;
+  border-radius: 25px; font-size: 16px; cursor: pointer; transition: all .3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,.3);
+  background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+}
+
+/* Texto con animación de escritura */
+.typing-text {
+  font-size: 24px; color: #333; overflow: hidden; border-right: 2px solid #333; white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}</pre>
+
+      <pre class="frame f3">function generarColor(){return'#'+Math.floor(16777215*Math.random()).toString(16).padStart(6,'0')}function random(min,max){return Math.floor(Math.random()*(max-min+1))+min}function crearElementosAleatorios(){const body=document.body;const titulo=document.createElement('h1');titulo.textContent='¡JavaScript Aleatorio!';titulo.style.color=generarColor();titulo.style.textAlign='center';titulo.style.marginTop='50px';titulo.style.fontFamily='Arial, sans-serif';body.appendChild(titulo);for(let i=0;i&lt;20;i++){const elemento=document.createElement('div');elemento.style.position='absolute';elemento.style.width=random(20,100)+'px';elemento.style.height=random(20,100)+'px';elemento.style.background=generarColor();elemento.style.borderRadius=random(0,50)+'px';elemento.style.left=random(0,window.innerWidth-100)+'px';elemento.style.top=random(0,window.innerHeight-100)+'px';elemento.style.opacity=0.2+0.8*Math.random();elemento.style.transition='all '+random(1,5)+'s ease';elemento.addEventListener('mouseover',function(){this.style.transform='scale(1.2) rotate('+random(-180,180)+'deg)';this.style.background=generarColor()});elemento.addEventListener('mouseout',function(){this.style.transform='scale(1) rotate(0deg)'});body.appendChild(elemento)}}function iniciarContadorAleatorio(){const contador=document.createElement('div');contador.style.position='fixed';contador.style.top='20px';contador.style.right='20px';contador.style.background='rgba(0,0,0,0.8)';contador.style.color='white';contador.style.padding='10px';contador.style.borderRadius='5px';contador.style.fontFamily='Arial, sans-serif';let cuenta=0;contador.textContent='Contador: '+cuenta;document.body.appendChild(contador);setInterval(()=>{cuenta+=random(1,10);contador.textContent='Contador: '+cuenta;contador.style.background=generarColor()},1000)}function efectoTextoAleatorio(){const texto=document.createElement('div');texto.style.position='fixed';texto.style.bottom='20px';texto.style.left='50%';texto.style.transform='translateX(-50%)';texto.style.color='white';texto.style.fontFamily='Arial, sans-serif';texto.style.fontSize='18px';const textos=['¡JavaScript mola!','Efectos aleatorios','Dinámico y divertido','Código creativo'];let textoActual='';let indiceTexto=0;let indiceCaracter=0;document.body.appendChild(texto);function escribir(){if(indiceCaracter&lt;textos[indiceTexto].length){textoActual+=textos[indiceTexto].charAt(indiceCaracter);texto.textContent=textoActual;indiceCaracter++;setTimeout(escribir,100)}else{setTimeout(borrar,2000)}}function borrar(){if(textoActual.length&gt;0){textoActual=textoActual.substring(0,textoActual.length-1);texto.textContent=textoActual;setTimeout(borrar,50)}else{indiceTexto=(indiceTexto+1)%textos.length;indiceCaracter=0;setTimeout(escribir,500)}}escribir()}document.addEventListener('DOMContentLoaded',function(){crearElementosAleatorios();iniciarContadorAleatorio();efectoTextoAleatorio()});</pre>
+    </div>
+  </section>
+
+  <!-- Tu sitio (visible tras 1.2s) -->
+  <main>
+    <!-- <article class="card">
+      <h1 style="margin:0 0 8px">¡Bienvenido a mi página! 🚀</h1>
+      <p style="margin:0 0 14px">Esta es la vista principal que aparece cuando termina la intro de 3 frames.</p>
+      <a class="btn" href="#">Ver más</a>
+    </article> -->
+  </main>
+</body>
+</html>
