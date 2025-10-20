@@ -1,5 +1,4 @@
 /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
-@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,10 +6,18 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-600: oklch(66.6% 0.179 58.318);
+    --color-lime-400: oklch(84.1% 0.238 128.85);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-cyan-500: oklch(71.5% 0.143 215.221);
+    --color-blue-950: oklch(28.2% 0.091 267.935);
+    --color-violet-300: oklch(81.1% 0.111 293.571);
+    --color-neutral-300: oklch(87% 0 0);
+    --color-neutral-600: oklch(43.9% 0 0);
     --color-black: #000;
-    --color-white: #fff;
     --spacing: 0.25rem;
-    --radius-xl: 0.75rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-fondo-oscuro: #1d1d1d;
@@ -165,29 +172,26 @@
   }
 }
 @layer utilities {
-  .z-1 {
-    z-index: 1;
+  .fixed {
+    position: fixed;
+  }
+  .static {
+    position: static;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
   }
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
-  .w-100 {
-    width: calc(var(--spacing) * 100);
+  .grid {
+    display: grid;
   }
   .w-full {
     width: 100%;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
+  .place-items-center {
+    place-items: center;
   }
   .content-center {
     align-content: center;
@@ -195,28 +199,41 @@
   .justify-center {
     justify-content: center;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-blue-950 {
+    background-color: var(--color-blue-950);
   }
   .bg-fondo-oscuro {
     background-color: var(--color-fondo-oscuro);
   }
-  .object-cover {
-    object-fit: cover;
+  .text-amber-400 {
+    color: var(--color-amber-400);
   }
-  .underline {
-    text-decoration-line: underline;
+  .text-amber-600 {
+    color: var(--color-amber-600);
   }
-  .opacity-25 {
-    opacity: 25%;
+  .text-cyan-500 {
+    color: var(--color-cyan-500);
   }
-  .opacity-\[\.1\] {
-    opacity: .1;
+  .text-emerald-500 {
+    color: var(--color-emerald-500);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .text-lime-400 {
+    color: var(--color-lime-400);
+  }
+  .text-neutral-300 {
+    color: var(--color-neutral-300);
+  }
+  .text-neutral-600 {
+    color: var(--color-neutral-600);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-violet-300 {
+    color: var(--color-violet-300);
   }
   .lg\:h-80 {
     @media (width >= 64rem) {
@@ -228,11 +245,6 @@
       height: calc(var(--spacing) * 100);
     }
   }
-  .lg\:h-400 {
-    @media (width >= 64rem) {
-      height: calc(var(--spacing) * 400);
-    }
-  }
   .lg\:w-8\/10 {
     @media (width >= 64rem) {
       width: calc(8/10 * 100%);
@@ -240,21 +252,3 @@
   }
 }
 @layer components;
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
-      --tw-outline-style: solid;
-    }
-  }
-}

@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <title>Prueba Tailwind</title>
   <link rel="stylesheet" href="tw.css">
 </head>
+<section class="fixed inset-0 grid place-items-center bg-black bg-opacity-50 text-neutral-300">
+<pre class=""><span class="text-red-500">using</span> <span class="text-cyan-500">System;</span>
+<span class="text-red-500">public</span> <span class="text-emerald-500">class</span> <span class="text-cyan-500">EjemploAleatorio</span>
+<span class="text-amber-400">{</span>
+<span class="text-red-500">public static void</span> <span class="text-lime-400">Main</span><span class="text-violet-300">(</span> <span class="text-red-500">string</span><span class="text-cyan-500">[]</span> <span class="text-amber-600">args</span><span class="text-violet-300">)</span>
+    <span class="text-violet-300">{</span>
+      <span class="text-neutral-600">// Crear una instancia de la clase Random</span>
+      <span class="text-cyan-500">Random</span> random <span class="text-red-500">= new</span> <span class="text-cyan-500">Random();</span>
+
+      <span class="text-neutral-600">// Generar un número entero aleatorio entre 0 y 99</span>
+      <span class="text-red-500">int</span> numeroAleatorio <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">Next</span><span class="text-cyan-500">(<span class="text-violet-300">100</span>)</span>;
+      <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número aleatorio entre 0 y 99: {</span>numeroAleatorio<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
+
+      <span class="text-neutral-600">// Generar un número entero aleatorio entre 1 y 100 (inclusive)</span>
+      <span class="text-red-500">int</span> numeroAleatorioRango <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">Next</span><span class="text-cyan-500">(</span><span class="text-violet-300">1</span>, <span class="text-violet-300">101</span><span class="text-cyan-500">)</span>; <span class="text-neutral-600">// El segundo parámetro es exclusivo</span>
+      <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span>$"Número aleatorio entre 1 y 100: {numeroAleatorioRango}");
+
+      <span class="text-neutral-600">// Generar un número de punto flotante aleatorio entre 0.0 y 1.0 (exclusivo)</span>
+        double numeroDecimalAleatorio = random.NextDouble();
+        <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span>$"Número decimal aleatorio: {numeroDecimalAleatorio}");
+    }
+}</pre>
+</section>
 
 <body class="bg-fondo-oscuro ">
   <div class="w-full flex justify-center content-center lg:h-100">
     <div class="lg:w-8/10 lg:h-80 bg-blue-950">
-
     </div>
   </div>
 </body>

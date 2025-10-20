@@ -8,6 +8,7 @@
     @apply bg-fondo-oscuro text-white p-6 rounded-xl;
   }
   */
+  
 }
 @theme {
   --color-fondo-oscuro: #1d1d1d;
