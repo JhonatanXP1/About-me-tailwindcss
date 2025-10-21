@@ -5,7 +5,7 @@
   <title>Prueba Tailwind</title>
   <link rel="stylesheet" href="tw.css">
 </head>
-<section class="fixed inset-0 grid place-items-center bg-blue-950 bg-opacity-50 text-neutral-300">
+<section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300">
 <pre class="hidden">
 <span class="text-red-500">using</span> <span class="text-cyan-500">System;</span>
 <span class="text-red-500">public</span> <span class="text-emerald-500">class</span> <span class="text-cyan-500">EjemploAleatorio</span>
@@ -41,22 +41,22 @@
 <span class="text-amber-400">}</span>
 
 <span class="text-red-500">@keyframes</span> <span class="text-amber-400">gradient {</span>
-  0% <span class="text-fuchsia-400">{</span> background-position: <span class="text-fuchsia-400">0</span><span class="text-red-500">%</span> <span class="text-fuchsia-400">29</span><span class="text-red-500">%</span>;<span class="text-fuchsia-400">}</span>
-  50% <span class="text-fuchsia-400">{</span> background-position: <span class="text-fuchsia-400">30</span><span class="text-red-500">%</span> <span class="text-fuchsia-400">50</span><span class="text-red-500">%</span>;<span class="text-fuchsia-400">}</span>
-  100% <span class="text-fuchsia-400">{</span> background-position: <span class="text-fuchsia-400">51</span><span class="text-red-500">%</span> <span class="text-fuchsia-400">100</span><span class="text-red-500">%</span>;<span class="text-fuchsia-400">}</span>
+  0% <span class="text-fuchsia-400">{</span> background-position: <span class="text-violet-300">0</span><span class="text-red-500">%</span> <span class="text-violet-300">29</span><span class="text-red-500">%</span>;<span class="text-fuchsia-400">}</span>
+  50% <span class="text-fuchsia-400">{</span> background-position: <span class="text-violet-300">30</span><span class="text-red-500">%</span> <span class="text-violet-300">50</span><span class="text-red-500">%</span>;<span class="text-fuchsia-400">}</span>
+  100% <span class="text-fuchsia-400">{</span> background-position: <span class="text-violet-300">51</span><span class="text-red-500">%</span> <span class="text-violet-300">100</span><span class="text-red-500">%</span>;<span class="text-fuchsia-400">}</span>
 <span class="text-amber-400">}</span>
 
 <span class="text-neutral-600">/* Tarjeta con efecto neumórfico */</span>
-.card {
-  background: #e0e5ec; padding: 30px; border-radius: 20px; max-width: 400px; margin: 50px auto;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; transition: transform .3s ease;
-}
-.card:hover { transform: translateY(-10px); }
+<span class="text-lime-400">.card</span> <span class="text-amber-400">{</span>
+  background: <span class="text-cyan-500">#e0e5ec</span>; padding: <span class="text-violet-300">30</span><span class="text-red-500">px</span>; border-radius: <span class="text-violet-300">20</span><span class="text-red-500">px</span>; max-width: <span class="text-violet-300">400</span><span class="text-red-500">px</span>; margin: <span class="text-violet-300">50</span><span class="text-red-500">px</span> <span class="text-cyan-500">auto</span>;
+  box-shadow: <span class="text-violet-300">20</span><span class="text-red-500">px</span> <span class="text-violet-300">20</span><span class="text-red-500">px</span> <span class="text-violet-300">60</span><span class="text-red-500">px</span> <span class="text-cyan-500">#bebebe</span>, <span class="text-violet-300">20</span><span class="text-red-500">px</span> <span class="text-violet-300">20</span><span class="text-red-500">px</span> <span class="text-violet-300">60</span><span class="text-red-500">px</span> <span class="text-cyan-500">#ffffff</span>; transition: transform <span class="text-violet-300">.3</span><span class="text-red-500">s</span> <span class="text-cyan-500">ease</span>;
+<span class="text-amber-400">}</span>
+<span class="text-lime-400">.card</span><span class="text-cyan-500">:hover</span> <span class="text-amber-400">{</span> transform: <span class="text-lime-400">translateY</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">-10</span><span class="text-red-500">px</span><span class="text-fuchsia-400">)</span>; <span class="text-amber-400">}</span>
 
-/* Botón con efecto hover */
-.btn {
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: #fff; border: 0; padding: 12px 30px;
-  border-radius: 25px; font-size: 16px; cursor: pointer; transition: all .3s ease;
+<span class="text-neutral-600">/* Botón con efecto hover */</span>
+<span class="text-lime-400">.btn</span> <span class="text-amber-400">{</span>
+  background: <span class="text-lime-400">linear-gradient</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">45</span><span class="text-red-500">deg</span>, <span class="text-cyan-500">#ff6b6b</span>, <span class="text-cyan-500">#ee5a24</span><span class="text-fuchsia-400">)</span>; color: <span class="text-cyan-500">#fff</span>; border: <span class="text-violet-300">0</span>; padding: <span class="text-violet-300">12</span><span class="text-red-500">px</span> <span class="text-violet-300">30</span><span class="text-red-500">px</span>;
+  border-radius: <span class="text-violet-300">25</span><span class="text-red-500">px</span>; font-size: <span class="text-violet-300">16</span><span class="text-red-500">px</span>; cursor: pointer; transition: all .3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,.2);
 }
 .btn:hover {
