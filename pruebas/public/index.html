@@ -6,6 +6,13 @@
   <link rel="stylesheet" href="tw.css">
 </head>
 <section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300">
+<div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#ffffff8c] lg:w-2/5 lg:h-1/6 rounded-md blur-xs lg:px-5 lg:py-2">
+  <div class="bg-fondo-oscuro w-[100%] h-[100%] rounded-md">
+
+  </div>
+</div>
+<img src="./dist/css.png" class="absolute  right-[15%] top-[30px] lg:w-[10%] sm:w-[20%]" style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));">
+<img src="./dist/Tailwind_CSS_Logo.svg.png" class="absolute  right-[5%] top-[250px] lg:w-[10%] sm:w-[20%]" style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));"> 
 <pre class="hidden">
 <span class="text-red-500">using</span> <span class="text-cyan-500">System;</span>
 <span class="text-red-500">public</span> <span class="text-emerald-500">class</span> <span class="text-cyan-500">EjemploAleatorio</span>
@@ -29,10 +36,10 @@
     <span class="text-violet-300">}</span>
 <span class="text-amber-400">}</span>
 </pre>
-<pre>
+<pre class="lg:text-xl lg:w-4/5 ">
+
 <span class="text-red-500">body</span> <span class="text-amber-400">{</span>
-  margin: <span class="text-violet-300">0</span>;
-  padding: <span class="text-violet-300">0</span>;
+  margin: <span class="text-violet-300">0</span>; padding: <span class="text-violet-300">0</span>;
   min-height: <span class="text-violet-300">100</span><span class="text-red-500">vh</span>;
   background: <span class="text-lime-400">linear-gradient</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">-45</span><span class="text-red-500">deg</span>, <span class="text-cyan-500">#ee7752</span>, <span class="text-cyan-500">#e73c7e</span>, <span class="text-cyan-500">#23a6d5</span>, <span class="text-cyan-500">#23d5ab</span><span class="text-fuchsia-400">)</span>;
   background-size: <span class="text-violet-300">400</span><span class="text-red-500">%</span> <span class="text-violet-300">400</span><span class="text-red-500">%</span>;
@@ -56,20 +63,21 @@
 <span class="text-neutral-600">/* Botón con efecto hover */</span>
 <span class="text-lime-400">.btn</span> <span class="text-amber-400">{</span>
   background: <span class="text-lime-400">linear-gradient</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">45</span><span class="text-red-500">deg</span>, <span class="text-cyan-500">#ff6b6b</span>, <span class="text-cyan-500">#ee5a24</span><span class="text-fuchsia-400">)</span>; color: <span class="text-cyan-500">#fff</span>; border: <span class="text-violet-300">0</span>; padding: <span class="text-violet-300">12</span><span class="text-red-500">px</span> <span class="text-violet-300">30</span><span class="text-red-500">px</span>;
-  border-radius: <span class="text-violet-300">25</span><span class="text-red-500">px</span>; font-size: <span class="text-violet-300">16</span><span class="text-red-500">px</span>; cursor: pointer; transition: all .3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,.2);
-}
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,.3);
-  background: linear-gradient(45deg, #ee5a24, #ff6b6b);
-}
+  border-radius: <span class="text-violet-300">25</span><span class="text-red-500">px</span>; font-size: <span class="text-violet-300">16</span><span class="text-red-500">px</span>; cursor: <span class="text-cyan-500">pointer</span>; transition: <span class="text-cyan-500">all <span class="text-violet-300">.3</span><span class="text-red-500">s</span> ease</span>;
+  box-shadow: <span class="text-violet-300">0 4<span class="text-red-500">px</span> 15<span class="text-red-500">px</span></span> <span class="text-lime-400">rgba</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">0</span>,<span class="text-violet-300">0</span>,<span class="text-violet-300">0</span>,<span class="text-violet-300">.2</span><span class="text-fuchsia-400">)</span>;
+<span class="text-amber-400">}</span>
 
-/* Texto con animación de escritura */
-.typing-text {
-  font-size: 24px; color: #333; overflow: hidden; border-right: 2px solid #333; white-space: nowrap;
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-}
+<span class="text-lime-400">.btn</span><span class="text-cyan-500">:hover</span> <span class="text-amber-400">{</span>
+  transform: <span class="text-lime-400">scale</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">175.05</span><span class="text-fuchsia-400">)</span>; cursor: <span class="text-cyan-500">none</span>;
+  box-shadow: <span class="text-violet-300">0 6<span class="text-red-500">px</span> 20<span class="text-red-500">px</span></span> <span class="text-lime-400">rgba</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">0</span>,<span class="text-violet-300">0</span>,<span class="text-violet-300">0</span>,<span class="text-violet-300">.35</span><span class="text-fuchsia-400">)</span>;
+  background: <span class="text-lime-400">linear-gradient</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">45</span><span class="text-red-500">deg</span>, <span class="text-cyan-500">#ee5a24</span>, <span class="text-cyan-500">#ff6b6b</span><span class="text-fuchsia-400">)</span>;
+<span class="text-amber-400">}</span>
+
+<span class="text-neutral-600">/* Texto con animación de escritura */</span>
+<span class="text-lime-400">.typing-text</span> <span class="text-amber-400">{</span>
+  font-size: <span class="text-violet-300">24<span class="text-red-500">px</span></span>; color: <span class="text-cyan-500">#3333</span>; overflow: <span class="text-cyan-500">hidden</span>; border-right: <span class="text-violet-300">2<span class="text-red-500">px</span></span> <span class="text-cyan-500">solid #3333</span>; white-space: <span class="text-cyan-500">nowrap</span>;
+  animation: typing <span class="text-violet-300">3.5<span class="text-red-500">s</span></span> <span class="text-lime-400">steps</span><span class="text-fuchsia-400">(</span><span class="text-violet-300">40</span>, <span class="text-cyan-500">end</span><span class="text-fuchsia-400">)</span>, blink-caret <span class="text-violet-300">.75<span class="text-red-500">s</span></span> <span class="text-cyan-500">step-end infinite</span>;
+<span class="text-amber-400">}</span>
 </pre>
 </section>  
 
