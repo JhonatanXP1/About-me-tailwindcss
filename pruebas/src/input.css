@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
+
 @source "./public/**/*.html";
 
-/* Opcional: tus componentes personalizados */
-@layer components {
-  /* ejemplo:
-  #tarjeta-destacada {
-    @apply bg-fondo-oscuro text-white p-6 rounded-xl;
-  }
-  */
-  
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
+
+
 @theme {
   --color-fondo-oscuro: #1d1d1d;
+  --font-roboto-mono: "Roboto Mono", monospace;
+  --animate-parpadeo: parpadeo .8s infinite;
 }

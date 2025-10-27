@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'fondo-oscuro': '#1d1d1d',
-        
+        'fondo-oscuro': '#1d1d1d'
       },
+      fontFamily: { 'roboto-mono': ['"Roboto Mono"', 'monospace'] }
     },
   },
   plugins: [],

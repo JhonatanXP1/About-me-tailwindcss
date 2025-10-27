@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <title>Prueba Tailwind</title>
   <link rel="stylesheet" href="tw.css">
+  <script src="animation.js" defer></script>
 </head>
 <section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300">
-<div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#ffffff8c] lg:w-2/5 lg:h-1/6 rounded-md blur-xs lg:px-5 lg:py-2">
-  <div class="bg-fondo-oscuro w-[100%] h-[100%] rounded-md">
-
-  </div>
+<div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
+bg-[#ffffff8c] lg:w-2/5 lg:h-1/6 rounded-md blur-xs lg:px-5 lg:py-2">
 </div>
+<div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
+ lg:w-2/5 lg:h-1/6 rounded-md lg:px-5 lg:py-2 flex justify-center items-center">
+<div class="bg-fondo-oscuro w-[100%] h-[90%] rounded-md pl-2 lg:text-2xl" id="consola">
+  <span class="font-roboto-mono " id="final"></span>
+  <span class="font-roboto-mono " id="textIntroducction"></span>
+  <span class="font-roboto-mono animate-parpadeo" id="cursor">&#95;</span>
+</div>
+</div>
+
 <img src="./images/css.png" class="absolute  right-[15%] top-[30px] lg:w-[10%] sm:w-[20%]" style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));">
 <img src="./images/Tailwind_CSS_Logo.svg.png" class="absolute  right-[5%] top-[250px] lg:w-[10%] sm:w-[20%]" style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));"> 
 <pre class="hidden">
