@@ -1,6 +1,6 @@
 // tailwind.config.cjs
 module.exports = {
-  content: ["./public/**/*.html"], // dónde buscar clases
+  content: ["./public/**/*.html","./public/**"], // dónde buscar clases
   theme: {
     extend: {
       colors: {

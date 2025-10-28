@@ -12,24 +12,22 @@
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-lime-400: oklch(84.1% 0.238 128.85);
-    --color-green-400: oklch(79.2% 0.209 151.711);
-    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-cyan-500: oklch(71.5% 0.143 215.221);
-    --color-blue-400: oklch(70.7% 0.165 254.624);
-    --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-950: oklch(28.2% 0.091 267.935);
     --color-violet-300: oklch(81.1% 0.111 293.571);
     --color-fuchsia-400: oklch(74% 0.238 322.16);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-neutral-300: oklch(87% 0 0);
+    --color-neutral-500: oklch(55.6% 0 0);
     --color-neutral-600: oklch(43.9% 0 0);
-    --color-white: #fff;
+    --color-neutral-700: oklch(37.1% 0 0);
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --radius-md: 0.375rem;
     --blur-xs: 4px;
     --default-transition-duration: 150ms;
@@ -202,6 +200,9 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
@@ -211,14 +212,26 @@
   .top-\[250px\] {
     top: 250px;
   }
+  .right-\[-90\%\] {
+    right: -90%;
+  }
   .right-\[5\%\] {
     right: 5%;
   }
   .right-\[15\%\] {
     right: 15%;
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
+  }
+  .left-\[-90\%\] {
+    left: -90%;
+  }
+  .z-10 {
+    z-index: 10;
   }
   .flex {
     display: flex;
@@ -229,11 +242,14 @@
   .hidden {
     display: none;
   }
+  .h-1\/2 {
+    height: calc(1/2 * 100%);
+  }
   .h-\[90\%\] {
     height: 90%;
   }
-  .w-\[100\%\] {
-    width: 100%;
+  .h-full {
+    height: 100%;
   }
   .w-full {
     width: 100%;
@@ -271,6 +287,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .bg-\[\#fef3c6\]\/10 {
+    background-color: color-mix(in oklab, #fef3c6 10%, transparent);
+  }
   .bg-\[\#ffffff8c\] {
     background-color: #ffffff8c;
   }
@@ -280,8 +299,11 @@
   .bg-fondo-oscuro {
     background-color: var(--color-fondo-oscuro);
   }
-  .pl-2 {
-    padding-left: calc(var(--spacing) * 2);
+  .bg-neutral-500 {
+    background-color: var(--color-neutral-500);
+  }
+  .bg-neutral-700 {
+    background-color: var(--color-neutral-700);
   }
   .font-roboto-mono {
     font-family: var(--font-roboto-mono);
@@ -328,9 +350,56 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .sm\:h-\[13\.5\%\] {
+    @media (width >= 40rem) {
+      height: 13.5%;
+    }
+  }
+  .sm\:h-\[14\%\] {
+    @media (width >= 40rem) {
+      height: 14%;
+    }
+  }
+  .sm\:w-4\/5 {
+    @media (width >= 40rem) {
+      width: calc(4/5 * 100%);
+    }
+  }
   .sm\:w-\[20\%\] {
     @media (width >= 40rem) {
       width: 20%;
+    }
+  }
+  .sm\:px-5 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 5);
+    }
+  }
+  .sm\:py-2 {
+    @media (width >= 40rem) {
+      padding-block: calc(var(--spacing) * 2);
+    }
+  }
+  .sm\:pt-10 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 10);
+    }
+  }
+  .sm\:pl-5 {
+    @media (width >= 40rem) {
+      padding-left: calc(var(--spacing) * 5);
+    }
+  }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-4xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
   .lg\:h-1\/6 {
@@ -378,10 +447,20 @@
       padding-block: calc(var(--spacing) * 2);
     }
   }
-  .lg\:text-2xl {
+  .lg\:pt-2 {
     @media (width >= 64rem) {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
+      padding-top: calc(var(--spacing) * 2);
+    }
+  }
+  .lg\:pl-2 {
+    @media (width >= 64rem) {
+      padding-left: calc(var(--spacing) * 2);
+    }
+  }
+  .lg\:text-3xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
   }
   .lg\:text-xl {
