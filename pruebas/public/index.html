@@ -10,26 +10,31 @@
 <section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300">
   <!--Consola-->
   <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
-bg-[#ffffff8c] rounded-md blur-xs lg:px-5 lg:py-2 lg:w-2/5 lg:h-1/6 sm:w-4/5 sm:h-[14%]">
+    bg-[#ffffff8c] rounded-md blur-xs lg:px-5 lg:py-2 lg:w-2/5 lg:h-1/6 sm:w-4/5 sm:h-[14%]">
   </div>
 
   <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 
   rounded-md lg:px-5 lg:py-2 sm:px-5 sm:py-2 flex justify-center items-center lg:w-2/5 lg:h-1/6 sm:w-4/5 sm:h-[13.5%]">
-    <div class="bg-fondo-oscuro w-full h-[90%] rounded-md lg:pt-2 lg:pl-2 sm:pl-5 sm:pt-10 lg:text-3xl sm:text-4xl " id="consola">
+    <div class="bg-fondo-oscuro w-full h-[90%] rounded-md lg:pt-2 lg:pl-2 sm:pl-5 sm:pt-10 lg:text-3xl sm:text-4xl "
+      id="consola">
       <span class="font-roboto-mono " id="final"></span>
       <span class="font-roboto-mono " id="textIntroducction"></span>
       <span class="font-roboto-mono animate-parpadeo" id="cursor">&#95;</span>
     </div>
   </div>
   <!--End Consola-->
+
   <!--Animacion-->
   <div class="absolute w-full h-full z-10 bg-[#fef3c6]/10">
-    <div class="absolute bg-neutral-700 w-full h-1/2 top-0 left-[-90%]"></div>
-    <div class="absolute bg-neutral-500 w-full h-1/2 bottom-0 right-[-90%]"></div>
+    <div class="absolute bg-neutral-700 w-full h-1/2 top-0 left-[-100%]" id="animacion-change-top"></div>
+    <div class="absolute bg-neutral-500 w-full h-1/2 bottom-0 right-[-100%]" id="animacion-change-bottom"></div>
   </div>
   <!--Animacion-->
+
+  <!--Imagen de CSS-->
   <img src="./images/css.png" class="absolute  right-[15%] top-[30px] lg:w-[10%] sm:w-[20%]"
     style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));">
+  <!--Imagenes de Tailwind-->
   <img src="./images/Tailwind_CSS_Logo.svg.png" class="absolute  right-[5%] top-[250px] lg:w-[10%] sm:w-[20%]"
     style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));">
   <pre class="hidden">

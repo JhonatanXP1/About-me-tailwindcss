@@ -7,7 +7,7 @@
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.min.css --minify",
     "tw": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.css --watch",
     "server": "browser-sync start --server public --files 'public/**/*.html,public/**/*.css'",
-    "modeServer": "concurrently -k -n '🎨TAILWIND,🌐SERVER' -c 'green.bold,magenta.bold' 'npm:tw' 'npm:server'"
+    "serverHome": "concurrently -k -n '🎨TAILWIND,🌐SERVER' -c 'green.bold,magenta.bold' 'npm:tw' 'npm:server'"
   },
   "keywords": [],
   "author": "",

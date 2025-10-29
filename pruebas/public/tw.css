@@ -37,6 +37,8 @@
     --color-fondo-oscuro: #1d1d1d;
     --font-roboto-mono: "Roboto Mono", monospace;
     --animate-parpadeo: parpadeo .8s infinite;
+    --animate-desplazar-left: DesplazarLeft 3s ease-in-out forwards;
+    --animate-desplazar-rigth: DesplazarRigth 3s ease-in-out forwards;
   }
 }
 @layer base {
@@ -212,8 +214,8 @@
   .top-\[250px\] {
     top: 250px;
   }
-  .right-\[-90\%\] {
-    right: -90%;
+  .right-\[-100\%\] {
+    right: -100%;
   }
   .right-\[5\%\] {
     right: 5%;
@@ -227,8 +229,8 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
-  .left-\[-90\%\] {
-    left: -90%;
+  .left-\[-100\%\] {
+    left: -100%;
   }
   .z-10 {
     z-index: 10;
@@ -264,6 +266,12 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .animate-desplazar-left {
+    animation: var(--animate-desplazar-left);
+  }
+  .animate-desplazar-rigth {
+    animation: var(--animate-desplazar-rigth);
   }
   .animate-parpadeo {
     animation: var(--animate-parpadeo);
@@ -476,6 +484,28 @@
   }
   50% {
     opacity: 0;
+  }
+}
+@keyframes DesplazarLeft {
+  20% {
+    right: 0%;
+  }
+  80% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@keyframes DesplazarRigth {
+  20% {
+    right: 0%;
+  }
+  80% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
   }
 }
 @property --tw-translate-x {
