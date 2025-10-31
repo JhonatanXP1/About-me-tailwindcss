@@ -1,4 +1,14 @@
 window.addEventListener('load', function () {
+
+    const observerTrian = new ResizeObserver(entries => {
+        for (let entry of entries) {
+           const { width, height } = entry.contentRect;
+           const div = entry.target;
+            div.style.setProperty('--triangulo-w', `${(width/2)}px`);
+            div.style.setProperty('--triangulo-h', `${(height/2)}px`);
+        }
+    });
+
     let text = `if(action|==|"I|imagine|it"){ \n iProgramIt(); \n}`;
     let textAux = '';
     let colorMetria = {
@@ -20,10 +30,13 @@ window.addEventListener('load', function () {
     const targetFinal = document.getElementById('final');
     const animacion_change_top = document.getElementById('animacion-change-top');
     const animacion_change_bottom = document.getElementById('animacion-change-bottom');
+    const miTriaBottomPadre = document.getElementById('triaBottomPadre');
+    observerTrian.observe(miTriaBottomPadre);
 
     for (let letra of text) {
         let letraSec = letra;
-        delay += 200; // Incrementa ANTES de cada setTimeout
+        //delay += 200; // Incrementa ANTES de cada setTimeout
+        delay += 50;
         setTimeout(() => {
             if (letra === '\n') {
                 if (!breakLine) {
@@ -58,10 +71,10 @@ window.addEventListener('load', function () {
     }
     setTimeout(() => {
         if (animacion_change_top) {
-            animacion_change_top.classList.add('animate-desplazar-left');
+           // animacion_change_top.classList.add('animate-desplazar-left');
         }
         if (animacion_change_bottom) {
-            animacion_change_bottom.classList.add('animate-desplazar-rigth');
+            //animacion_change_bottom.classList.add('animate-desplazar-rigth');
         }
     }, delay + 500);
 });
