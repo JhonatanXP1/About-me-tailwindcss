@@ -4,8 +4,8 @@ window.addEventListener('load', function () {
         for (let entry of entries) {
            const { width, height } = entry.contentRect;
            const div = entry.target;
-            div.style.setProperty('--triangulo-w', `${(width/2)}px`);
-            div.style.setProperty('--triangulo-h', `${(height/2)}px`);
+            div.style.setProperty('--triangulo-w', `${((width/2)-4)}px`);
+            div.style.setProperty('--triangulo-h', `${((height/2)+4)}px`);
         }
     });
 
@@ -31,7 +31,9 @@ window.addEventListener('load', function () {
     const animacion_change_top = document.getElementById('animacion-change-top');
     const animacion_change_bottom = document.getElementById('animacion-change-bottom');
     const miTriaBottomPadre = document.getElementById('triaBottomPadre');
+    const miTriaTopPadre = document.getElementById('triaTopPadre');
     observerTrian.observe(miTriaBottomPadre);
+    observerTrian.observe(miTriaTopPadre);
 
     for (let letra of text) {
         let letraSec = letra;
@@ -71,10 +73,10 @@ window.addEventListener('load', function () {
     }
     setTimeout(() => {
         if (animacion_change_top) {
-           // animacion_change_top.classList.add('animate-desplazar-left');
+            animacion_change_top.classList.add('animate-desplazar-left');
         }
         if (animacion_change_bottom) {
-            //animacion_change_bottom.classList.add('animate-desplazar-rigth');
+            animacion_change_bottom.classList.add('animate-desplazar-rigth');
         }
     }, delay + 500);
 });

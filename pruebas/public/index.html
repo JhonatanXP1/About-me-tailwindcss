@@ -26,13 +26,21 @@
 
   <!--Animacion-->
   <div class="absolute w-full h-full z-10 bg-[#fef3c6]/10">
-    <!--right-[left-[-100%]]-->
-    <div class="relative bg-[#221f1f] w-[125%] h-1/2 top-0 left-[-50%]" id="animacion-change-top"></div>
-    <!--right-[-100%]-->
-    <div class="relative bg-[#221f1f62] w-[125%] h-1/2 bottom-0 right-[-50%]" id="animacion-change-bottom">
-      <div class="absolute bg-[#df191962] left-0 w-[20%] h-full" id="triaBottomPadre">
-        <div class="w-0 h-0  triangulo border-b-amber-100 border-r-amber-300" id="triaBottom"></div>
+    <!--left-[-100%]-->
+    <div class="relative w-[125%] h-1/2 top-0 left-[-125%]" id="animacion-change-top">
+      <div class="absolute right-0 w-[20%] h-full" id="triaTopPadre">
+        <div class="w-0 h-0  triangulo border-b-transparent border-r-transparent border-t-[#221f1f] border-l-[#221f1f]">
+        </div>
       </div>
+      <div class="absolute left-0 bg-[#221f1f] w-[80%] h-full"></div>
+    </div>
+    <!--right-[-100%]-->
+    <div class="relative  w-[125%] h-1/2 bottom-0 right-[-100%]" id="animacion-change-bottom">
+      <div class="absolute left-0 w-[20%] h-full" id="triaBottomPadre">
+        <div class="w-0 h-0  triangulo border-t-transparent border-l-transparent border-b-[#221f1f] border-r-[#221f1f]">
+        </div>
+      </div>
+      <div class="absolute right-0 bg-[#221f1f] w-[80%] h-full"></div>
     </div>
   </div>
   <!--Animacion-->
