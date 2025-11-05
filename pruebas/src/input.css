@@ -21,8 +21,8 @@
   --color-fondo-oscuro: #1d1d1d;
   --font-roboto-mono: "Roboto Mono", monospace;
   --animate-parpadeo: parpadeo .8s infinite;
-  --animate-desplazar-left: DesplazarLeft 3s ease-in-out forwards;
-  --animate-desplazar-rigth: DesplazarRigth 3s ease-in-out forwards;
+  --animate-desplazar-left: DesplazarLeft 2.5s  cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
+  --animate-desplazar-rigth: DesplazarRigth 2.5s  cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
   --triangulo-w:0px;
   --triangulo-h:0px;
 }

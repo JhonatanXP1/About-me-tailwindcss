@@ -7,7 +7,25 @@
   <link rel="stylesheet" href="tw.css">
   <script src="animation.js" defer></script>
 </head>
-<section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300">
+<!--Animacion-->
+<div class="absolute w-full h-full z-10 bg-[#fef3c6]/10">
+  <div class="relative w-[125%] h-1/2 top-0 left-[-125%]" id="animacion-change-top">
+    <div class="absolute right-0 w-[20%] h-full" id="triaTopPadre">
+      <div class="w-0 h-0  triangulo border-b-transparent border-r-transparent border-t-[#221f1f] border-l-[#221f1f]">
+      </div>
+    </div>
+    <div class="absolute left-0 bg-[#221f1f] w-[80%] h-full"></div>
+  </div>
+  <div class="relative  w-[125%] h-1/2 bottom-0 right-[-100%]" id="animacion-change-bottom">
+    <div class="absolute left-0 w-[20%] h-full" id="triaBottomPadre">
+      <div class="w-0 h-0  triangulo border-t-transparent border-l-transparent border-b-[#221f1f] border-r-[#221f1f]">
+      </div>
+    </div>
+    <div class="absolute right-0 bg-[#221f1f] w-[80%] h-full"></div>
+  </div>
+</div>
+<!--Animacion-->
+<section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300" id="presentacion">
   <!--Consola-->
   <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
     bg-[#ffffff8c] rounded-md blur-xs lg:px-5 lg:py-2 lg:w-2/5 lg:h-1/6 sm:w-4/5 sm:h-[14%]">
@@ -23,28 +41,6 @@
     </div>
   </div>
   <!--End Consola-->
-
-  <!--Animacion-->
-  <div class="absolute w-full h-full z-10 bg-[#fef3c6]/10">
-    <!--left-[-100%]-->
-    <div class="relative w-[125%] h-1/2 top-0 left-[-125%]" id="animacion-change-top">
-      <div class="absolute right-0 w-[20%] h-full" id="triaTopPadre">
-        <div class="w-0 h-0  triangulo border-b-transparent border-r-transparent border-t-[#221f1f] border-l-[#221f1f]">
-        </div>
-      </div>
-      <div class="absolute left-0 bg-[#221f1f] w-[80%] h-full"></div>
-    </div>
-    <!--right-[-100%]-->
-    <div class="relative  w-[125%] h-1/2 bottom-0 right-[-100%]" id="animacion-change-bottom">
-      <div class="absolute left-0 w-[20%] h-full" id="triaBottomPadre">
-        <div class="w-0 h-0  triangulo border-t-transparent border-l-transparent border-b-[#221f1f] border-r-[#221f1f]">
-        </div>
-      </div>
-      <div class="absolute right-0 bg-[#221f1f] w-[80%] h-full"></div>
-    </div>
-  </div>
-  <!--Animacion-->
-
   <!--Imagen de CSS-->
   <img src="./images/css.png" class="absolute  right-[15%] top-[30px] lg:w-[10%] sm:w-[20%]"
     style="filter: drop-shadow(0 0 0.75rem rgb(110, 110, 110));">
@@ -120,8 +116,6 @@
 
 <body class="bg-fondo-oscuro ">
   <div class="w-full flex justify-center content-center lg:h-100">
-    <div class="lg:w-8/10 lg:h-80 bg-blue-950">
-    </div>
   </div>
 </body>
 
