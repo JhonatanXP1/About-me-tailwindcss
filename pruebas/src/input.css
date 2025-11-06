@@ -31,7 +31,5 @@
   .triangulo {
     border-width: var(--triangulo-w) var(--triangulo-h);
   }
-  .triangulo::after{
-    border-width: var(--triangulo-w) var(--triangulo-h);
-  }
+
 }
