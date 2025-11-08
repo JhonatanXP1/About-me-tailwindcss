@@ -65,8 +65,7 @@ window.addEventListener('load', function () {
 
     for (let letra of text) {
         let letraSec = letra;
-        //delay += 200; // Incrementa ANTES de cada setTimeout
-        delay += 100;
+        delay += 150; // Incrementa ANTES de cada setTimeout
         setTimeout(() => {
             if (letra === '\n') {
                 if (!breakLine) {
@@ -101,12 +100,12 @@ window.addEventListener('load', function () {
     }
     setTimeout(() => {
         if (animacion_change_top) {
-            /*animacion_change_top.classList.add('animate-desplazar-left');
-            ObservableAnimacion(animacion_change_top);*/
+            animacion_change_top.classList.add('animate-desplazar-left');
+            ObservableAnimacion(animacion_change_top);
         }
         if (animacion_change_bottom) {
-            /*animacion_change_bottom.classList.add('animate-desplazar-rigth');
-            ObservableAnimacion(animacion_change_bottom);*/
+            animacion_change_bottom.classList.add('animate-desplazar-rigth');
+            ObservableAnimacion(animacion_change_bottom);
         }
     }, delay + 500);
 });

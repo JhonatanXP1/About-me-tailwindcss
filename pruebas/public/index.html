@@ -8,9 +8,8 @@
   <script src="animation.js" defer></script>
 </head>
 <!--Animacion-->
-<div class="absolute w-full h-full z-10 bg-[#fef3c6]/10">
-  <!--left-[-125%]-->
-  <div class="relative w-[125%] h-1/2 top-0 left-[-55%]" id="animacion-change-top">
+<div class="hidden absolute w-full h-full z-10 bg-[#fef3c6]/10 overflow-hidden">
+  <div class="relative w-[125%] h-1/2 top-0 left-[-126%]" id="animacion-change-top">
     <div class="absolute right-0 w-[20%] h-full" id="triaTopPadre">
       <div class="
       triangulo 
@@ -23,7 +22,17 @@
       ">
       </div>
       <div class="
-      left-[10px]
+      left-0
+      top-0
+      absolute
+      h-full
+      w-[12px]
+      bg-[#0772a3]
+      z-[-1] 
+      ">
+      </div>
+      <div class="
+      left-[12px]
       top-0
       absolute
       triangulo 
@@ -37,17 +46,38 @@
     </div>
     <div class="absolute left-0 bg-[#221f1f] w-[80%] h-full"></div>
   </div>
-  <!--right-[-100%]-->
-  <div class="relative  w-[125%] h-1/2 bottom-0 right-[-50%]" id="animacion-change-bottom">
+  <div class="relative  w-[125%] h-1/2 bottom-0 right-[-101%]" id="animacion-change-bottom">
     <div class="absolute left-0 w-[20%] h-full" id="triaBottomPadre">
       <div class="w-0 h-0  triangulo border-t-transparent border-l-transparent border-b-[#221f1f] border-r-[#221f1f]">
       </div>
+      <div class="
+      right-0
+      top-0
+      absolute
+      h-full
+      w-[12px]
+      bg-[#0772a3]
+      z-[-1] 
+      ">
+      </div>
+      <div class="
+      right-[12px]
+      top-0
+      absolute
+      triangulo 
+      border-r-[#0772a3] 
+      border-b-[#0c88c2]
+      border-t-transparent
+      border-l-transparent
+       w-0 h-0
+       z-[-1]
+      "></div>
     </div>
     <div class="absolute right-0 bg-[#221f1f] w-[80%] h-full"></div>
   </div>
 </div>
 <!--Termina Animacion-->
-<section class="fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300" id="presentacion">
+<section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300" id="presentacion">
   <!--Consola-->
   <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
     bg-[#ffffff8c] rounded-md blur-xs lg:px-5 lg:py-2 lg:w-2/5 lg:h-1/6 sm:w-4/5 sm:h-[14%]">
@@ -137,7 +167,10 @@
 </section>
 
 <body class="bg-fondo-oscuro ">
-  <div class="w-full flex justify-center content-center lg:h-100">
+  <div class="w-full lg:px-[40px] ">
+    <div class="relative py-5">
+
+    </div>
   </div>
 </body>
 
