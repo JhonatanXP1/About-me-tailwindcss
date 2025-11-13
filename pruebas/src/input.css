@@ -80,10 +80,10 @@
 @layer components {
   /*Falta hacer responsive el boton */
   .botonReferencia {
-    @apply  bg-transparent border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10;
+    @apply  bg-transparent ;
   }
 
   .botonReferenciaIcono {
-    @apply leading-none align-middle text-lg;
+    @apply border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle ;
   }
 }

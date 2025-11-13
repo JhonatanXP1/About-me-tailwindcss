@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>Prueba Tailwind</title>
   <link rel="stylesheet" href="tw.css">
-  <script src="animation.js" defer></script>
+  <script src="./animation.js" defer></script>
+  <script src="./holeBlack.js"></script>
 </head>
 <!--Animacion-->
 <div class="hidden absolute w-full h-full z-10 bg-[#fef3c6]/10 overflow-hidden">
@@ -77,7 +78,8 @@
   </div>
 </div>
 <!--Termina Animacion-->
-<section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300" id="presentacion">
+<section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
+  id="presentacion">
   <!--Consola-->
   <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
     bg-[#ffffff8c] rounded-md blur-xs lg:px-5 lg:py-2 lg:w-2/5 lg:h-1/6 sm:w-4/5 sm:h-[14%]">
@@ -167,6 +169,7 @@
 </section>
 
 <body class="bg-fondo-oscuro ">
+  <div id="holeBlack" class="w-[100vw] h-[100vh] fixed top-0 left-0"></div>
   <div class="w-full lg:px-[40px] ">
     <div class="relative py-[30px] text-neutral-50">
       <div class="relative mx-auto px-[3px] xl:w-[1280px] lg:w-[1024px]">

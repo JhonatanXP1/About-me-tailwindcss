@@ -24,8 +24,6 @@
     --color-neutral-600: oklch(43.9% 0 0);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
@@ -297,6 +295,9 @@
   .h-\[90\%\] {
     height: 90%;
   }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
   .h-full {
     height: 100%;
   }
@@ -311,6 +312,9 @@
   }
   .w-\[80\%\] {
     width: 80%;
+  }
+  .w-\[100vw\] {
+    width: 100vw;
   }
   .w-\[125\%\] {
     width: 125%;
@@ -666,6 +670,9 @@
 }
 @layer components {
   .botonReferencia {
+    background-color: transparent;
+  }
+  .botonReferenciaIcono {
     display: flex;
     height: calc(var(--spacing) * 10);
     width: calc(var(--spacing) * 10);
@@ -675,7 +682,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
     border-color: var(--color-neutral-500);
-    background-color: transparent;
+    vertical-align: middle;
+    --tw-leading: 1;
+    line-height: 1;
     color: var(--color-white);
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -687,13 +696,6 @@
         background-color: var(--color-blue-700);
       }
     }
-  }
-  .botonReferenciaIcono {
-    vertical-align: middle;
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-    --tw-leading: 1;
-    line-height: 1;
   }
 }
 @property --tw-translate-x {
@@ -798,11 +800,11 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-duration {
+@property --tw-leading {
   syntax: "*";
   inherits: false;
 }
-@property --tw-leading {
+@property --tw-duration {
   syntax: "*";
   inherits: false;
 }
@@ -833,8 +835,8 @@
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
       --tw-ease: initial;
-      --tw-duration: initial;
       --tw-leading: initial;
+      --tw-duration: initial;
     }
   }
 }
