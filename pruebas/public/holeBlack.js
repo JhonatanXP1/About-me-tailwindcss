@@ -1,18 +1,22 @@
 window.addEventListener('load', function () {
-    import('./class.start.js');
-
     const holeBlack = document.getElementById('holeBlack');
-
+    const startTime = new Date().getTime();
     const maxorbit = 255;
     const stars = [];
     let w = 0;
     let h = 0;
     let centerX = '';
     let centerY = '';
-    let collapse = false; //Estado de hover
-    let expanse = false; // Aqui las estrellas se expanden
+    let currentTime = 0;
+    let collapse = false;
+    let expanse = false;
+    let returning = false;
     let canvas, ctx;
-    /*Puede que no lo ocupes*/let returning = false; // Aqui las estrellas regresan a su posicion original
+    let autoClicked = true;
+    
+    window.addEventListener('animacionTerminada', () => {
+        autoClicked= true;
+    });
 
     const ResizeObserverHole = new ResizeObserver(entries => {
         for (let entry of entries) {
@@ -23,26 +27,47 @@ window.addEventListener('load', function () {
                 [w, h, centerX, centerY] = [rect.width, rect.height, rect.width / 2, rect.height / 2];
                 console.log('Dimensiones actualizadas:', w, h, centerX, centerY);
                 initCanvas();
-            });
+                init();
 
+                // ✅ Click automático la primera vez que se inicializa
+                if (!autoClicked) {
+                    autoClicked = true;
+                    holeBlack.dispatchEvent(new Event('click'));
+                }
+            });
         }
     });
 
     ResizeObserverHole.observe(holeBlack);
 
     function initCanvas() {
-        // Si el canvas no existe, crearlo
         if (!canvas) {
             canvas = document.createElement('canvas');
             holeBlack.appendChild(canvas);
             ctx = canvas.getContext('2d');
             ctx.globalCompositeOperation = "multiply";
+
+            holeBlack.addEventListener('click', function() {
+                collapse = false;
+                expanse = true;
+                returning = false;
+            });
+
+            holeBlack.addEventListener('mouseover', function() {
+                if (expanse === false) {
+                    collapse = true;
+                }
+            });
+
+            holeBlack.addEventListener('mouseout', function() {
+                if (expanse === false) {
+                    collapse = false;
+                }
+            });
         }
 
-        // Actualizar dimensiones del canvas
         canvas.width = w;
         canvas.height = h;
-
         setDPI(canvas, 192);
     }
 
@@ -78,15 +103,13 @@ window.addEventListener('load', function () {
             
             this.x = centerX;
             this.y = centerY + this.orbital;
-
             this.yOrigin = centerY + this.orbital;
 
             this.speed = (Math.floor(Math.random() * 2.5) + 1.5) * Math.PI / 180;
-            this.rotation = 0; // current Rotation
+            this.rotation = 0;
             this.startRotation = (Math.floor(Math.random() * 360) + 1) * Math.PI / 180;
 
             this.id = stars.length;
-
             this.collapseBonus = this.orbital - (maxorbit * 0.7);
             if (this.collapseBonus < 0) {
                 this.collapseBonus = 0;
@@ -99,7 +122,6 @@ window.addEventListener('load', function () {
             this.prevR = this.startRotation;
             this.prevX = this.x;
             this.prevY = this.y;
-            
             this.originalY = this.yOrigin;
 
             stars.push(this);
@@ -115,7 +137,7 @@ window.addEventListener('load', function () {
                     if (this.y < this.yOrigin - 4) {
                         this.y += (this.yOrigin - this.y) / 10;
                     }
-                } else { // on hover
+                } else {
                     this.trail = 1;
                     if (this.y > this.hoverPos) {
                         this.y -= (this.hoverPos - this.y) / -5;
@@ -130,10 +152,9 @@ window.addEventListener('load', function () {
                     this.y -= Math.floor(this.expansePos - this.y) / -80;
                 }
             } else if (returning) {
-                // Returning to original orbit slowly
                 this.rotation = this.startRotation + (currentTime * this.speed);
                 if (Math.abs(this.y - this.originalY) > 2) {
-                    this.y += (this.originalY - this.y) / 50; // Much slower return
+                    this.y += (this.originalY - this.y) / 50;
                 } else {
                     this.y = this.originalY;
                     this.yOrigin = this.originalY;
@@ -159,5 +180,30 @@ window.addEventListener('load', function () {
         }
     }
 
+    function loop() {
+        const now = new Date().getTime();
+        currentTime = (now - startTime) / 50;
 
+        ctx.fillStyle = 'rgba(25,25,25,0.2)';
+        ctx.fillRect(0, 0, w, h);
+
+        for (let i = 0; i < stars.length; i++) {
+            if (stars[i] !== undefined) {
+                stars[i].draw();
+            }
+        }
+        requestAnimationFrame(loop);
+    }
+
+    function init() {
+        ctx.fillStyle = 'rgba(25,25,25,1)';
+        ctx.fillRect(0, 0, w, h);
+
+        stars.length = 0;
+        
+        for (let i = 0; i < 2500; i++) {
+            new Star();
+        }
+        loop();
+    }
 });

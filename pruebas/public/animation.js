@@ -28,6 +28,8 @@ window.addEventListener('load', function () {
             if (porcentaje < 100) {
                 idFrame = requestAnimationFrame(verificarProgreso);
             } else {
+                if (elemento.id === 'animacion_change_top') 
+                    window.dispatchEvent(new CustomEvent('animacionTerminada'));
                 cancelAnimationFrame(idFrame);
             }
         }
