@@ -9,15 +9,15 @@
   <script src="./holeBlack.js"></script>
 </head>
 <!--Animacion-->
-<div class="hidden absolute w-full h-full z-10 bg-[#fef3c6]/10 overflow-hidden">
+<div class="absolute w-full h-full z-10 bg-[#fef3c6]/10 overflow-hidden" id="animacionCambios">
   <div class="relative w-[125%] h-1/2 top-0 left-[-126%]" id="animacion-change-top">
     <div class="absolute right-0 w-[20%] h-full" id="triaTopPadre">
       <div class="
       triangulo 
       border-b-transparent 
       border-r-transparent
-      border-t-[#221f1f]
-      border-l-[#221f1f]
+      border-t-[rgb(0,0,0)]
+      border-l-[rgb(0,0,0)]
       w-0 h-0
       z-0
       ">
@@ -45,11 +45,11 @@
        z-[-1]
       "></div>
     </div>
-    <div class="absolute left-0 bg-[#221f1f] w-[80%] h-full"></div>
+    <div class="absolute left-0 bg-[rgb(0,0,0)] w-[80%] h-full"></div>
   </div>
   <div class="relative  w-[125%] h-1/2 bottom-0 right-[-101%]" id="animacion-change-bottom">
     <div class="absolute left-0 w-[20%] h-full" id="triaBottomPadre">
-      <div class="w-0 h-0  triangulo border-t-transparent border-l-transparent border-b-[#221f1f] border-r-[#221f1f]">
+      <div class="w-0 h-0  triangulo border-t-transparent border-l-transparent border-b-[rgb(0,0,0)] border-r-[rgb(0,0,0)]">
       </div>
       <div class="
       right-0
@@ -74,11 +74,11 @@
        z-[-1]
       "></div>
     </div>
-    <div class="absolute right-0 bg-[#221f1f] w-[80%] h-full"></div>
+    <div class="absolute right-0 bg-[rgb(0,0,0)] w-[80%] h-full"></div>
   </div>
 </div>
 <!--Termina Animacion-->
-<section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
+<section class=" fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
   id="presentacion">
   <!--Consola-->
   <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
@@ -168,9 +168,10 @@
 </pre>
 </section>
 
-<body class="bg-fondo-oscuro ">
-  <div id="holeBlack" class="w-[100vw] h-[100vh] fixed top-0 left-0"></div>
-  <div class="w-full lg:px-[40px] ">
+<body class="bg-fondo-oscuro">
+  <div id="holeBlack" class="w-[100vw] h-[100vh] fixed top-0 left-0 animate-showUp"></div>
+  <!-- Inicia el encabezado -->
+  <div class="w-full lg:px-[40px] hidden" id="headerPage">
     <div class="relative py-[30px] text-neutral-50">
       <div class="relative mx-auto px-[3px] xl:w-[1280px] lg:w-[1024px]">
         <div class="grid grid-cols-3 animate-showUp">
@@ -190,6 +191,7 @@
       </div>
     </div>
   </div>
+  <!-- Termina el encabezado -->
 </body>
 
 </html>

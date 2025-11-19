@@ -61,7 +61,7 @@
 }
 
 @theme {
-  --color-fondo-oscuro: #1d1d1d;
+  --color-fondo-oscuro: rgb(0,0,0);
   --font-roboto-mono: "Roboto Mono", monospace;
   --animate-parpadeo: parpadeo .8s infinite;
   --animate-desplazar-left: DesplazarLeft 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;

@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
     const holeBlack = document.getElementById('holeBlack');
+    const headerPage = document.getElementById('headerPage');
     const startTime = new Date().getTime();
     const maxorbit = 255;
     const stars = [];
@@ -15,7 +16,12 @@ window.addEventListener('load', function () {
     let autoClicked = true;
     
     window.addEventListener('animacionTerminada', () => {
-        autoClicked= true;
+        autoClicked= false;
+        ResizeObserverHole.observe(holeBlack);
+        setTimeout(() => {
+            headerPage.classList.remove('hidden');
+            headerPage.classList.add('animate-showUp');
+        },600);
     });
 
     const ResizeObserverHole = new ResizeObserver(entries => {
@@ -37,9 +43,7 @@ window.addEventListener('load', function () {
             });
         }
     });
-
-    ResizeObserverHole.observe(holeBlack);
-
+    
     function initCanvas() {
         if (!canvas) {
             canvas = document.createElement('canvas');
@@ -184,7 +188,7 @@ window.addEventListener('load', function () {
         const now = new Date().getTime();
         currentTime = (now - startTime) / 50;
 
-        ctx.fillStyle = 'rgba(25,25,25,0.2)';
+        ctx.fillStyle = 'rgba(0,0,0,0.2)';
         ctx.fillRect(0, 0, w, h);
 
         for (let i = 0; i < stars.length; i++) {
@@ -196,7 +200,7 @@ window.addEventListener('load', function () {
     }
 
     function init() {
-        ctx.fillStyle = 'rgba(25,25,25,1)';
+        ctx.fillStyle = 'rgba(0,0,0,1)';
         ctx.fillRect(0, 0, w, h);
 
         stars.length = 0;

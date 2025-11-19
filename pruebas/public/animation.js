@@ -14,6 +14,7 @@ window.addEventListener('load', function () {
         const duracion = 3000;
         let yaEjecutado = false;
         const presentacionDiv = document.getElementById('presentacion');
+        const animacionCambios = document.getElementById('animacionCambios');
 
         function verificarProgreso() {
             const tiempoActual = performance.now();
@@ -22,15 +23,28 @@ window.addEventListener('load', function () {
 
             if (porcentaje >= 20 && !yaEjecutado && presentacionDiv) {
                 presentacionDiv.classList.add('hidden');
+                if (animacionCambios) animacionCambios.classList.add('hidden');
                 yaEjecutado = true;
+
+                // Para ahorrar recursos: si la animación ya se ocultó, no necesitamos
+                // seguir ejecutando `requestAnimationFrame` continuamente.
+                // Cancelamos el rAF y usamos un `setTimeout` para completar el tiempo
+                // restante y disparar el evento final cuando corresponda.
+                if (idFrame) {
+                    cancelAnimationFrame(idFrame);
+                    idFrame = null;
+                }
+
+                setTimeout(() => {
+                    if (elemento.id == 'animacion-change-top') 
+                        window.dispatchEvent(new CustomEvent('animacionTerminada'));
+                }, 200);
+                // No seguimos programando rAF aquí para ahorrar CPU.
+                return;
             }
 
             if (porcentaje < 100) {
                 idFrame = requestAnimationFrame(verificarProgreso);
-            } else {
-                if (elemento.id === 'animacion_change_top') 
-                    window.dispatchEvent(new CustomEvent('animacionTerminada'));
-                cancelAnimationFrame(idFrame);
             }
         }
 
@@ -100,6 +114,7 @@ window.addEventListener('load', function () {
             }
         }, delay);
     }
+    
     setTimeout(() => {
         if (animacion_change_top) {
             animacion_change_top.classList.add('animate-desplazar-left');
