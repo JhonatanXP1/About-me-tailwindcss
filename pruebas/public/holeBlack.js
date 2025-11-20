@@ -205,7 +205,7 @@ window.addEventListener('load', function () {
 
         stars.length = 0;
         
-        for (let i = 0; i < 2500; i++) {
+        for (let i = 0; i < 1700; i++) {
             new Star();
         }
         loop();

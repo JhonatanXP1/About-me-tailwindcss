@@ -217,9 +217,6 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
@@ -249,9 +246,6 @@
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
-  }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
   }
   .left-1\/2 {
     left: calc(1/2 * 100%);
@@ -283,14 +277,8 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .h-0 {
     height: calc(var(--spacing) * 0);
-  }
-  .h-1 {
-    height: calc(var(--spacing) * 1);
   }
   .h-1\/2 {
     height: calc(1/2 * 100%);
@@ -325,19 +313,8 @@
   .w-full {
     width: 100%;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-y-1 {
-    --tw-translate-y: calc(var(--spacing) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
@@ -358,9 +335,6 @@
   }
   .animate-showUp {
     animation: var(--animate-showUp);
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -390,17 +364,11 @@
   .border-t-\[\#0c88c2\] {
     border-top-color: #0c88c2;
   }
-  .border-t-\[\#221f1f\] {
-    border-top-color: #221f1f;
-  }
   .border-t-\[rgb\(0\,0\,0\)\] {
     border-top-color: rgb(0,0,0);
   }
   .border-t-transparent {
     border-top-color: transparent;
-  }
-  .border-r-\[\#221f1f\] {
-    border-right-color: #221f1f;
   }
   .border-r-\[\#0772a3\] {
     border-right-color: #0772a3;
@@ -414,17 +382,11 @@
   .border-b-\[\#0c88c2\] {
     border-bottom-color: #0c88c2;
   }
-  .border-b-\[\#221f1f\] {
-    border-bottom-color: #221f1f;
-  }
   .border-b-\[rgb\(0\,0\,0\)\] {
     border-bottom-color: rgb(0,0,0);
   }
   .border-b-transparent {
     border-bottom-color: transparent;
-  }
-  .border-l-\[\#221f1f\] {
-    border-left-color: #221f1f;
   }
   .border-l-\[\#0772a3\] {
     border-left-color: #0772a3;
@@ -434,9 +396,6 @@
   }
   .border-l-transparent {
     border-left-color: transparent;
-  }
-  .bg-\[\#221f1f\] {
-    background-color: #221f1f;
   }
   .bg-\[\#0772a3\] {
     background-color: #0772a3;
@@ -449,9 +408,6 @@
   }
   .bg-\[rgb\(0\,0\,0\)\] {
     background-color: rgb(0,0,0);
-  }
-  .bg-\[rgb\(0\,0\,0\)\]\/10 {
-    background-color: color-mix(in oklab, rgb(0,0,0) 10%, transparent);
   }
   .bg-fondo-oscuro {
     background-color: var(--color-fondo-oscuro);
@@ -501,13 +457,6 @@
   .text-violet-300 {
     color: var(--color-violet-300);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .blur-xs {
     --tw-blur: blur(var(--blur-xs));
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -519,10 +468,6 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .ease-in {
-    --tw-ease: var(--ease-in);
-    transition-timing-function: var(--ease-in);
   }
   .sm\:h-\[13\.5\%\] {
     @media (width >= 40rem) {
@@ -759,11 +704,6 @@
   inherits: false;
   initial-value: solid;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -817,10 +757,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-ease {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-leading {
   syntax: "*";
   inherits: false;
@@ -841,7 +777,6 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-border-style: solid;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -855,7 +790,6 @@
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
-      --tw-ease: initial;
       --tw-leading: initial;
       --tw-duration: initial;
     }
