@@ -1,12 +1,33 @@
+function debounce(fn, wait = 50) {
+    let t;
+    return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), wait);
+    };
+}
+
 window.addEventListener('load', function () {
-    const observerTrian = new ResizeObserver(entries => {
+    const updateTrianguloSize = (elemt) => {
+        if (!elemt) return;
+        const rect = elemt.getBoundingClientRect();
+        console.log({
+            rectWidth: rect.width,
+            rectHeight: rect.height,
+            devicePixelRatio: window.devicePixelRatio,
+            innerWidth: window.innerWidth,
+            visualViewportWidth: window.visualViewport && window.visualViewport.width,
+            clientWidth: document.documentElement.clientWidth,
+            offsetWidth: elemt.offsetWidth
+        });
+        elemt.style.setProperty('--triangulo-w', `${Math.max(((rect.width / 2) - 4), 0)}px`);
+        elemt.style.setProperty('--triangulo-h', `${Math.max(((rect.height / 2) + 4), 0)}px`);
+    };
+
+    const observerTrian = new ResizeObserver(debounce(entries => {
         for (let entry of entries) {
-            const { width, height } = entry.contentRect;
-            const div = entry.target;
-            div.style.setProperty('--triangulo-w', `${((width / 2) - 4)}px`);
-            div.style.setProperty('--triangulo-h', `${((height / 2) + 4)}px`);
+            updateTrianguloSize(entry.target);
         }
-    });
+    }, 50));
 
     const ObservableAnimacion = (elemento) => {
         let idFrame;
@@ -36,7 +57,7 @@ window.addEventListener('load', function () {
                 }
 
                 setTimeout(() => {
-                    if (elemento.id == 'animacion-change-top') 
+                    if (elemento.id == 'animacion-change-top')
                         window.dispatchEvent(new CustomEvent('animacionTerminada'));
                 }, 200);
                 // No seguimos programando rAF aquí para ahorrar CPU.
@@ -51,7 +72,7 @@ window.addEventListener('load', function () {
         idFrame = requestAnimationFrame(verificarProgreso);
         return idFrame;
     }
-    
+
     let text = `if(action|==|"I|imagine|it"){ \n iProgramIt(); \n}`;
     let textAux = '';
     let colorMetria = {
@@ -114,15 +135,15 @@ window.addEventListener('load', function () {
             }
         }, delay);
     }
-    
+
     setTimeout(() => {
         if (animacion_change_top) {
-            animacion_change_top.classList.add('animate-desplazar-left');
-            ObservableAnimacion(animacion_change_top);
+            //animacion_change_top.classList.add('animate-desplazar-left');
+            //ObservableAnimacion(animacion_change_top);
         }
         if (animacion_change_bottom) {
-            animacion_change_bottom.classList.add('animate-desplazar-rigth');
-            ObservableAnimacion(animacion_change_bottom);
+            //animacion_change_bottom.classList.add('animate-desplazar-rigth');
+            //ObservableAnimacion(animacion_change_bottom);
         }
     }, delay + 500);
 });
