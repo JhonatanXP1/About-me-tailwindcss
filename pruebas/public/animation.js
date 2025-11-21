@@ -9,18 +9,10 @@ function debounce(fn, wait = 50) {
 window.addEventListener('load', function () {
     const updateTrianguloSize = (elemt) => {
         if (!elemt) return;
-        const rect = elemt.getBoundingClientRect();
-        console.log({
-            rectWidth: rect.width,
-            rectHeight: rect.height,
-            devicePixelRatio: window.devicePixelRatio,
-            innerWidth: window.innerWidth,
-            visualViewportWidth: window.visualViewport && window.visualViewport.width,
-            clientWidth: document.documentElement.clientWidth,
-            offsetWidth: elemt.offsetWidth
-        });
-        elemt.style.setProperty('--triangulo-w', `${Math.max(((rect.width / 2) - 4), 0)}px`);
-        elemt.style.setProperty('--triangulo-h', `${Math.max(((rect.height / 2) + 4), 0)}px`);
+        const totalWidth = elemt.offsetWidth;
+        const totalHeight = elemt.offsetHeight;
+        elemt.style.setProperty('--triangulo-w', `${Math.max((totalWidth / 2), 0)}px`);
+        elemt.style.setProperty('--triangulo-h', `${Math.max((totalHeight / 2), 0)}px`);
     };
 
     const observerTrian = new ResizeObserver(debounce(entries => {

@@ -72,9 +72,7 @@
 }
 
 @layer utilities {
-  .triangulo {
-    border-width: var(--triangulo-w) var(--triangulo-h);
-  }
+  
 }
 
 @layer components {
@@ -85,5 +83,22 @@
 
   .botonReferenciaIcono {
     @apply border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle ;
+  }
+
+  .imagenPresentResponsive {
+    @apply w-[20%] sm:w-[20%] lg:w-[10%];
+  }
+
+  .triangulo {
+    /* ✅ MOBILE FIRST: invertido (default) */
+    border-width: var(--triangulo-h) var(--triangulo-w);
+  }
+
+  /* ✅ AQUÍ VA EL @screen sm - DENTRO de @layer components */
+  @screen sm {
+    .triangulo {
+      /* ✅ TABLET+: normal */
+      border-width: var(--triangulo-w) var(--triangulo-h);
+    }
   }
 }
