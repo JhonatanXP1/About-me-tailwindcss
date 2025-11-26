@@ -26,6 +26,8 @@
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
@@ -37,7 +39,7 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-fondo-oscuro: rgb(0,0,0);
+    --color-fondo-oscuro: rgb(0, 0, 0);
     --font-roboto-mono: "Roboto Mono", monospace;
     --animate-parpadeo: parpadeo .8s infinite;
     --animate-desplazar-left: DesplazarLeft 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
@@ -232,11 +234,8 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
-  .right-\[-50\%\] {
-    right: -50%;
-  }
-  .right-\[-101\%\] {
-    right: -101%;
+  .right-\[-105\%\] {
+    right: -105%;
   }
   .right-\[5\%\] {
     right: 5%;
@@ -259,8 +258,8 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
-  .left-\[-80\%\] {
-    left: -80%;
+  .left-\[-128\%\] {
+    left: -128%;
   }
   .left-\[12px\] {
     left: 12px;
@@ -580,6 +579,16 @@
       height: calc(1/6 * 100%);
     }
   }
+  .lg\:h-\[18\%\] {
+    @media (width >= 64rem) {
+      height: 18%;
+    }
+  }
+  .lg\:h-\[19\%\] {
+    @media (width >= 64rem) {
+      height: 19%;
+    }
+  }
   .lg\:w-2\/5 {
     @media (width >= 64rem) {
       width: calc(2/5 * 100%);
@@ -588,6 +597,16 @@
   .lg\:w-4\/5 {
     @media (width >= 64rem) {
       width: calc(4/5 * 100%);
+    }
+  }
+  .lg\:w-\[18\%\] {
+    @media (width >= 64rem) {
+      width: 18%;
+    }
+  }
+  .lg\:w-\[35\%\] {
+    @media (width >= 64rem) {
+      width: 35%;
     }
   }
   .lg\:w-\[1024px\] {
@@ -620,10 +639,10 @@
       padding-left: calc(var(--spacing) * 2);
     }
   }
-  .lg\:text-3xl {
+  .lg\:text-2xl {
     @media (width >= 64rem) {
-      font-size: var(--text-3xl);
-      line-height: var(--tw-leading, var(--text-3xl--line-height));
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
   }
   .lg\:text-xl {
@@ -719,11 +738,6 @@
   }
   .triangulo {
     border-width: var(--triangulo-h) var(--triangulo-w);
-  }
-  @screen sm {
-    .triangulo {
-      border-width: var(--triangulo-w) var(--triangulo-h);
-    }
   }
 }
 @property --tw-translate-x {

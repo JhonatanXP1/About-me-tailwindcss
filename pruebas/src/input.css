@@ -4,6 +4,7 @@
 @import "tailwindcss";
 
 @keyframes parpadeo {
+
   0%,
   100% {
     opacity: 1;
@@ -19,11 +20,13 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes DesplazarLeft {
   20% {
     left: 0%;
@@ -61,7 +64,7 @@
 }
 
 @theme {
-  --color-fondo-oscuro: rgb(0,0,0);
+  --color-fondo-oscuro: rgb(0, 0, 0);
   --font-roboto-mono: "Roboto Mono", monospace;
   --animate-parpadeo: parpadeo .8s infinite;
   --animate-desplazar-left: DesplazarLeft 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
@@ -69,36 +72,26 @@
   --triangulo-w: 0px;
   --triangulo-h: 0px;
   --animate-showUp: showUp 0.5s ease-in forwards;
+
 }
 
-@layer utilities {
-  
-}
+@layer utilities {}
 
 @layer components {
+
   /*Falta hacer responsive el boton */
   .botonReferencia {
-    @apply  bg-transparent ;
+    @apply bg-transparent;
   }
 
   .botonReferenciaIcono {
-    @apply border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle ;
+    @apply border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle;
   }
 
   .imagenPresentResponsive {
     @apply w-[20%] sm:w-[20%] lg:w-[10%];
   }
-
   .triangulo {
-    /* ✅ MOBILE FIRST: invertido (default) */
-    border-width: var(--triangulo-h) var(--triangulo-w);
-  }
-
-  /* ✅ AQUÍ VA EL @screen sm - DENTRO de @layer components */
-  @screen sm {
-    .triangulo {
-      /* ✅ TABLET+: normal */
-      border-width: var(--triangulo-w) var(--triangulo-h);
-    }
+    border-width:  var(--triangulo-h) var(--triangulo-w);
   }
 }

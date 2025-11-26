@@ -14,36 +14,38 @@ window.addEventListener('load', function () {
     let returning = false;
     let canvas, ctx;
     let autoClicked = true;
-    
+
     window.addEventListener('animacionTerminada', () => {
-        autoClicked= false;
+        autoClicked = false;
         ResizeObserverHole.observe(holeBlack);
         setTimeout(() => {
             headerPage.classList.remove('hidden');
             headerPage.classList.add('animate-showUp');
-        },600);
+        }, 600);
     });
 
-    const ResizeObserverHole = new ResizeObserver(entries => {
+    const ResizeObserverHole = new ResizeObserver(debounce(entries => {
         for (let entry of entries) {
             const div = entry.target;
             const rect = div.getBoundingClientRect();
             requestAnimationFrame(() => {
-                console.log(rect.width, rect.height);
                 [w, h, centerX, centerY] = [rect.width, rect.height, rect.width / 2, rect.height / 2];
-                console.log('Dimensiones actualizadas:', w, h, centerX, centerY);
+                if (canvas) {
+                    holeBlack.removeChild(canvas);
+                    canvas = null;
+                }
                 initCanvas();
                 init();
-
-                // ✅ Click automático la primera vez que se inicializa
+                console.log(stars.length + ' estrellas creadas');
+                //Click automático la primera vez que se inicializa
                 if (!autoClicked) {
                     autoClicked = true;
                     holeBlack.dispatchEvent(new Event('click'));
                 }
             });
         }
-    });
-    
+    }, 50));
+
     function initCanvas() {
         if (!canvas) {
             canvas = document.createElement('canvas');
@@ -51,19 +53,19 @@ window.addEventListener('load', function () {
             ctx = canvas.getContext('2d');
             ctx.globalCompositeOperation = "multiply";
 
-            holeBlack.addEventListener('click', function() {
+            holeBlack.addEventListener('click', function () {
                 collapse = false;
                 expanse = true;
                 returning = false;
             });
 
-            holeBlack.addEventListener('mouseover', function() {
+            holeBlack.addEventListener('mouseover', function () {
                 if (expanse === false) {
                     collapse = true;
                 }
             });
 
-            holeBlack.addEventListener('mouseout', function() {
+            holeBlack.addEventListener('mouseout', function () {
                 if (expanse === false) {
                     collapse = false;
                 }
@@ -104,7 +106,7 @@ window.addEventListener('load', function () {
             rands.push(Math.random() * (maxorbit / 2) + maxorbit);
 
             this.orbital = (rands.reduce((p, c) => p + c, 0) / rands.length);
-            
+
             this.x = centerX;
             this.y = centerY + this.orbital;
             this.yOrigin = centerY + this.orbital;
@@ -155,15 +157,7 @@ window.addEventListener('load', function () {
                 if (this.y > this.expansePos) {
                     this.y -= Math.floor(this.expansePos - this.y) / -80;
                 }
-            } else if (returning) {
-                this.rotation = this.startRotation + (currentTime * this.speed);
-                if (Math.abs(this.y - this.originalY) > 2) {
-                    this.y += (this.originalY - this.y) / 50;
-                } else {
-                    this.y = this.originalY;
-                    this.yOrigin = this.originalY;
-                }
-            }
+            } 
 
             ctx.save();
             ctx.fillStyle = this.color;
@@ -204,7 +198,7 @@ window.addEventListener('load', function () {
         ctx.fillRect(0, 0, w, h);
 
         stars.length = 0;
-        
+
         for (let i = 0; i < 1700; i++) {
             new Star();
         }
