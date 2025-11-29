@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="tw.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="./animation.js" defer></script>
   <script src="./holeBlack.js" defer></script>
+  <script src="./animation.js" defer></script>
 </head>
 
 <body class="bg-fondo-oscuro">
   <!--Animacion-->
-  <div class="absolute w-full h-full z-10 bg-[#fef3c6]/10 overflow-hidden" id="animacionCambios">
+  <div class=" hidden absolute w-full h-full z-10 bg-[#fef3c6]/10 overflow-hidden" id="animacionCambios">
     <!---->
     <div class="relative w-[125%] h-1/2 top-0 left-[-128%]" id="animacion-change-top">
       <div class="absolute right-0 w-[20%] h-full" id="triaTopPadre">
@@ -44,7 +44,7 @@
     </div>
   </div>
   <!--Termina Animacion-->
-  <section class=" fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
+  <section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
     id="presentacion">
     <!--Imagen de CSS-->
     <img src="./images/css.png"
@@ -140,9 +140,9 @@
 
   <div id="holeBlack" class="w-[100vw] h-[100vh] fixed top-0 left-0 animate-showUp"></div>
   <!-- Inicia el encabezado -->
-  <div class="w-full lg:px-[40px] hidden" id="headerPage">
+  <div id="headerPage" class="w-full lg:px-[40px] hidden">
     <div class="relative py-[30px] text-neutral-50">
-      <div class="relative mx-auto px-[3px] xl:w-[1280px] lg:w-[1024px]">
+      <div class="relative mx-auto px-[3px] lg:w-[1024px] xl:w-[1280px]">
         <div class="grid grid-cols-3 animate-showUp">
           <div>Good Dev</div>
           <div class="flex justify-between px-30">
@@ -155,8 +155,18 @@
             <a class="botonReferencia" href="">
               <i class="fi fi-brands-whatsapp botonReferenciaIcono "></i>
             </a>
+            <a class="botonReferencia" href="">
+              <i class="fi fi-sr-envelope botonReferenciaIcono"></i>
+            </a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div id="bodyPage" class="w-full lg:px-[40px] hidden">
+    <div class="relative px-[3px]">
+      <div class="bg-neutral-900 mx-auto lg:w-[1024px] xl:w-[1280px]">
+        hola
       </div>
     </div>
   </div>

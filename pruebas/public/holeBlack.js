@@ -1,6 +1,7 @@
 window.addEventListener('load', function () {
     const holeBlack = document.getElementById('holeBlack');
     const headerPage = document.getElementById('headerPage');
+    const bodyPage = document.getElementById('bodyPage');
     const startTime = new Date().getTime();
     const maxorbit = 255;
     const stars = [];
@@ -21,6 +22,8 @@ window.addEventListener('load', function () {
         setTimeout(() => {
             headerPage.classList.remove('hidden');
             headerPage.classList.add('animate-showUp');
+            bodyPage.classList.remove('hidden');
+            bodyPage.classList.add('animate-showUp');
         }, 600);
     });
 
