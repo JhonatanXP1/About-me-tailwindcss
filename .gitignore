@@ -1,6 +1,7 @@
-pruebas/node_modules/
+/workPortfolio/node_modules/
 dist/
 build/
 *.log
 .DS_Store
 .env
+/workPortfolio/public/tw.css
