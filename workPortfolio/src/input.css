@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+
+@import "tailwindcss";
+
+@keyframes parpadeo {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes DesplazarLeft {
+  20% {
+    left: 0%;
+  }
+
+  /* 1s: llega al 100% */
+  80% {
+    left: 0%;
+  }
+
+  /* 4s: se mantiene en 100% */
+  100% {
+    left: 100%;
+  }
+
+  /* 5s: termina en 200% */
+}
+
+@keyframes DesplazarRigth {
+  20% {
+    right: 25%;
+  }
+
+  /* 1s: llega al 100% */
+  80% {
+    right: 25%;
+  }
+
+  /* 4s: se mantiene en 100% */
+  100% {
+    right: 125%;
+  }
+
+  /* 5s: termina en 200% */
+}
+
+@theme {
+  --color-fondo-oscuro: rgb(0, 0, 0);
+  --font-roboto-mono: "Roboto Mono", monospace;
+  --animate-parpadeo: parpadeo .8s infinite;
+  --animate-desplazar-left: DesplazarLeft 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
+  --animate-desplazar-rigth: DesplazarRigth 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
+  --triangulo-w: 0px;
+  --triangulo-h: 0px;
+  --animate-showUp: showUp 0.5s ease-in forwards;
+}
+
+@layer utilities {}
+
+@layer components {
+
+  /*Falta hacer responsive el boton */
+  .botonReferencia {
+    @apply bg-transparent;
+  }
+
+  .botonReferenciaIcono {
+    @apply border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle;
+  }
+
+  .imagenPresentResponsive {
+    @apply w-[20%] sm:w-[20%] lg:w-[10%];
+  }
+  .triangulo {
+    border-width:  var(--triangulo-h) var(--triangulo-w);
+  }
+}
