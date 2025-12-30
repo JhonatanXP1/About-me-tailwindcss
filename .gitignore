@@ -1,4 +1,5 @@
 /workPortfolio/node_modules/
+/invitationInitiation/invitationInitiation/node_modules/
 dist/
 build/
 *.log
