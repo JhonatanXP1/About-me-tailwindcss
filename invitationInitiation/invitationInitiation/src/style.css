@@ -12,3 +12,23 @@ body {
     background: #CFAD82;
     background: linear-gradient(90deg, rgba(207, 173, 130, 1) 0%, rgba(239, 232, 215, 1) 20%, rgba(239, 232, 215, 1) 80%, rgba(207, 173, 130, 1) 100%);
 }
+
+.dancing-script-700 {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@layer components {
+    .botonInit {
+        @apply bg-neutral-950 text-neutral-50 w-full h-full rounded-full border border-amber-300 align-middle;
+    }
+}
