@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
@@ -68,6 +68,7 @@
 @theme {
   --color-fondo-oscuro: rgb(0, 0, 0);
   --font-roboto-mono: "Roboto Mono", monospace;
+  --font-Inter: "Inter", sans-serif;
   --animate-parpadeo: parpadeo .8s infinite;
   --animate-desplazar-left: DesplazarLeft 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
   --animate-desplazar-rigth: DesplazarRigth 2.5s cubic-bezier(0.08, 0.31, 0.57, 0.03) forwards;
@@ -86,7 +87,7 @@
   }
 
   .botonReferenciaIcono {
-    @apply border-neutral-500 border-1 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle;
+    @apply border-neutral-500 border text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle;
   }
 
   .imagenPresentResponsive {
