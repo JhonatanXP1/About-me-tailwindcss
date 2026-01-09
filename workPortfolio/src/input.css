@@ -96,4 +96,10 @@
   .triangulo {
     border-width:  var(--triangulo-h) var(--triangulo-w);
   }
+  .buttonDownloadCV {
+    @apply  bg-transparent px-5 py-1 relative text-xl rounded-full border-2 border-neutral-50 rotate-x-15 -rotate-y-30 rotate-z-2;
+  }
+  .buttonDownloadCV:hover {
+    @apply rotate-0
+  }
 }
