@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="./holeBlack.js" defer></script>
   <script src="./animation.js" defer></script>
+  <script src="./hexagono.js"></script>
 </head>
 
 <body class="bg-fondo-oscuro">
@@ -45,7 +46,7 @@
     </div>
   </div>
   <!--Termina Animacion-->
-  <section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
+  <section class=" fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
     id="presentacion">
     <!--Imagen de CSS-->
     <img src="./images/css.png"
@@ -73,29 +74,6 @@
       </div>
     </div>
     <!--End Consola-->
-    <pre class="hidden">
-<span class="text-red-500">using</span> <span class="text-cyan-500">System;</span>
-<span class="text-red-500">public</span> <span class="text-emerald-500">class</span> <span class="text-cyan-500">EjemploAleatorio</span>
-<span class="text-amber-400">{</span>
-<span class="text-red-500">public static void</span> <span class="text-lime-400">Main</span><span class="text-violet-300">(</span> <span class="text-red-500">string</span><span class="text-cyan-500">[]</span> <span class="text-amber-600">args</span><span class="text-violet-300">)</span>
-    <span class="text-violet-300">{</span>
-      <span class="text-neutral-600">// Crear una instancia de la clase Random</span>
-      <span class="text-cyan-500">Random</span> random <span class="text-red-500">= new</span> <span class="text-cyan-500">Random();</span>
-
-      <span class="text-neutral-600">// Generar un número entero aleatorio entre 0 y 99</span>
-      <span class="text-red-500">int</span> numeroAleatorio <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">Next</span><span class="text-cyan-500">(<span class="text-violet-300">100</span>)</span>;
-      <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número aleatorio entre 0 y 99: {</span>numeroAleatorio<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
-
-      <span class="text-neutral-600">// Generar un número entero aleatorio entre 1 y 100 (inclusive)</span>
-      <span class="text-red-500">int</span> numeroAleatorioRango <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">Next</span><span class="text-cyan-500">(</span><span class="text-violet-300">1</span>, <span class="text-violet-300">101</span><span class="text-cyan-500">)</span>; <span class="text-neutral-600">// El segundo parámetro es exclusivo</span>
-      <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número aleatorio entre 1 y 100: {</span>numeroAleatorioRango<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
-
-      <span class="text-neutral-600">// Generar un número de punto flotante aleatorio entre 0.0 y 1.0 (exclusivo)</span>
-        <span class="text-red-500">double</span> numeroDecimalAleatorio <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">NextDouble</span><span class="text-cyan-500">()</span>;
-        <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número decimal aleatorio: {</span>numeroDecimalAleatorio<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
-    <span class="text-violet-300">}</span>
-<span class="text-amber-400">}</span>
-</pre>
     <pre class="lg:text-xl sm:text-3xl lg:w-4/5">
 <span class="text-red-500">body</span> <span class="text-amber-400">{</span>
   margin: <span class="text-violet-300">0</span>; padding: <span class="text-violet-300">0</span>;
@@ -165,19 +143,20 @@
       </div>
     </div>
   </div>
-  <div id="bodyPage" class="w-full lg:px-[40px] hidden">
+  <div id="bodyPage" class="w-full lg:px-10 hidden">
     <div class="relative px-[3px]">
-      <div class="bg-neutral-900 mx-auto lg:w-[1024px] xl:w-[1280px] lg:min-h-100 xl:min-h-120">
-        <div class="flex">
+      <div
+        class="relative bg-neutral-900 mx-auto lg:w-5xl xl:w-7xl lg:min-h-120 xl:min-h-130 rounded-t-2xl rounded-br-2xl">
+        <div class="flex relative">
           <div class="w-[30%] h-120 flex justify-center content-center py-5 px-10">
             <img src="./images/astrosT.jpg" alt="">
           </div>
           <div class="w-[70%] font-Inter text-neutral-50 lg:text-5xl font-light pt-15 px-10 ">
             <div>
-              ¡Hola!, Soy Carlos Jhonatan
+              ¡Hola!, Soy <span class="text-[#23ce9e] ">Jhonatan Díaz</span>
               <br>
               <br>
-              Desarrollador Full Stack enfocado en crear sistemas reales, escalables y seguros
+              Desarrollador Full Stack enfocado en crear soluciones escalables, seguras y de alto rendimiento
             </div>
             <div class="flex">
               <div class="w-[40%] flex items-center content-center py-10">
@@ -188,6 +167,72 @@
                 <button class="buttonDownloadCV ">
                   Descargar C.V
                 </button>
+              </div>
+            </div>
+          </div>
+          <div class="absolute min-h-16 bg-neutral-900 w-1/3 -bottom-25 rounded-bl-2xl">
+          </div>
+          <div class="absolute w-0 h-0 trianCard-left -bottom-25 left-1/3">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative py-25">
+      <div class="bg-neutral-900 mx-auto lg:w-5xl xl:w-7xl lg:min-h-450 xl:min-h-450 rounded-b-2xl rounded-tl-2xl">
+        <div class="flex relative">
+          <div class="absolute min-h-16 bg-neutral-900 w-7/12 -top-16 rounded-tr-2xl right-0 "></div>
+          <div class="absolute w-0 h-0 trianCard-rigth -top-16 right-7/12"></div>
+          <div class="w-full font-Inter  pt-15 px-12 ">
+            <div class="text-center xl:text-4xl text-neutral-50">
+              <span class="text-shadow-neutral-50 text-shadow-2xs relative" id="lineAbout">
+                Habilidades Técnicas
+              </span>
+              <div class="flex">
+                <div class="text-start  text-xl w-7/12 py-8 font-light" id="textSkillChange">
+                  <h3 class="font-medium">Backend & APIs</h3>
+                  <br>
+                  <h4 class="font-normal">C# / ASP.NET</h4>
+                  <br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Desarrollo de APIs RESTful escalables y seguras.<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Implementación de arquitecturas por capas (Controllers, Services,
+                  Repositories, DTOs).<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Optimización de lógica de negocio para mejor rendimiento y
+                  mantenibilidad.<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Uso de Entity Framework Core y Dapper según el caso.<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Manejo de autenticación y autorización (JWT, roles, claims).<br><br>
+                  <h4 class="font-normal">Integraciones y Procesamiento de Pagos</h4><br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Integración de pasarelas de pago como <b>OpenPay, EVO y Digital
+                    FEMSA</b>.<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Implementación de algoritmos para generación y validación de referencias.<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Diseño de flujos backend para procesamiento seguro de pagos, manejo de
+                  estados transaccionales y validaciones de integridad.<br>
+                  →&nbsp;&nbsp;&nbsp;&nbsp;Comunicación con servicios externos mediante APIs de terceros, manejo de
+                  errores, reintentos y respuestas asincrónicas.<br>
+                </div>
+                <div class="w-1/2 p-5 pt-20 flex justify-center">
+                  <div class="hexagonoBorder">
+                    <div class="hexagonoBorderB flex justify-center items-center">
+                      <div class="hexagonoTegnologeShow" id="hexTech">
+                        <img src="./images/prof.avif" alt="" id="hexImg">
+                      </div>
+                    </div>
+                    <div class="hexagonoBorder-V2">
+                      <div class="hexagonoBorderB-V2 flex justify-center items-center">
+                        <div class="hexagonoTegnologeShow-V2" id="hexTechV2">
+                          <img src="./images/net.avif" alt="" id="hexImgV2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex netProgress">
+                <img src="./images/net.avif" alt="">
+                <div class="w-full bg-neutral-quaternary rounded-full">
+                  <div
+                    class="bg-brand text-xs font-medium text-white text-center  leading-none rounded-full h-10 flex items-center justify-center"
+                    style="width: 65%"> 65%</div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
 
 @import "tailwindcss";
 
@@ -75,6 +79,7 @@
   --triangulo-w: 0px;
   --triangulo-h: 0px;
   --animate-showUp: showUp 0.5s ease-in forwards;
+
 }
 
 @layer utilities {}
@@ -93,13 +98,216 @@
   .imagenPresentResponsive {
     @apply w-[20%] sm:w-[20%] lg:w-[10%];
   }
+
   .triangulo {
-    border-width:  var(--triangulo-h) var(--triangulo-w);
+    border-width: var(--triangulo-h) var(--triangulo-w);
   }
+
   .buttonDownloadCV {
-    @apply  bg-transparent px-5 py-1 relative text-xl rounded-full border-2 border-neutral-50 rotate-x-15 -rotate-y-30 rotate-z-2;
+    z-index: 1;
+    @apply relative bg-transparent px-5 py-1 text-xl rounded-full border-2 border-neutral-50;
+    transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
   }
+
   .buttonDownloadCV:hover {
-    @apply rotate-0
+    @apply rotate-x-15 -rotate-y-30 rotate-z-2 border-transparent;
+    box-shadow: 0 0 40px 40px white inset;
+    color: black;
   }
+  .trianCard-left {
+    @apply p-0 m-0 border-32 border-neutral-900 border-r-transparent border-b-transparent;
+  }
+
+  .trianCard-rigth {
+    @apply p-0 m-0 border-33 border-neutral-900 border-l-transparent border-t-transparent;
+  }
+
+  #lineAbout {
+    @apply relative z-10;
+  }
+
+  #lineAbout::before {
+    content: "";
+    @apply absolute left-5 right-0 bottom-0.5 w-full h-3 bg-[#1a7d61] -z-10;
+  }
+
+  /*
+  Tabulacion de Hexagonos
+  w-24 → h-14
+  w-28 → h-16
+  w-32 → h-18
+  w-36 → h-21
+  w-40 → h-23
+  w-44 → h-25
+  w-48 → h-28
+  w-52 → h-30
+  w-56 → h-32
+  w-60 → h-35
+  w-64 → h-37
+  w-68 → h-39
+  w-72 → h-42
+  w-80 → h-46
+  w-88 → h-51
+  w-96 → h-55 
+  w-104 → h-60 
+  w-112 → h-65
+  */
+
+  /*Hegano de del fondo*/
+  .hexagonoBorder {
+    @apply relative w-80  h-46 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% flex justify-center items-center;
+  }
+
+  .hexagonoBorder::before,
+  .hexagonoBorder::after {
+    content: "";
+    z-index: 0;
+    @apply absolute inset-0 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90%;
+    transform-origin: center;
+  }
+
+  .hexagonoBorder::before {
+    transform: rotate(60deg);
+  }
+
+  .hexagonoBorder::after {
+
+    transform: rotate(-60deg);
+  }
+
+  /* HEXÁGONO INTERNO BACKGROUND BASE */
+  .hexagonoBorderB {
+    @apply relative bg-neutral-900;
+    z-index: 1;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  /* repetir la geometría */
+  .hexagonoBorderB::before,
+  .hexagonoBorderB::after {
+    content: "";
+    @apply absolute inset-0 bg-neutral-900;
+    transform-origin: center;
+  }
+
+  .hexagonoBorderB::before {
+    transform: rotate(60deg);
+  }
+
+  .hexagonoBorderB::after {
+    transform: rotate(-60deg);
+  }
+
+  .hexagonoTegnologeShow {
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    @apply relative bg-neutral-50;
+    z-index: 5;
+    width: calc(100% - 16px);
+    height: calc(100% - 4px);
+  }
+
+  .hexagonoTegnologeShow:before,
+  .hexagonoTegnologeShow:after {
+    content: "";
+    @apply absolute inset-0 bg-neutral-50;
+    transform-origin: center;
+  }
+
+  .hexagonoTegnologeShow:before {
+    transform: rotate(60deg);
+  }
+
+  .hexagonoTegnologeShow:after {
+    transform: rotate(-60deg);
+  }
+
+  .hexagonoTegnologeShow img {
+    z-index: 3;
+    object-fit: contain;
+    @apply absolute w-full h-[175%] top-1/2 -translate-y-1/2;
+  }
+
+  /*-------------------Hexagono Mini----------------*/
+  .hexagonoBorder-V2 {
+    @apply absolute -bottom-58 -right-25 w-60 h-35 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% flex justify-center items-center;
+  }
+
+  .hexagonoBorder-V2::before,
+  .hexagonoBorder-V2::after {
+    content: "";
+    z-index: 0;
+    @apply absolute inset-0 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90%;
+    transform-origin: center;
+  }
+
+  .hexagonoBorder-V2::before {
+    transform: rotate(60deg);
+  }
+
+  .hexagonoBorder-V2::after {
+    transform: rotate(-60deg);
+  }
+
+  /* HEXÁGONO INTERNO BACKGROUND BASE */
+  .hexagonoBorderB-V2 {
+    @apply relative bg-neutral-900;
+    z-index: 1;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  /* repetir la geometría */
+  .hexagonoBorderB-V2::before,
+  .hexagonoBorderB-V2::after {
+    content: "";
+    @apply absolute inset-0 bg-neutral-900;
+    transform-origin: center;
+  }
+
+  .hexagonoBorderB-V2::before {
+    transform: rotate(60deg);
+  }
+
+  .hexagonoBorderB-V2::after {
+    transform: rotate(-60deg);
+  }
+
+  .hexagonoTegnologeShow-V2 {
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+    @apply relative bg-neutral-700;
+    z-index: 3;
+    width: calc(100% - 16px);
+    height: calc(100% - 8px);
+  }
+
+  .hexagonoTegnologeShow-V2:before,
+  .hexagonoTegnologeShow-V2:after {
+    content: "";
+    @apply absolute inset-0 bg-neutral-700;
+    transform-origin: center;
+  }
+
+  .hexagonoTegnologeShow-V2:before {
+    transform: rotate(60deg);
+  }
+
+  .hexagonoTegnologeShow-V2:after {
+    transform: rotate(-60deg);
+  }
+
+  .hexagonoTegnologeShow-V2 img {
+    z-index: 3;
+    object-fit: contain;
+    @apply absolute w-full h-[175%] top-1/2 -translate-y-1/2;
+  }
+  .netProgress img{
+    object-fit: contain;
+    @apply w-10 h-10 mr-2;
+  }
+
+
+
 }

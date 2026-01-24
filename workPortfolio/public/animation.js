@@ -138,6 +138,6 @@ window.addEventListener('load', function () {
             //ObservableAnimacion(animacion_change_bottom);
         }
     }, delay + 500);
-
+   //desapare esto
     window.dispatchEvent(new CustomEvent('animacionTerminada'));
 });

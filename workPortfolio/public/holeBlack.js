@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
 
     window.addEventListener('animacionTerminada', () => {
         autoClicked = false;
+        holeBlack.classList.remove('hidden');
         ResizeObserverHole.observe(holeBlack);
         setTimeout(() => {
             headerPage.classList.remove('hidden');
