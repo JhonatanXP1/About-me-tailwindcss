@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="Desarrollador Full Stack especializado en Angular, JavaScript y Tailwind CSS. Creo aplicaciones web modernas, responsive y de alto rendimiento. ¡Contáctame para tu próximo proyecto!">
-  <title>Prueba Tailwind</title>
+  <title>Jhoan | Portafolio</title>
   <link rel="stylesheet" href="tw.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="./holeBlack.js" defer></script>
   <script src="./animation.js" defer></script>
+  <script src="./hexagono.js"></script>
 </head>
 
 <body class="bg-fondo-oscuro">
@@ -45,7 +46,7 @@
     </div>
   </div>
   <!--Termina Animacion-->
-  <section class="hidden fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
+  <section class=" fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
     id="presentacion">
     <!--Imagen de CSS-->
     <img src="./images/css.png"
@@ -73,29 +74,6 @@
       </div>
     </div>
     <!--End Consola-->
-    <pre class="hidden">
-<span class="text-red-500">using</span> <span class="text-cyan-500">System;</span>
-<span class="text-red-500">public</span> <span class="text-emerald-500">class</span> <span class="text-cyan-500">EjemploAleatorio</span>
-<span class="text-amber-400">{</span>
-<span class="text-red-500">public static void</span> <span class="text-lime-400">Main</span><span class="text-violet-300">(</span> <span class="text-red-500">string</span><span class="text-cyan-500">[]</span> <span class="text-amber-600">args</span><span class="text-violet-300">)</span>
-    <span class="text-violet-300">{</span>
-      <span class="text-neutral-600">// Crear una instancia de la clase Random</span>
-      <span class="text-cyan-500">Random</span> random <span class="text-red-500">= new</span> <span class="text-cyan-500">Random();</span>
-
-      <span class="text-neutral-600">// Generar un número entero aleatorio entre 0 y 99</span>
-      <span class="text-red-500">int</span> numeroAleatorio <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">Next</span><span class="text-cyan-500">(<span class="text-violet-300">100</span>)</span>;
-      <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número aleatorio entre 0 y 99: {</span>numeroAleatorio<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
-
-      <span class="text-neutral-600">// Generar un número entero aleatorio entre 1 y 100 (inclusive)</span>
-      <span class="text-red-500">int</span> numeroAleatorioRango <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">Next</span><span class="text-cyan-500">(</span><span class="text-violet-300">1</span>, <span class="text-violet-300">101</span><span class="text-cyan-500">)</span>; <span class="text-neutral-600">// El segundo parámetro es exclusivo</span>
-      <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número aleatorio entre 1 y 100: {</span>numeroAleatorioRango<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
-
-      <span class="text-neutral-600">// Generar un número de punto flotante aleatorio entre 0.0 y 1.0 (exclusivo)</span>
-        <span class="text-red-500">double</span> numeroDecimalAleatorio <span class="text-red-500">=</span> <span class="text-cyan-500">random</span>.<span class="text-lime-400">NextDouble</span><span class="text-cyan-500">()</span>;
-        <span class="text-cyan-500">Console</span>.<span class="text-lime-400">WriteLine</span><span class="text-cyan-500">(</span><span class="text-amber-400">$"Número decimal aleatorio: {</span>numeroDecimalAleatorio<span class="text-amber-400">}"</span><span class="text-cyan-500">)</span>;
-    <span class="text-violet-300">}</span>
-<span class="text-amber-400">}</span>
-</pre>
     <pre class="lg:text-xl sm:text-3xl lg:w-4/5">
 <span class="text-red-500">body</span> <span class="text-amber-400">{</span>
   margin: <span class="text-violet-300">0</span>; padding: <span class="text-violet-300">0</span>;
@@ -142,22 +120,24 @@
 
   <div id="holeBlack" class="w-screen h-screen fixed top-0 left-0 animate-showUp"></div>
   <!-- Inicia el encabezado -->
-  <div id="headerPage" class="w-full lg:px-[40px] hidden">
-    <div class="relative py-[30px] text-neutral-50">
-      <div class="relative mx-auto px-[3px] lg:w-[1024px] xl:w-[1280px]">
-        <div class="grid grid-cols-3 animate-showUp">
-          <div>Good Dev</div>
-          <div class="flex justify-between px-30">
+  <div id="headerPage" class="w-full px-2.5 lg:px-10 hidden">
+    <div class="relative py-2.5 lg:py-[30px] text-neutral-50">
+      <div class="relative mx-auto px-[3px] lg:w-5xl xl:w-7xl">
+        <div class="grid grid-cols-2 lg:grid-cols-3 animate-showUp">
+          <div>
+            <img class="object-contain w-1/2 h-full" src="./images/logo.avif" alt="">
+          </div>
+          <div class="flex justify-between items-start lg:items-center px-2 lg:px-30">
             <a class="botonReferencia" href="https://github.com/JhonatanXP1" class="" target="_blanck">
               <i class="fi fi-brands-github botonReferenciaIcono"></i>
             </a>
-            <a class="botonReferencia" href="#">
+            <a class="botonReferencia" href="#" target="_blanck">
               <i class="fi fi-brands-linkedin botonReferenciaIcono"></i>
             </a>
-            <a class="botonReferencia" href="">
+            <a class="botonReferencia" href="https://wa.me/522211243472" target="_blanck">
               <i class="fi fi-brands-whatsapp botonReferenciaIcono "></i>
             </a>
-            <a class="botonReferencia" href="">
+            <a class="botonReferencia" href="mailto:jhonatanxpx1@gmail.com" target="_blanck">
               <i class="fi fi-sr-envelope botonReferenciaIcono"></i>
             </a>
           </div>
@@ -165,35 +145,283 @@
       </div>
     </div>
   </div>
-  <div id="bodyPage" class="w-full lg:px-[40px] hidden">
+  <div id="bodyPage" class="w-full px-2.5 lg:px-10 hidden">
     <div class="relative px-[3px]">
-      <div class="bg-neutral-900 mx-auto lg:w-[1024px] xl:w-[1280px] lg:min-h-100 xl:min-h-120">
-        <div class="flex">
-          <div class="w-[30%] h-120 flex justify-center content-center py-5 px-10">
-            <img src="./images/astrosT.jpg" alt="">
+      <div
+        class="relative bg-[#252323a6] mx-auto pb-5 sm:pb-0 lg:w-5xl xl:w-7xl lg:min-h-120 xl:min-h-130 rounded-t-2xl rounded-br-2xl">
+        <div class="block sm:flex relative">
+          <div class="relative w-full sm:w-[30%] h-115 sm:h-120 flex justify-end pt-10">
+            <div class="absolute w-full h-115 sm:w-[80%] sm:h-100 text-center  text-amber-50 font-Inter text-xl">
+              <img class="w-[80%] h-[80%] mx-auto sm:w-full sm:h-full rounded-lg object-cover" src="./images/im.png" alt="">
+            </div>
           </div>
-          <div class="w-[70%] font-Inter text-neutral-50 lg:text-5xl font-light pt-15 px-10 ">
+          <div class="w-full sm:w-[70%] font-Inter text-neutral-50 text-2xl sm:text-5xl font-light pt-0 sm:pt-15 px-5 sm:px-10 ">
             <div>
-              ¡Hola!, Soy Carlos Jhonatan
+              ¡Hola!, Soy <span class="text-[#23ce9e] ">Jhonatan Díaz</span>
               <br>
               <br>
-              Desarrollador Full Stack enfocado en crear sistemas reales, escalables y seguros
+              Desarrollador Full Stack enfocado en crear soluciones escalables, seguras y de alto rendimiento
             </div>
             <div class="flex">
-              <div class="w-[40%] flex items-center content-center py-10">
-                <span>3</span>
-                <span class="pl-2 lg:text-xl">Años <br>de Experiencia.</span>
+              <div class="w-[60%] sm:w-[40%] flex items-center content-center py-10">
+                <span class="text-5xl sm:text-5xl">3</span>
+                <span class="pl-2 text-lg sm:text-xl">Años <br>de Experiencia.</span>
               </div>
-              <div class="w-[60%] flex items-center content-center justify-center">
+              <div class="w-[40%] sm:w-[60%] flex items-center content-center justify-center">
                 <button class="buttonDownloadCV ">
                   Descargar C.V
                 </button>
               </div>
             </div>
           </div>
+          <div class="absolute min-h-10 sm:min-h-15 bg-[#252323a6] w-1/3 -bottom-15 sm:-bottom-25 rounded-bl-2xl">
+          </div>
+          <div class="absolute w-0 h-0 trianCard-left -bottom-15 sm:-bottom-25 left-1/3">
+          </div>
         </div>
       </div>
     </div>
+    <div class="relative py-20 sm:py-25">
+      <div class="bg-[#252323a6] mx-auto lg:w-5xl xl:w-7xl lg:min-h-450 xl:min-h-550 rounded-b-2xl rounded-tl-2xl">
+        <div class="flex relative">
+          <div class="absolute min-h-11 sm:min-h-16 bg-[#252323a6] w-13/24 sm:w-7/12 -top-11 sm:-top-16 rounded-tr-2xl right-0 "></div>
+          <div class="absolute w-0 h-0 trianCard-rigth -top-11 sm:-top-16 right-13/24 sm:right-7/12"></div>
+          <div class="w-full font-Inter  py-15 px-5 sm:px-12 ">
+            <div class="text-center text-2xl sm:text-3xl xl:text-4xl text-neutral-50">
+              <span class="text-shadow-neutral-50 text-shadow-2xs relative" id="lineAbout">
+              </span>
+              <div class="block sm:flex pb-80 sm:pb-20">
+                <div class="text-start text-sm sm:text-xl w-full sm:w-7/12 py-8 font-light" id="textSkillChange">
+                </div>
+                <div class="w-full sm:w-1/2 p-0 sm:p-5 pt-20 flex justify-start sm:justify-center">
+                  <div class="hexagonoBorder">
+                    <div class="hexagonoBorderB flex justify-center items-center">
+                      <div class="hexagonoTegnologeShow" id="hexTech">
+                        <img src="./images/prof.avif" alt="" id="hexImg">
+                      </div>
+                    </div>
+                    <div class="hexagonoBorder-V2 animate-hoverMax">
+                      <div class="hexagonoBorderB-V2  flex justify-center items-center">
+                        <div class="hexagonoTegnologeShow-V2" id="hexTechV2">
+                          <img src="./images/net.avif" alt="" id="hexImgV2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="text-shadow-neutral-50 text-shadow-2xs relative fontExpectac before:bg-[#7d1a1a]">
+                Experiencia
+              </span>
+              <div class="w-full text-start">
+                <ol class="relative border-s border-default">
+                  <li class="mb-10 ms-6">
+                    <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-brand-softer rounded-full -start-3 ring-8 ring-buffer">
+                      <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.382l1.447.723.005.003.027.013.12.056c.108.05.272.123.486.212.429.177 1.056.416 1.834.655C7.481 13.524 9.63 14 12 14c2.372 0 4.52-.475 6.08-.956.78-.24 1.406-.478 1.835-.655a14.028 14.028 0 0 0 .606-.268l.027-.013.005-.002L22 11.381V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.447 7.894.553-.276V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.382l.553.276.002.002.004.002.013.006.041.02.151.07c.13.06.318.144.557.242.478.198 1.163.46 2.01.72C7.019 15.476 9.37 16 12 16c2.628 0 4.98-.525 6.67-1.044a22.95 22.95 0 0 0 2.01-.72 15.994 15.994 0 0 0 .707-.312l.041-.02.013-.006.004-.002.001-.001-.431-.866.432.865ZM12 10a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                    <time
+                      class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+                      Enero 2024 a Enero 2026</time>
+                    <h3 class="flex items-center mb-1 text-2xl font-semibold text-neutral-50 my-2 ">
+                      <span class="fontExpectac before:bg-sky-600">EDUCAPP</span>
+                    </h3>
+                    <p class="mb-4 text-neutral-50 font-Inter text-xl">
+                      <span>Desarrollador Full Stack</span><br>
+                      Como parte del equipo de desarrollo, mis responsabilidades principales fueron: <br>
+                    <ul class="max-w-3xl space-y-2 list-inside font-Inter font-light text-base">
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        El diseño y desarrollo de módulos para un sistema integral de gestión educativa,
+                        enfocado en proporcionar herramientas administrativas y operativas para instituciones escolares.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Mantenimiento y mejora continua del sistema, asegurando su estabilidad, rendimiento y
+                        actualización tecnológica.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Gestión de la comunicación con clientes para la elaboración de formatos, solicitudes especiales
+                        y análisis de requerimientos.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Implementación de integraciones con servicios externos, incluyendo pasarelas de pago y otras
+                        plataformas complementarias.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Administración y monitoreo de servidores en entornos Linux, garantizando la disponibilidad y
+                        seguridad de la infraestructura.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Desarrollo de scripts en Bash para la automatización de tareas del servidor, incluyendo
+                        despliegues, mantenimiento, monitoreo de recursos y optimización de flujos operativos.
+                      </li>
+                    </ul>
+                    </p>
+                  </li>
+                  <li class="mb-10 ms-6">
+                    <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-brand-softer rounded-full -start-3 ring-8 ring-buffer">
+                      <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.382l1.447.723.005.003.027.013.12.056c.108.05.272.123.486.212.429.177 1.056.416 1.834.655C7.481 13.524 9.63 14 12 14c2.372 0 4.52-.475 6.08-.956.78-.24 1.406-.478 1.835-.655a14.028 14.028 0 0 0 .606-.268l.027-.013.005-.002L22 11.381V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.447 7.894.553-.276V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.382l.553.276.002.002.004.002.013.006.041.02.151.07c.13.06.318.144.557.242.478.198 1.163.46 2.01.72C7.019 15.476 9.37 16 12 16c2.628 0 4.98-.525 6.67-1.044a22.95 22.95 0 0 0 2.01-.72 15.994 15.994 0 0 0 .707-.312l.041-.02.013-.006.004-.002.001-.001-.431-.866.432.865ZM12 10a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                    <time
+                      class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+                      Marzo 2024 a Agosto 2025</time>
+                    <h3 class="flex items-center mb-1 text-2xl font-semibold text-neutral-50 my-2 ">
+                      <span class="fontExpectac before:bg-blue-700">Royal Prestige</span>
+                    </h3>
+                    <p class="mb-4 text-neutral-50 font-Inter text-xl">
+                      <span>Soporte TI</span><br>
+                      Como Soporte TI externo, participé en la operación, integración y mantenimiento de sistemas
+                      tecnológicos, desempeñando las siguientes funciones: <br>
+                    <ul class="max-w-3xl space-y-2 list-inside font-Inter font-light text-base">
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Desarrollo e implementación de un módulo básico de tickets para la gestión de candidatos
+                        potenciales, enfocado en el seguimiento del área de telemarketing y su integración con la
+                        plataforma Zoho.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Integración de RingCentral con Zoho CRM, facilitando la gestión y trazabilidad de llamadas y la
+                        comunicación con clientes.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Administración del hosting que albergaba el sitio web y el sistema interno, asegurando su
+                        disponibilidad y correcto funcionamiento.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Mantenimiento preventivo y correctivo de equipos de cómputo, garantizando la continuidad
+                        operativa del personal.
+                      </li>
+                    </ul>
+                    </p>
+                  </li>
+                  <li class="ms-6">
+                    <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-brand-softer rounded-full -start-3 ring-8 ring-buffer">
+                      <svg class="w-6 h-6 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.382l1.447.723.005.003.027.013.12.056c.108.05.272.123.486.212.429.177 1.056.416 1.834.655C7.481 13.524 9.63 14 12 14c2.372 0 4.52-.475 6.08-.956.78-.24 1.406-.478 1.835-.655a14.028 14.028 0 0 0 .606-.268l.027-.013.005-.002L22 11.381V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.447 7.894.553-.276V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.382l.553.276.002.002.004.002.013.006.041.02.151.07c.13.06.318.144.557.242.478.198 1.163.46 2.01.72C7.019 15.476 9.37 16 12 16c2.628 0 4.98-.525 6.67-1.044a22.95 22.95 0 0 0 2.01-.72 15.994 15.994 0 0 0 .707-.312l.041-.02.013-.006.004-.002.001-.001-.431-.866.432.865ZM12 10a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                    <time
+                      class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+                      Enero 2024 a Enero 2025</time>
+                    <h3 class="flex items-center mb-1 text-2xl font-semibold text-neutral-50 my-2 ">
+                      <span class="fontExpectac before:bg-green-700">ETICS</span>
+                    </h3>
+                    <p class="mb-4 text-neutral-50 font-Inter text-xl">
+                      <span>Soporte TI</span><br>
+                      Como Soporte TI externo, participé en la operación, integración y mantenimiento de sistemas
+                      tecnológicos, desempeñando las siguientes funciones: <br>
+                    <ul class="max-w-3xl space-y-2 list-inside font-Inter font-light text-base">
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Desarrollo e implementación de un módulo básico de tickets para la gestión de candidatos
+                        potenciales, enfocado en el seguimiento del área de telemarketing y su integración con la
+                        plataforma Zoho.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Integración de RingCentral con Zoho CRM, facilitando la gestión y trazabilidad de llamadas y la
+                        comunicación con clientes.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Administración del hosting que albergaba el sitio web y el sistema interno, asegurando su
+                        disponibilidad y correcto funcionamiento.
+                      </li>
+                      <li class="flex items-center">
+                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="m10 16 4-4-4-4" />
+                        </svg>
+                        Mantenimiento preventivo y correctivo de equipos de cómputo, garantizando la continuidad
+                        operativa del personal.
+                      </li>
+                    </ul>
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <!-- Termina el encabezado -->
 </body>
