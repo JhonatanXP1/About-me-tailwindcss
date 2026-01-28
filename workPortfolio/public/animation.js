@@ -130,14 +130,14 @@ window.addEventListener('load', function () {
 
     setTimeout(() => {
         if (animacion_change_top) {
-            //animacion_change_top.classList.add('animate-desplazar-left');
-            //ObservableAnimacion(animacion_change_top);
+            animacion_change_top.classList.add('animate-desplazar-left');
+            ObservableAnimacion(animacion_change_top);
         }
         if (animacion_change_bottom) {
-            //animacion_change_bottom.classList.add('animate-desplazar-rigth');
-            //ObservableAnimacion(animacion_change_bottom);
+            animacion_change_bottom.classList.add('animate-desplazar-rigth');
+            ObservableAnimacion(animacion_change_bottom);
         }
     }, delay + 500);
    //desapare esto
-    window.dispatchEvent(new CustomEvent('animacionTerminada'));
+   // window.dispatchEvent(new CustomEvent('animacionTerminada'));
 });

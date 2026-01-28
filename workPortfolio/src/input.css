@@ -141,11 +141,16 @@
 
   .buttonDownloadCV {
     z-index: 1;
-    @apply relative bg-transparent px-5 py-1 text-sm sm:text-xl rounded-full border-2 border-neutral-50;
+    @apply relative bg-transparent px-5 py-1 text-sm sm:text-xl text-center rounded-full border-2 border-neutral-50;
     transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
   }
 
   .buttonDownloadCV:hover {
+    @apply rotate-x-15 -rotate-y-30 rotate-z-2 border-transparent;
+    box-shadow: 0 0 40px 40px white inset;
+    color: black;
+  }
+  .buttonDownloadCV:active {
     @apply rotate-x-15 -rotate-y-30 rotate-z-2 border-transparent;
     box-shadow: 0 0 40px 40px white inset;
     color: black;

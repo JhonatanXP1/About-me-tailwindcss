@@ -297,7 +297,7 @@ window.addEventListener('load', () => {
         hoverActive = false;
         perfilToHabilidades = !perfilToHabilidades;
         renderContenido();
-        startAutoSpin()
+        startAutoSpin();
     });
 
     // Hover: gira inmediatamente UNA VEZ
