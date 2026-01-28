@@ -33,6 +33,24 @@
   }
 }
 
+@keyframes hoverMax {
+   0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes hideDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
 @keyframes DesplazarLeft {
   20% {
     left: 0%;
@@ -79,7 +97,8 @@
   --triangulo-w: 0px;
   --triangulo-h: 0px;
   --animate-showUp: showUp 0.5s ease-in forwards;
-
+  --animate-hideDown: hideDown 0.5s ease-in forwards;
+  --animate-hoverMax: hoverMax 1.5s ease-in infinite ;
 }
 
 @layer utilities {}
@@ -92,7 +111,24 @@
   }
 
   .botonReferenciaIcono {
-    @apply border-neutral-500 border text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 w-10 h-10 leading-none align-middle;
+    @apply 
+    border-neutral-500 
+    border 
+    text-white 
+    rounded-full 
+    flex 
+    items-center 
+    justify-center 
+    hover:bg-blue-700 
+    transition-colors 
+    duration-300 
+    w-7 
+    h-7
+    text-xs
+    lg:w-10 
+    lg:h-10
+    lg:text-base 
+    leading-none align-middle;
   }
 
   .imagenPresentResponsive {
@@ -105,7 +141,7 @@
 
   .buttonDownloadCV {
     z-index: 1;
-    @apply relative bg-transparent px-5 py-1 text-xl rounded-full border-2 border-neutral-50;
+    @apply relative bg-transparent px-5 py-1 text-sm sm:text-xl rounded-full border-2 border-neutral-50;
     transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
   }
 
@@ -114,12 +150,13 @@
     box-shadow: 0 0 40px 40px white inset;
     color: black;
   }
+
   .trianCard-left {
-    @apply p-0 m-0 border-32 border-neutral-900 border-r-transparent border-b-transparent;
+    @apply p-0 m-0 border-20 sm:border-30 border-[#252323a6] border-r-transparent border-b-transparent;
   }
 
   .trianCard-rigth {
-    @apply p-0 m-0 border-33 border-neutral-900 border-l-transparent border-t-transparent;
+    @apply p-0 m-0 border-22 sm:border-32 border-[#252323a6] border-l-transparent border-t-transparent;
   }
 
   #lineAbout {
@@ -155,7 +192,7 @@
 
   /*Hegano de del fondo*/
   .hexagonoBorder {
-    @apply relative w-80  h-46 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% flex justify-center items-center;
+    @apply relative  w-64 h-37 sm:w-80 sm:h-46 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% flex justify-center items-center;
   }
 
   .hexagonoBorder::before,
@@ -231,7 +268,7 @@
 
   /*-------------------Hexagono Mini----------------*/
   .hexagonoBorder-V2 {
-    @apply absolute -bottom-58 -right-25 w-60 h-35 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% flex justify-center items-center;
+    @apply absolute -bottom-48 sm:-bottom-58 -right-23 sm:-right-25 w-48 h-28 sm:w-60 sm:h-35 bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90% flex justify-center items-center;
   }
 
   .hexagonoBorder-V2::before,
@@ -277,7 +314,7 @@
   .hexagonoTegnologeShow-V2 {
     transform-style: preserve-3d;
     transition: transform 0.8s ease-in-out;
-    @apply relative bg-neutral-700;
+    @apply relative bg-neutral-50;
     z-index: 3;
     width: calc(100% - 16px);
     height: calc(100% - 8px);
@@ -286,7 +323,7 @@
   .hexagonoTegnologeShow-V2:before,
   .hexagonoTegnologeShow-V2:after {
     content: "";
-    @apply absolute inset-0 bg-neutral-700;
+    @apply absolute inset-0 bg-neutral-50;
     transform-origin: center;
   }
 
@@ -303,11 +340,13 @@
     object-fit: contain;
     @apply absolute w-full h-[175%] top-1/2 -translate-y-1/2;
   }
-  .netProgress img{
-    object-fit: contain;
-    @apply w-10 h-10 mr-2;
+
+   .fontExpectac {
+    @apply relative z-10;
   }
 
-
-
+  .fontExpectac::before {
+    content: "";
+    @apply absolute left-5 right-0 bottom-0.5 w-full h-3  -z-10;
+  }
 }
