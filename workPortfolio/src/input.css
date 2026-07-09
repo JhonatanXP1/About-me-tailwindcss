@@ -88,7 +88,7 @@
 }
 
 @theme {
-  --color-fondo-oscuro: rgb(0, 0, 0);
+  --color-fondo-oscuro: #06060a;
   --font-roboto-mono: "Roboto Mono", monospace;
   --font-Inter: "Inter", sans-serif;
   --animate-parpadeo: parpadeo .8s infinite;
