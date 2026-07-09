@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.min.css --minify",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/tw.min.css --minify",
     "tw": "npx @tailwindcss/cli -i ./src/input.css -o ./public/tw.css --watch",
     "server": "browser-sync start --server public --files 'public/**/*.html,public/**/*.css'",
     "serverHome": "concurrently -k -n '🎨TAILWIND,🌐SERVER' -c 'green,magenta' 'npm:tw' 'npm:server'"
