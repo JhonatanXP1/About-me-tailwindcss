@@ -136,15 +136,16 @@ window.addEventListener('load', function () {
         //setTimeout(startTyping, delay + 1500);
 
         // RESTAURAR: quita el setTimeout de arriba y descomenta esto:
+        if (animacion_change_top) {
+            animacion_change_top.classList.add('animate-desplazar-left');
+            ObservableAnimacion(animacion_change_top);
+        }
+        if (animacion_change_bottom) {
+            animacion_change_bottom.classList.add('animate-desplazar-rigth');
+            ObservableAnimacion(animacion_change_bottom);
+        }
         setTimeout(() => {
-            if (animacion_change_top) {
-                animacion_change_top.classList.add('animate-desplazar-left');
-                ObservableAnimacion(animacion_change_top);
-            }
-            if (animacion_change_bottom) {
-                animacion_change_bottom.classList.add('animate-desplazar-rigth');
-                ObservableAnimacion(animacion_change_bottom);
-            }
+
         }, delay + 500);
     }
     startTyping();

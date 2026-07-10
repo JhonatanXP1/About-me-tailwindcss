@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 @import "flowbite/src/themes/default";
+@import "tailwindcss";
+
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
-
-@import "tailwindcss";
 
 @keyframes parpadeo {
 
@@ -53,12 +54,12 @@
 
 @keyframes DesplazarLeft {
   20% {
-    left: 0%;
+    left: 0;
   }
 
   /* 1s: llega al 100% */
   80% {
-    left: 0%;
+    left: 0;
   }
 
   /* 4s: se mantiene en 100% */
@@ -133,6 +134,22 @@
 
   .imagenPresentResponsive {
     @apply w-[20%] sm:w-[20%] lg:w-[10%];
+  }
+
+  .firts-presentacion{
+    @apply
+    relative
+    flex
+    w-full
+    h-screen
+    py-5
+    px-5;
+    div.presentacion{
+      @apply w-3/4 h-full text-white;
+    }
+    div.img-presentacion{
+      @apply w-1/4 h-full;
+    }
   }
 
   .triangulo {
