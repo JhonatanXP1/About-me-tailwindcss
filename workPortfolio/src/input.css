@@ -102,7 +102,24 @@
   --animate-hoverMax: hoverMax 1.5s ease-in infinite ;
 }
 
-@layer utilities {}
+@layer utilities {
+  .monserat-bold-700{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .monserat-bold-500{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .monserat-bold-300{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
 
 @layer components {
 
@@ -145,13 +162,37 @@
     py-5
     px-5;
     div.presentacion{
-      @apply w-3/4 h-full text-white;
+      @apply w-3/5 h-full text-white;
     }
-    div.img-presentacion{
-      @apply w-1/4 h-full;
+    div.card-img-presentacion{
+      @apply w-2/5 h-full;
     }
   }
 
+  .card-data-person{
+    @apply
+    inline-flex
+    w-fit
+    items-center
+    gap-2.5
+    border
+    pl-2
+    pr-3
+    py-1.5
+    font-mono
+    text-xl
+    uppercase
+    tracking-[0.22em]
+    text-muted;
+  }
+  .point-index{
+    @apply
+    w-[7px]
+    h-[7px]
+    rounded-full
+    bg-emerald-400
+    shrink-0;
+  }
   .triangulo {
     border-width: var(--triangulo-h) var(--triangulo-w);
   }
