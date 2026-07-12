@@ -65,9 +65,8 @@ window.addEventListener('load', function () {
         return idFrame;
     }
 
-    let text = `if(action|==|"I|imagine|it"){ \n iProgramIt(); \n}`;
-    let textAux = '';
-    let colorMetria = {
+    const text = `if(action|==|"I|imagine|it"){ \n iProgramIt(); \n}`;
+    const colorMetria = {
         'if': 'text-red-500',
         'action': '',
         '|==|': 'text-red-500',
@@ -80,8 +79,6 @@ window.addEventListener('load', function () {
         'iProgramIt()': 'text-lime-400',
     };
 
-    let delay = 0; // Comienza en 0
-    let breakLine = false;
     const target = document.getElementById('textIntroducction');
     const targetFinal = document.getElementById('final');
     const animacion_change_top = document.getElementById('animacion-change-top');
@@ -92,43 +89,53 @@ window.addEventListener('load', function () {
     observerTrian.observe(miTriaBottomPadre);
     observerTrian.observe(miTriaTopPadre);
 
-    for (let letra of text) {
-        let letraSec = letra;
-        delay += 150; // Incrementa ANTES de cada setTimeout
-        setTimeout(() => {
-            if (letra === '\n') {
-                if (!breakLine) {
-                    target.innerHTML += '<br>&nbsp;&nbsp;&nbsp;&nbsp;';
-                    breakLine = true;
+    function startTyping() {
+        target.innerHTML = '';
+        targetFinal.innerHTML = '';
+
+        let textAux = '';
+        let delay = 0;
+        let breakLine = false;
+
+        for (let letra of text) {
+            let letraSec = letra;
+            delay += 150;
+            setTimeout(() => {
+                if (letra === '\n') {
+                    if (!breakLine) {
+                        target.innerHTML += '<br>&nbsp;&nbsp;&nbsp;&nbsp;';
+                        breakLine = true;
+                    } else {
+                        target.innerHTML += '<br>';
+                    }
                 } else {
-                    target.innerHTML += '<br>';
-                } // Agrega salto de línea HTML
-
-            } else {
-                letra = (letra == '|') ? ' ' : letra;
-                target.innerHTML += letra;
-            }
-
-            textAux += [' ', '\s', '\n', '\t'].includes(letraSec) ? '' : letraSec;
-
-            if (textAux in colorMetria) {
-                target.innerHTML = '';
-                if (textAux == 'iProgramIt()') {
-                    targetFinal.innerHTML += `<span class="${colorMetria[textAux]}"><br>&nbsp;&nbsp;&nbsp;&nbsp;${textAux}</span>`;
-                } else if (textAux == ';') {
-                    targetFinal.innerHTML += `<span class="${colorMetria[textAux]}">${textAux}</span><br>`;
-                } else if (textAux.includes('|')) {
-                    targetFinal.innerHTML += `<span class="${colorMetria[textAux]}">${textAux.replaceAll('|', ' ')}</span>`;
-                } else {
-                    targetFinal.innerHTML += `<span class="${colorMetria[textAux]}">${textAux}</span>`;
+                    letra = (letra == '|') ? ' ' : letra;
+                    target.innerHTML += letra;
                 }
 
-                textAux = '';
-            }
-        }, delay);
-    }
+                textAux += [' ', '\s', '\n', '\t'].includes(letraSec) ? '' : letraSec;
 
-    setTimeout(() => {
+                if (textAux in colorMetria) {
+                    target.innerHTML = '';
+                    if (textAux == 'iProgramIt()') {
+                        targetFinal.innerHTML += `<span class="${colorMetria[textAux]}"><br>&nbsp;&nbsp;&nbsp;&nbsp;${textAux}</span>`;
+                    } else if (textAux == ';') {
+                        targetFinal.innerHTML += `<span class="${colorMetria[textAux]}">${textAux}</span><br>`;
+                    } else if (textAux.includes('|')) {
+                        targetFinal.innerHTML += `<span class="${colorMetria[textAux]}">${textAux.replaceAll('|', ' ')}</span>`;
+                    } else {
+                        targetFinal.innerHTML += `<span class="${colorMetria[textAux]}">${textAux}</span>`;
+                    }
+                    textAux = '';
+                }
+            }, delay);
+        }
+
+        // DEBUG: repite el texto en bucle. Para restaurar el flujo original,
+        // reemplaza esta línea por el bloque comentado de abajo:
+        //setTimeout(startTyping, delay + 1500);
+
+        // RESTAURAR: quita el setTimeout de arriba y descomenta esto:
         if (animacion_change_top) {
             animacion_change_top.classList.add('animate-desplazar-left');
             ObservableAnimacion(animacion_change_top);
@@ -137,7 +144,9 @@ window.addEventListener('load', function () {
             animacion_change_bottom.classList.add('animate-desplazar-rigth');
             ObservableAnimacion(animacion_change_bottom);
         }
-    }, delay + 500);
-   //desapare esto
-   // window.dispatchEvent(new CustomEvent('animacionTerminada'));
+        setTimeout(() => {
+
+        }, delay + 500);
+    }
+    startTyping();
 });

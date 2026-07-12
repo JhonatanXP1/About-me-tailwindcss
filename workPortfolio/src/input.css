@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 @import "flowbite/src/themes/default";
+@import "tailwindcss";
+
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
-
-@import "tailwindcss";
 
 @keyframes parpadeo {
 
@@ -53,12 +54,12 @@
 
 @keyframes DesplazarLeft {
   20% {
-    left: 0%;
+    left: 0;
   }
 
   /* 1s: llega al 100% */
   80% {
-    left: 0%;
+    left: 0;
   }
 
   /* 4s: se mantiene en 100% */
@@ -88,7 +89,7 @@
 }
 
 @theme {
-  --color-fondo-oscuro: rgb(0, 0, 0);
+  --color-fondo-oscuro: #06060a;
   --font-roboto-mono: "Roboto Mono", monospace;
   --font-Inter: "Inter", sans-serif;
   --animate-parpadeo: parpadeo .8s infinite;
@@ -101,7 +102,24 @@
   --animate-hoverMax: hoverMax 1.5s ease-in infinite ;
 }
 
-@layer utilities {}
+@layer utilities {
+  .monserat-bold-700{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .monserat-bold-500{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .monserat-bold-300{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
 
 @layer components {
 
@@ -135,6 +153,46 @@
     @apply w-[20%] sm:w-[20%] lg:w-[10%];
   }
 
+  .firts-presentacion{
+    @apply
+    relative
+    flex
+    w-full
+    h-screen
+    py-5
+    px-5;
+    div.presentacion{
+      @apply w-3/5 h-full text-white;
+    }
+    div.card-img-presentacion{
+      @apply w-2/5 h-full;
+    }
+  }
+
+  .card-data-person{
+    @apply
+    inline-flex
+    w-fit
+    items-center
+    gap-2.5
+    border
+    pl-2
+    pr-3
+    py-1.5
+    font-mono
+    text-xl
+    uppercase
+    tracking-[0.22em]
+    text-muted;
+  }
+  .point-index{
+    @apply
+    w-[7px]
+    h-[7px]
+    rounded-full
+    bg-emerald-400
+    shrink-0;
+  }
   .triangulo {
     border-width: var(--triangulo-h) var(--triangulo-w);
   }
