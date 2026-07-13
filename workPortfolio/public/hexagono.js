@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     let spinInterval;
     let isSpinning = false;
     let hoverActive = false;
-    let perfilToHabilidades = false; //alternar entre Interfaces
+    let perfilToHabilidades = true; //alternar entre Interfaces
     let pointArayImage = '';
     let firstInteraction=0;
 
@@ -41,176 +41,16 @@ window.addEventListener('load', () => {
     };
 
     function animarVista() {
-        titulo.classList.remove('animate-showUp');
-        bodyCardH.classList.remove('animate-showUp');
-
-        void titulo.offsetWidth;
-        void bodyCardH.offsetWidth;
-        titulo.classList.add('animate-showUp');
-        bodyCardH.classList.add('animate-showUp');
+        [titulo, bodyCardH].forEach(el => {
+            if (!el) return;
+            el.classList.remove('animate-showUp');
+            void el.offsetWidth;
+            el.classList.add('animate-showUp');
+        });
     }
 
     function renderContenido() {
-        if (perfilToHabilidades) {
-            titulo.innerHTML = "Habilidades Técnicas";
-            bodyCardH.innerHTML = `<a 
-            class="relative bg-transparent block  p-6 border border-transparent rounded-base shadow-xs hover:bg-neutral-800" id="showDescrip-1" data-Image='backend'>
-                    <h5 class=" text-2xl font-semibold tracking-tight text-amber-50 leading-8"><span
-                        class="text-lg text-[#fc4b08]">01.</span> Backend & APIs</h5>
-                    <i class="absolute right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down"></i>
-                    <i class="absolute  rotate-180 right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down hidden"></i>
-                  </a>
-                  <div class="pl-8 py-3 hidden" id="showInfo-1">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body"> C# / ASP.NET (Core / APIs)</span>
-                      <span class="text-sm font-medium text-body">81%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-purple-600 h-2 rounded-full" style="width: 81%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">MariaDB / MySQL</span>
-                      <span class="text-sm font-medium text-body">82%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-blue-400 h-2 rounded-full" style="width: 82%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">SQL Server</span>
-                      <span class="text-sm font-medium text-body">75%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-brand h-2 rounded-full" style="width: 75%"></div>
-                    </div>
-                  </div>
-                  <a 
-                  class="relative bg-transparent block  p-6 border border-transparent rounded-base shadow-xs hover:bg-neutral-800" id="showDescrip-2" data-Image='frontend'>
-                    <h5 class=" text-2xl font-semibold tracking-tight text-amber-50 leading-8"><span
-                        class="text-lg text-[#fc4b08]">02.</span> Frontend</h5>
-                    <i class="absolute right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down"></i>
-                    <i class="absolute  rotate-180 right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down hidden"></i>
-                  </a>
-                  <div class="pl-8 py-3 hidden" id="showInfo-2">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body"> HTML / CSS avanzado</span>
-                      <span class="text-sm font-medium text-body">82%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-[#d44512] h-2 rounded-full" style="width: 82%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Tailwind CSS</span>
-                      <span class="text-sm font-medium text-body">85%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-blue-600 h-2 rounded-full" style="width: 82%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Diseño UI custom</span>
-                      <span class="text-sm font-medium text-body">62%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-neutral-400 h-2 rounded-full" style="width: 62%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">JavaScript / TypeScript</span>
-                      <span class="text-sm font-medium text-body">75%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-amber-400 h-2 rounded-full" style="width: 75%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Angular</span>
-                      <span class="text-sm font-medium text-body">61%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-[#bd1919] h-2 rounded-full" style="width: 61%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Node</span>
-                      <span class="text-sm font-medium text-body">70%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-[#215732] h-2 rounded-full" style="width: 70%"></div>
-                    </div>
-                  </div>
-                  <a
-                  class="relative bg-transparent block  p-6 border border-transparent rounded-base shadow-xs hover:bg-neutral-800" id="showDescrip-3"
-                  data-Image='devOps'>
-                    <h5 class=" text-2xl font-semibold tracking-tight text-amber-50 leading-8"><span
-                        class="text-lg text-[#fc4b08]">03.</span> DevOps</h5>
-                    <i class="absolute right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down"></i>
-                    <i class="absolute  rotate-180 right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down hidden"></i>
-                  </a>
-                  <div class="pl-8 py-3 hidden" id="showInfo-3">
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body"> Linux (Rocky / Ubuntu)</span>
-                      <span class="text-sm font-medium text-body">85%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-[#00FF00] h-2 rounded-full" style="width: 82%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Bash Scripting (Automatización de tareas)</span>
-                      <span class="text-sm font-medium text-body">82%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-zinc-700 h-2 rounded-full" style="width: 82%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Docker / Docker Compose</span>
-                      <span class="text-sm font-medium text-body">78%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-brand h-2 rounded-full" style="width: 78%"></div>
-                    </div>
-                    <div class="flex justify-between mb-1">
-                      <span class="text-sm font-medium text-body">Nginx / Reverse Proxy</span>
-                      <span class="text-sm font-medium text-body">80%</span>
-                    </div>
-                    <div class="w-full bg-[#364153] rounded-full h-2">
-                      <div class="bg-[#159a4d] h-2 rounded-full" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <a
-                  class="relative bg-transparent block  p-6 border border-transparent rounded-base shadow-xs hover:bg-neutral-800" id="showDescrip-4" data-Image=''>
-                    <h5 class=" text-2xl font-semibold tracking-tight text-amber-50 leading-8"><span
-                        class="text-lg text-[#fc4b08]">04.</span> Integraciones y Procesamiento de Pagos</h5>
-                    <i class="absolute right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down"></i>
-                    <i class="absolute  rotate-180 right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down hidden"></i>
-                  </a>
-                  <div class="pl-8 py-3 hidden" id="showInfo-4">
-                    →&nbsp;&nbsp;&nbsp;&nbsp;Integración de pasarelas de pago como <b>OpenPay, EVO y Digital
-                      FEMSA</b>.<br>
-                    →&nbsp;&nbsp;&nbsp;&nbsp;Implementación de algoritmos para generación y validación de
-                    referencias bancarias.<br>
-                    →&nbsp;&nbsp;&nbsp;&nbsp;Diseño de flujos backend para procesamiento seguro de pagos, manejo de
-                    estados transaccionales y validaciones de integridad.<br>
-                    →&nbsp;&nbsp;&nbsp;&nbsp;Comunicación con servicios externos mediante APIs de terceros, manejo de
-                    errores, reintentos y respuestas asincrónicas.<br>
-                  </div>`;
-        } else {
-            titulo.innerHTML = "Perfil Profesional";
-            bodyCardH.innerHTML = `<span>
-                    Como profesional apasionado por la innovación tecnológica y la optimización de procesos,
-                    mi objetivo es diseñar e implementar soluciones como desarrollador Full-Stack centradas en el usuario
-                    que impulsen la calidad,
-                    el rendimiento y la relevancia de los sistemas digitales.
-                  </span>
-                  <br>
-                  <br>
-                  Logro esto mediante el desarrollo de sistemas web utilizando entornos como .NET, Angular y otras
-                  tecnologías,
-                  así como la gestión y el despliegue de soluciones sobre entornos Linux, integrando backend,
-                  frontend e infraestructura de manera coherente y escalable.
-                  <br>
-                  <br>
-                  Mi enfoque se centra en transformar desafíos técnicos en oportunidades de crecimiento, escalabilidad y
-                  desarrollo sostenible,
-                  optimizando el código para facilitar su mantenimiento, mejorar el rendimiento de los proyectos y
-                  permitir la integración fluida de nuevas funcionalidades y tecnologías, promoviendo 
-                  un flujo de trabajo sólido entre los colaboradores.`;
-        }
+
         animarVista();
     }
 
@@ -310,7 +150,7 @@ window.addEventListener('load', () => {
         }
     });
 
-    bodyCardH.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
         const btn = e.target.closest('[id^="showDescrip-"]');
         if (!btn) return;
 

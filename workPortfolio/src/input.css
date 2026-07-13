@@ -10,6 +10,8 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 
+html, body { overflow-x: hidden; }
+
 @keyframes parpadeo {
 
   0%,
@@ -122,7 +124,6 @@
 }
 
 @layer components {
-
   /*Falta hacer responsive el boton */
   .botonReferencia {
     @apply bg-transparent;
@@ -150,7 +151,8 @@
   }
 
   .imagenPresentResponsive {
-    @apply w-[20%] sm:w-[20%] lg:w-[10%];
+    @apply w-[20%]
+    sm:w-[20%] lg:w-[10%];
   }
 
   .firts-presentacion{
@@ -158,17 +160,16 @@
     relative
     flex
     w-full
-    h-screen
+    h-[90vh]
     py-5
     px-5;
     div.presentacion{
       @apply w-3/5 h-full text-white;
     }
     div.card-img-presentacion{
-      @apply w-2/5 h-full;
+      @apply w-2/5 h-full ;
     }
   }
-
   .card-data-person{
     @apply
     inline-flex
@@ -176,19 +177,45 @@
     items-center
     gap-2.5
     border
+    border-[#a1a1aa]
     pl-2
     pr-3
     py-1.5
     font-mono
-    text-xl
+    text-xs
     uppercase
     tracking-[0.22em]
-    text-muted;
+    text-[#a1a1aa];
   }
+  .card-img-presentacion {
+    @apply
+    ml-20
+    px-17
+    py-10
+    border-l-1
+    border-[#ffffff14]
+    text-[#a1a1aa]
+    ;
+    div{
+      @apply
+      relative
+      w-full
+      h-130
+      border
+      border-[#ffffff14];
+      img{
+        @apply object-cover h-full w-full;
+      }
+      span{
+        @apply absolute;
+      }
+    }
+  }
+
   .point-index{
     @apply
-    w-[7px]
-    h-[7px]
+    w-[3px]
+    h-[3px]
     rounded-full
     bg-emerald-400
     shrink-0;
