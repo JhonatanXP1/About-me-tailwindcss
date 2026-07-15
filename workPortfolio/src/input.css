@@ -195,7 +195,7 @@ html, body { overflow-x: hidden; }
     ml-20
     px-17
     py-10
-    border-l-1
+    border-l
     border-[#ffffff14]
     text-[#a1a1aa]
     ;
@@ -260,6 +260,8 @@ html, body { overflow-x: hidden; }
     content: "";
     @apply absolute left-5 right-0 bottom-0.5 w-full h-3 bg-[#1a7d61] -z-10;
   }
+
+
   #mySkill::before {
     content: "";
     @apply absolute left-5 right-0 bottom-0.5 w-full h-3 bg-[#fc4b08] -z-10;

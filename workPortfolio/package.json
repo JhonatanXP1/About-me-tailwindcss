@@ -48,6 +48,8 @@
     "micromatch": "^4.0.8",
     "minipass": "^7.1.2",
     "minizlib": "^3.1.0",
+    "monaco-editor": "^0.55.1",
+    "monaco-themes": "^0.4.8",
     "mri": "^1.2.0",
     "node-addon-api": "^7.1.1",
     "picocolors": "^1.1.1",
