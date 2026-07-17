@@ -62,7 +62,7 @@ window.addEventListener('animacionTerminada', function () {
 
     function mountEditor() {
         monaco.editor.create(container, {
-            value: '{\n  \n}',
+            value: '{\n\n\n\n\n\n\n\n\n\n\n}',
             language: 'json',
             theme: 'one-monokai',
             minimap: { enabled: false },

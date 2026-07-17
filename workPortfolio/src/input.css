@@ -443,6 +443,17 @@ html, body { overflow-x: hidden; }
     @apply relative z-10;
   }
 
+  .myProyects>div>div{
+    @apply
+    relative
+    m-0
+    py-4
+    px-5
+    rounded-lg
+    text-start;
+    border: 1px solid rgba(52, 211, 153, 0.28);
+  }
+
   .fontExpectac::before {
     content: "";
     @apply absolute left-5 right-0 bottom-0.5 w-full h-3  -z-10;
