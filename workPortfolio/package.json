@@ -37,6 +37,7 @@
     "flowbite": "^4.0.1",
     "get-caller-file": "^2.0.5",
     "graceful-fs": "^4.2.11",
+    "gsap": "^3.15.0",
     "has-flag": "^4.0.0",
     "is-extglob": "^2.1.1",
     "is-fullwidth-code-point": "^3.0.0",

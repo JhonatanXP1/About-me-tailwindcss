@@ -62,7 +62,23 @@ window.addEventListener('animacionTerminada', function () {
 
     function mountEditor() {
         monaco.editor.create(container, {
-            value: '{\n\n\n\n\n\n\n\n\n\n\n}',
+            value: '{\n' +
+                '  "nameFile": "Reporte_Alumnos_",\n' +
+                '  "title": "Reporte de Alumnos\\nNivel: Secundaria | Ciclo Escolar: 2025\\/1",\n' +
+                '  "indice": true,\n' +
+                '  "fillter": true,\n' +
+                '  "data": {\n' +
+                '    "1\u00b0 A": [\n' +
+                '      ["Nombre", "Matr\u00edcula", "Edad", "Estatus", "Observaciones"],\n' +
+                '      ["Luis Miguel Torres Garc\u00eda", "TOR-456B3z", "16", "Activo", ""],\n' +
+                '      ["Ana Sof\u00eda Ram\u00edrez L\u00f3pez", "RAM-234A9y", "15", "Activo", ""],\n' +
+                '      [\n' +
+                '        {"0": "Totales", "mergeX": 3, "strong": true, "indice": false},\n' +
+                '        {"0": "2 alumnos", "color": "4472C4"}\n' +
+                '      ]\n' +
+                '    ]\n' +
+                '  }\n' +
+                '}',
             language: 'json',
             theme: 'one-monokai',
             minimap: { enabled: false },

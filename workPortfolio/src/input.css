@@ -4,7 +4,6 @@
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
-@import "flowbite/src/themes/default";
 @import "tailwindcss";
 
 @plugin "flowbite/plugin";
@@ -451,7 +450,58 @@ html, body { overflow-x: hidden; }
     px-5
     rounded-lg
     text-start;
-    border: 1px solid rgba(52, 211, 153, 0.28);
+    border: 1px solid rgba(37, 49, 71, 0.55);
+  }
+    .cardProyect{
+      --x: 50%;
+      --y: 50%;
+      --opacity: 0;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: transparent;
+  }
+    .cardProyect::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: var(--opacity);
+      background: radial-gradient(
+              circle 700px at var(--x) var(--y),
+              rgba(37, 49, 71, 0.55) 0%,
+              rgba(24, 33, 54, 0.32) 30%,
+              rgba(17, 24, 39, 0.16) 50%,
+              rgba(17, 24, 39, 0) 72%
+      );
+
+      .cardProyect {
+
+      }
+  }
+
+    .perfilCard{
+      --x: 50%;
+      --y: 50%;
+      --opacity: 0;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+  }
+    .perfilCard::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: var(--opacity);
+      background: radial-gradient(
+              circle 300px at var(--x) var(--y),
+              rgba(52, 211, 153, 0.16) 0%,
+              rgba(52, 211, 153, 0.07) 40%,
+              rgba(52, 211, 153, 0) 70%
+      );
   }
 
   .fontExpectac::before {
