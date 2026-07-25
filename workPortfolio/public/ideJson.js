@@ -61,7 +61,7 @@ window.addEventListener('animacionTerminada', function () {
     if (!container) return;
 
     function mountEditor() {
-        monaco.editor.create(container, {
+        window.jsonEditor = monaco.editor.create(container, {
             value: '{\n' +
                 '  "nameFile": "Reporte_Alumnos_",\n' +
                 '  "title": "Reporte de Alumnos\\nNivel: Secundaria | Ciclo Escolar: 2025\\/1",\n' +

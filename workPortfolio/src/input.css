@@ -497,7 +497,7 @@ html, body { overflow-x: hidden; }
       pointer-events: none;
       opacity: var(--opacity);
       background: radial-gradient(
-              circle 300px at var(--x) var(--y),
+              circle 500px at var(--x) var(--y),
               rgba(52, 211, 153, 0.16) 0%,
               rgba(52, 211, 153, 0.07) 40%,
               rgba(52, 211, 153, 0) 70%

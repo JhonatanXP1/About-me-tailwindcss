@@ -22,6 +22,7 @@
     <script src="./animationCard.js" defer></script>
     <script src="./ideJson.js" defer></script>
     <script src="./tooltips.js" defer></script>
+    <script src="./httpClient.js" defer></script>
 </head>
 
 <body class="bg-fondo-oscuro">
@@ -135,7 +136,7 @@
         </div>
     </div>
     <div class="relative py-40 text-center text-4xl text-neutral-50">
-        <div class="border-b border-t border-[#ffffff14] mt-5 mb-20 pt-20">
+        <div class="border-b border-t border-[#ffffff14] mt-5 mb-20 pt-20 px-5 perfilCard">
             <span class="text-shadow-neutral-50 text-shadow-2xs relative"
                   id="lineAbout">Perfil Profesional</span><br><br>
             <div class="flex text-start text-neutral-100 text-sm pb-20 w-full font-light">
@@ -144,7 +145,7 @@
                 </span>
                 <div class="w-2/3">
                     <div class="grid grid-cols-3 gap-4 text-base text-[#a1a1aa] ">
-                            <div class="col-span-3 p-4 border-b border-[#ffffff14] perfilCard group transition-colors group-hover:text-neutral-50">
+                            <div class="col-span-3 p-4 border-b border-[#ffffff14]">
                                 Desde Puebla, México, colaborando con equipos multidisciplinarios. Construyo y despliego
                                 soluciones full-stack integrales — frontend (Angular),
                                 backend (.NET) e infraestructura (Linux). Conecto la lógica de negocio con la arquitectura
@@ -152,9 +153,9 @@
                                 para acelerar el desarrollo del equipo y asegurar productos escalables y fáciles de
                                 mantener.
                             </div>
-                            <div class="p-4 border-r border-[#ffffff14] text-xs perfilCard group">
+                            <div class="p-4 border-r border-[#ffffff14] text-xs">
                                 <span>01</span><br>
-                                <span class="text-base text-neutral-50 font-semibold transition-colors group-hover:text-emerald-400">Desarrollo colaborativo</span>
+                                <span class="text-base text-neutral-50 font-semibold">Desarrollo colaborativo</span>
                                 <br>
                                 <br>
                                 No creo en silos. Optimizo el código y estructuro la arquitectura pensando en los
@@ -163,17 +164,17 @@
                                 técnica
                                 y multiplicando la velocidad de entrega del equipo.
                             </div>
-                            <div class="p-4 border-r border-[#ffffff14] text-xs perfilCard group">
+                            <div class="p-4 border-r border-[#ffffff14] text-xs">
                                 <span>02</span><br>
-                                <span class="text-base text-neutral-50 font-semibold transition-colors group-hover:text-emerald-400">Arquitectura preparada para crecer</span>
+                                <span class="text-base text-neutral-50 font-semibold">Arquitectura preparada para crecer</span>
                                 <br>
                                 <br>
                                 No me quedo solo en la capa de código: diseño arquitectura de datos, filtrado
                                 de roles con EF Core y despliegues en Docker/Linux. Participo en cada eslabón del sistema.
                             </div>
-                            <div class="p-4 text-xs perfilCard group">
+                            <div class="p-4 text-xs">
                                 <span>03</span><br>
-                                <span class="text-base text-neutral-50 font-semibold transition-colors group-hover:text-emerald-400">Confianza integrada</span>
+                                <span class="text-base text-neutral-50 font-semibold">Confianza integrada</span>
                                 <br>
                                 <br>
                                 La seguridad no es un extra, es parte del diseño. Integro pasarelas de pago (Openpay,
@@ -604,8 +605,10 @@
             </div>
         </div>
         <div class="">
-            <span class="text-shadow-neutral-50 text-shadow-2xs relative" id="myProyectsTitle">Desarrollos</span>
-            <div class="grid gap-4 myProyects ">
+            <span class=" text-shadow-neutral-50 text-shadow-2xs relative mb-10 fontExpectac before:bg-[rgba(37,49,71,0.55)]" id="myProyectsTitle">Desarrollos</span>
+            <br>
+            <br>
+            <div class="grid gap-4 myProyects">
                 <!-- Primera fila -->
                 <div class="grid grid-cols-5 gap-4">
                     <div class="col-span-3 h-140 cardProyect group ">
@@ -653,6 +656,7 @@
                                     </a>
 
                                     <button
+                                            id="generateIa"
                                             class="py-1 px-2 rounded-xl"
                                             style="background:rgb(52,211,153);color:rgb(4,20,13);cursor: pointer;">
                                         Crear ejemplo con IA
@@ -660,6 +664,9 @@
                                     <button
                                             class="py-1 px-2 rounded-xl"
                                             style="background:rgb(52,211,153);color:rgb(4,20,13); cursor: pointer;">
+                                        <svg class="inline w-6 h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30">
+                                            <path d="M 15 3 A 2 2 0 0 0 14.599609 3.0429688 L 14.597656 3.0410156 L 4.6289062 5.0351562 L 4.6269531 5.0371094 A 2 2 0 0 0 3 7 L 3 23 A 2 2 0 0 0 4.6289062 24.964844 L 14.597656 26.958984 A 2 2 0 0 0 15 27 A 2 2 0 0 0 17 25 L 17 5 A 2 2 0 0 0 15 3 z M 19 5 L 19 8 L 21 8 L 21 10 L 19 10 L 19 12 L 21 12 L 21 14 L 19 14 L 19 16 L 21 16 L 21 18 L 19 18 L 19 20 L 21 20 L 21 22 L 19 22 L 19 25 L 25 25 C 26.105 25 27 24.105 27 23 L 27 7 C 27 5.895 26.105 5 25 5 L 19 5 z M 23 8 L 24 8 C 24.552 8 25 8.448 25 9 C 25 9.552 24.552 10 24 10 L 23 10 L 23 8 z M 6.1855469 10 L 8.5878906 10 L 9.8320312 12.990234 C 9.9330313 13.234234 10.013797 13.516891 10.091797 13.837891 L 10.125 13.837891 C 10.17 13.644891 10.258531 13.351797 10.394531 12.966797 L 11.785156 10 L 13.972656 10 L 11.359375 14.955078 L 14.050781 19.998047 L 11.716797 19.998047 L 10.212891 16.740234 C 10.155891 16.625234 10.089203 16.393266 10.033203 16.072266 L 10.011719 16.072266 C 9.9777187 16.226266 9.9105937 16.458578 9.8085938 16.767578 L 8.2949219 20 L 5.9492188 20 L 8.7324219 14.994141 L 6.1855469 10 z M 23 12 L 24 12 C 24.552 12 25 12.448 25 13 C 25 13.552 24.552 14 24 14 L 23 14 L 23 12 z M 23 16 L 24 16 C 24.552 16 25 16.448 25 17 C 25 17.552 24.552 18 24 18 L 23 18 L 23 16 z M 23 20 L 24 20 C 24.552 20 25 20.448 25 21 C 25 21.552 24.552 22 24 22 L 23 22 L 23 20 z"></path>
+                                        </svg>
                                         Generar Excel
                                     </button>
                                 </div>
@@ -668,7 +675,7 @@
                                 <div class="text-start">
                                     <div class="relative mt-5 mb-2">
                                         <textarea class="block w-full max-h-10 pr-20 text-base bg-[#282c34] text-[#abb2bf] resize-none overflow-y-hidden"
-                                                  placeholder="Ingresa el promt "></textarea>
+                                                  placeholder="Ingresa el promt " id="inputTextPrompt"></textarea>
                                         <div class="absolute flex top-0 right-10 w-10 h-full p-1 justify-center items-center">
                                             <button type="button" id="promptHelp" aria-label="Ver instrucciones"
                                                     class="w-5 h-5 inline-flex items-center justify-center rounded-full border border-[#a1a1aa] text-[#a1a1aa] text-xs leading-none hover:text-emerald-400 hover:border-emerald-400 transition-colors cursor-pointer">
@@ -677,6 +684,7 @@
                                         </div>
                                         <div class="absolute flex top-0 right-0 w-10 h-full p-1">
                                             <button type="button"
+                                                    id="inputPrompt"
                                                     class=" relative w-full h-full inline-flex items-center justify-center rounded-xl bg-[#a1a1aa] border border-[#a1a1aa] text-neutral-50 text-xs leading-none hover:bg-transparent hover:text-emerald-400 hover:border-emerald-400 transition-colors cursor-pointer">
                                                 <svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
@@ -708,6 +716,27 @@
     </div>
 </div>
 <!-- Termina el encabezado -->
+
+<!-- Modal: confirmar borrado del editor JSON -->
+<div id="jsonModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div class="w-[min(440px,90vw)] rounded-xl border border-[rgba(148,163,184,0.18)] bg-[rgba(13,13,20,0.95)] p-6 text-neutral-200 shadow-[0_20px_60px_rgba(0,0,0,0.55)]">
+        <h3 class="text-lg font-semibold text-neutral-50">¿Conservar el contenido del editor JSON?</h3>
+        <p class="mt-3 text-sm text-[#a1a1aa]">
+            El contenido del editor JSON se enviará como parte del prompt.
+            ¿Deseas conservarlo o prefieres borrarlo?
+        </p>
+        <div class="mt-6 flex justify-end gap-3">
+            <button type="button" id="jsonModalNo"
+                    class="px-4 py-1.5 rounded-md border border-[#a1a1aa] text-sm text-[#a1a1aa] hover:text-neutral-50 hover:border-neutral-50 transition-colors cursor-pointer">
+                No, borrar
+            </button>
+            <button type="button" id="jsonModalYes"
+                    class="px-4 py-1.5 rounded-md bg-emerald-400 text-sm font-semibold text-[rgb(4,20,13)] hover:bg-emerald-300 transition-colors cursor-pointer">
+                Sí, conservar
+            </button>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
