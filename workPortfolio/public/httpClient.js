@@ -106,6 +106,12 @@ window.addEventListener('load', function () {
         const data = await res.json().catch(function () { return {}; });
 
         if (!res.ok) {
+            if (res.status === 429) {
+                const retrySecs = parseInt(res.headers.get('Retry-After') || '0', 10);
+                const mins = Math.ceil(retrySecs / 60);
+                const base = data.message || 'Alcanzaste el límite de solicitudes.';
+                throw new Error(mins > 0 ? base + ' Intenta de nuevo en ~' + mins + ' min.' : base);
+            }
             throw new Error(data.reason || data.message || ('Error ' + res.status));
         }
         return data;
