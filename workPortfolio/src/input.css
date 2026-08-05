@@ -161,15 +161,19 @@ html, body { overflow-x: hidden; }
     @apply
     relative
     flex
+    flex-col
+    lg:flex-row
     w-full
-    h-[90vh]
-    py-5
-    px-5;
+    min-h-[95vh]
+    lg:min-h-[90vh]
+    lg:h-[90vh]
+    md:py-5
+    md:px-5;
     div.presentacion{
-      @apply w-3/5 h-full text-white;
+      @apply w-full lg:w-3/5 h-full text-white;
     }
     div.card-img-presentacion{
-      @apply w-2/5 h-full ;
+      @apply w-full lg:w-2/5 h-full ;
     }
   }
   .card-data-person{
@@ -184,17 +188,24 @@ html, body { overflow-x: hidden; }
     pr-3
     py-1.5
     font-mono
-    text-xs
+    text-[11px]
+    md:text-xs
     uppercase
     tracking-[0.22em]
     text-[#a1a1aa];
   }
   .card-img-presentacion {
     @apply
-    ml-20
-    px-17
-    py-10
-    border-l
+    mt-5
+    lg:mt-0
+    lg:ml-20
+    px-4
+    lg:px-17
+    pt-5
+    md:py-5
+    border-t
+    lg:border-t-0
+    lg:border-l
     border-[#ffffff14]
     text-[#a1a1aa]
     ;
@@ -202,7 +213,9 @@ html, body { overflow-x: hidden; }
       @apply
       relative
       w-full
-      h-130
+      h-85
+
+      lg:h-130
       border
       border-[#ffffff14];
       img{

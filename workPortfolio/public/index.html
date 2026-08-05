@@ -59,7 +59,7 @@
 <section class=" fixed inset-0 grid place-items-center bg-fondo-oscuro bg-opacity-50 text-neutral-300"
          id="presentacion">
     <div class="absolute inset-0 flex items-center justify-center z-6 pointer-events-none">
-        <div class="min-w-[525px] max-w-[min(680px,86vw)] h-50 rounded-[14px] px-8 py-7
+        <div class="min-w-0 sm:min-w-[525px] w-[90vw] max-w-[min(680px,86vw)] h-50 rounded-[14px] px-8 py-7
               bg-[rgba(13,13,20,0.92)]
               border border-[rgba(148,163,184,0.18)]
               shadow-[0_20px_60px_rgba(0,0,0,0.55),0_0_0_1px_rgba(52,211,153,0.06)]
@@ -81,14 +81,14 @@
 
 <div id="holeBlack" class="w-screen h-screen absolute top-0 left-0 animate-showUp"></div>
 <!-- Inicia el encabezado -->
-<div id="headerPage" class="w-full px-2.5 lg:px-10 hidden h-[10vh]">
-    <div class="relative py-2.5 lg:py-[30px] text-neutral-50">
+<div id="headerPage" class="w-full px-2.5 lg:px-10 hidden h-[5vh] lg:h-[10vh]">
+    <div class="relative py-2 md:py-2.5 lg:py-[30px] text-neutral-50">
         <div class="relative mx-auto px-[3px] lg:w-5xl xl:w-7xl">
-            <div class="grid grid-cols-2 lg:grid-cols-3 animate-showUp">
+            <div class="grid grid-cols-1 lg:grid-cols-3 animate-showUp">
                 <div>
-                    <div class="object-contain w-1/2 h-full"></div>
+                    <div class="object-contain w-0 lg:w-1/2 h-full"></div>
                 </div>
-                <div class="flex justify-between items-start lg:items-center px-2 lg:px-30">
+                <div class="flex justify-between items-start lg:items-center px-30  lg:px-30">
                     <a class="botonReferencia" href="https://github.com/JhonatanXP1" target="_blanck">
                         <i class="fi fi-brands-github botonReferenciaIcono"></i>
                     </a>
@@ -107,21 +107,22 @@
         </div>
     </div>
 </div>
-<div id="bodyPage" class="w-full container mx-auto px-10 hidden">
+<div id="bodyPage" class="w-full container mx-auto px-4 sm:px-6 lg:px-10 hidden">
     <div class="firts-presentacion">
         <div class="presentacion">
             <span class="card-data-person mr-6">
                 <span class="point-index"></span>
                 Jhonatan Diaz
             </span>
-            <span class="card-data-person">
-                <span class="point-index"></span> Ingeniero en Software</span>
-            <span class="block text-7xl mt-10 monserat-bold-600">
+            <span class="card-data-person mt-2 md:mt-0">
+                <span class="point-index"></span> Ingeniero en Software
+            </span>
+            <span class="block text-3xl sm:text-5xl lg:text-7xl mt-5 md:mt-10 monserat-bold-600">
             <span class="monserat-bold-700">Full Stack Developer <br></span>
             <span class="text-[#a8a8a8] ">construyendo el <br> puente entre <span class="text-emerald-400 italic">backend</span> <br>
                 <span class="text-neutral-50">y experiencia de usuarios.</span> </span>
             </span>
-            <span class="block mt-5 monserat-bold-400 text-lg text-[#a1a1aa] ">
+            <span class="block mt-2 md:mt-5 monserat-bold-400 text-sm md:text-lg text-[#a1a1aa] ">
                +3 años construyendo soluciones web que convierten procesos manuales en plataformas escalables, seguras y de alto rendimiento.
                 Actualmente desarrollando sistemas financieros y optimizando arquitecturas para mejorar el rendimiento y la confiabilidad.
             </span>
@@ -136,60 +137,60 @@
                     class=" text-neutral-100 monserat-bold-400 not-italic! text-5xl block mr-2">+3</span>  Años conenctando <br> ideas.</span>
         </div>
     </div>
-    <div class="relative py-40 text-center text-4xl text-neutral-50">
-        <div class="border-b border-t border-[#ffffff14] mt-5 mb-20 pt-20 px-5 perfilCard reveal">
+    <div class="relative py-16 sm:py-24 lg:py-40 text-center text-4xl text-neutral-50">
+        <div class="border-b border-t border-[#ffffff14] mt-5 mb-10 md:mb-20 pt-20 px-5 perfilCard reveal">
             <span class="text-shadow-neutral-50 text-shadow-2xs relative"
                   id="lineAbout">Perfil Profesional</span><br><br>
-            <div class="flex text-start text-neutral-100 text-sm pb-20 w-full font-light">
-                <span class="w-1/3 monserat-bold-500 text-4xl">
+            <div class="flex flex-col lg:flex-row gap-6 lg:gap-0 text-start text-neutral-100 text-sm pb-5 md:pb-20 w-full font-light">
+                <span class="w-full lg:w-1/3 monserat-bold-500 text-2xl sm:text-3xl lg:text-4xl">
                     Construyo el <span class="text-emerald-400 italic">stack</span> y los flujos que multiplican el impacto del equipo
                 </span>
-                <div class="w-2/3">
-                    <div class="grid grid-cols-3 gap-4 text-base text-[#a1a1aa] ">
-                            <div class="col-span-3 p-4 border-b border-[#ffffff14]">
-                                Desde Puebla, México, colaborando con equipos multidisciplinarios. Construyo y despliego
-                                soluciones full-stack integrales — frontend (Angular),
-                                backend (.NET) e infraestructura (Linux). Conecto la lógica de negocio con la arquitectura
-                                técnica
-                                para acelerar el desarrollo del equipo y asegurar productos escalables y fáciles de
-                                mantener.
-                            </div>
-                            <div class="p-4 border-r border-[#ffffff14] text-xs">
-                                <span>01</span><br>
-                                <span class="text-base text-neutral-50 font-semibold">Desarrollo colaborativo</span>
-                                <br>
-                                <br>
-                                No creo en silos. Optimizo el código y estructuro la arquitectura pensando en los
-                                desarrolladores que vendrán después.
-                                Mi enfoque permite que los flujos de colaboración sean fluidos, reduciendo la fricción
-                                técnica
-                                y multiplicando la velocidad de entrega del equipo.
-                            </div>
-                            <div class="p-4 border-r border-[#ffffff14] text-xs">
-                                <span>02</span><br>
-                                <span class="text-base text-neutral-50 font-semibold">Arquitectura preparada para crecer</span>
-                                <br>
-                                <br>
-                                No me quedo solo en la capa de código: diseño arquitectura de datos, filtrado
-                                de roles con EF Core y despliegues en Docker/Linux. Participo en cada eslabón del sistema.
-                            </div>
-                            <div class="p-4 text-xs">
-                                <span>03</span><br>
-                                <span class="text-base text-neutral-50 font-semibold">Confianza integrada</span>
-                                <br>
-                                <br>
-                                La seguridad no es un extra, es parte del diseño. Integro pasarelas de pago (Openpay,
-                                Conekta,
-                                Digital Femsa) y autenticación JWT con rotación de refresh tokens, construyendo sistemas
-                                en los que tanto el equipo como el usuario final pueden confiar.
-                            </div>
+                <div class="w-full lg:w-2/3">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-base text-[#a1a1aa]">
+                        <div class="col-span-1 lg:col-span-3 p-4 border-b border-[#ffffff14]">
+                            Desde Puebla, México, colaborando con equipos multidisciplinarios. Construyo y despliego
+                            soluciones full-stack integrales — frontend (Angular),
+                            backend (.NET) e infraestructura (Linux). Conecto la lógica de negocio con la arquitectura
+                            técnica
+                            para acelerar el desarrollo del equipo y asegurar productos escalables y fáciles de
+                            mantener.
+                        </div>
+                        <div class="p-4 border-b lg:border-b-0 lg:border-r border-[#ffffff14] text-xs">
+                            <span>01</span><br>
+                            <span class="text-base text-neutral-50 font-semibold">Desarrollo colaborativo</span>
+                            <br>
+                            <br>
+                            No creo en silos. Optimizo el código y estructuro la arquitectura pensando en los
+                            desarrolladores que vendrán después.
+                            Mi enfoque permite que los flujos de colaboración sean fluidos, reduciendo la fricción
+                            técnica
+                            y multiplicando la velocidad de entrega del equipo.
+                        </div>
+                        <div class="p-4 border-b lg:border-b-0 lg:border-r border-[#ffffff14] text-xs">
+                            <span>02</span><br>
+                            <span class="text-base text-neutral-50 font-semibold">Arquitectura preparada para crecer</span>
+                            <br>
+                            <br>
+                            No me quedo solo en la capa de código: diseño arquitectura de datos, filtrado
+                            de roles con EF Core y despliegues en Docker/Linux. Participo en cada eslabón del sistema.
+                        </div>
+                        <div class="p-4 text-xs">
+                            <span>03</span><br>
+                            <span class="text-base text-neutral-50 font-semibold">Confianza integrada</span>
+                            <br>
+                            <br>
+                            La seguridad no es un extra, es parte del diseño. Integro pasarelas de pago (Openpay,
+                            Conekta,
+                            Digital Femsa) y autenticación JWT con rotación de refresh tokens, construyendo sistemas
+                            en los que tanto el equipo como el usuario final pueden confiar.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <span class="text-shadow-neutral-50 text-shadow-2xs relative reveal inline-block" id="mySkill">Habilidades Técnicas</span>
-        <div class="block sm:flex py-25 border-b border-[#ffffff14] reveal">
-            <div class="text-start text-neutral-100 text-sm sm:text-xl w-full sm:w-7/12 py-8 font-light">
+        <div class="block lg:flex py-2 md:py-12 lg:py-25 border-b border-[#ffffff14] reveal">
+            <div class="text-start text-neutral-100 text-sm sm:text-xl w-full lg:w-7/12 py-8 font-light">
                 <a
                         class="relative bg-transparent block  p-6 border border-transparent rounded-base shadow-xs hover:bg-neutral-800"
                         id="showDescrip-1" data-Image='backend'>
@@ -331,7 +332,7 @@
                     errores, reintentos y respuestas asincrónicas.<br>
                 </div>
             </div>
-            <div class="w-full sm:w-1/2 p-0 flex justify-start sm:justify-center">
+            <div class="w-full lg:w-5/12 h-108 md:h-auto pt-10 md:pt-0 md:p-0 flex justify-start md:justify-center">
                 <div class="hexagonoBorder">
                     <div class="hexagonoBorderB flex justify-center items-center">
                         <div class="hexagonoTegnologeShow" id="hexTech">
@@ -350,7 +351,7 @@
         </div>
         <div class="flex relative reveal">
             <div class="w-full font-Inter  py-15 px-5 sm:px-12 ">
-                <div class="text-center text-2xl sm:text-3xl xl:text-4xl text-neutral-50">
+                <div class="text-center text-3xl xl:text-4xl text-neutral-50">
                         <span class="text-shadow-neutral-50 text-shadow-2xs relative fontExpectac before:bg-[#7d1a1a]">
                 Experiencia
               </span>
@@ -369,16 +370,16 @@
                                 <time class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
                                     Enero 2024 a Julio 2026
                                 </time>
-                                <h3 class="flex items-center mb-1 text-2xl font-semibold text-neutral-50 my-2 ">
+                                <h3 class="flex items-center mb-1 text-xl md:text-2xl font-semibold text-neutral-50 my-2 ">
                                     <span class="fontExpectac before:bg-sky-600">EDUCAPP</span>
                                 </h3>
-                                <p class="mb-4 text-neutral-50 font-Inter text-xl">
-                                    <span class="text-sky-500 text-2xl monserat-bold-600">Desarrollador Full Stack</span><br>
+                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl">
+                                    <span class="text-sky-500 text-xl md:text-2xl monserat-bold-600">Desarrollador Full Stack</span><br>
                                     Como parte del equipo de desarrollo, mis responsabilidades principales fueron:
                                     <br>
-                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]">
+                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter  font-light text-base text-[#a1a1aa]">
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -391,7 +392,7 @@
                                         instituciones escolares.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -403,7 +404,7 @@
                                         actualización tecnológica.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -415,7 +416,7 @@
                                         y análisis de requerimientos.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -427,7 +428,7 @@
                                         plataformas complementarias.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -439,7 +440,7 @@
                                         seguridad de la infraestructura.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-sky-500"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -468,17 +469,17 @@
                                         class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
                                     Marzo 2024 a Agosto 2025
                                 </time>
-                                <h3 class="flex items-center mb-1 text-2xl font-semibold text-neutral-50 my-2 ">
+                                <h3 class="flex items-center mb-1 text-xl md:text-2xl font-semibold text-neutral-50 my-2 ">
                                     <span class="fontExpectac before:bg-blue-700">Royal Prestige</span>
                                 </h3>
-                                <p class="mb-4 text-neutral-50 font-Inter text-xl">
-                                    <span class="text-blue-700 text-xl monserat-bold-600">Soporte TI</span><br>
+                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl">
+                                    <span class="text-blue-700 text-lg md:text-xl monserat-bold-600">Soporte TI</span><br>
                                     Como Soporte TI externo, participé en la operación, integración y mantenimiento
                                     de sistemas
                                     tecnológicos, desempeñando las siguientes funciones: <br>
                                 <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]">
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-blue-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -492,7 +493,7 @@
                                         plataforma Zoho.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-blue-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -504,7 +505,7 @@
                                         comunicación con clientes.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-blue-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -516,7 +517,7 @@
                                         disponibilidad y correcto funcionamiento.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-blue-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-blue-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -543,17 +544,17 @@
                                 <time class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
                                     Julio 2023 a Enero 2024
                                 </time>
-                                <h3 class="flex items-center mb-1 text-2xl font-semibold text-neutral-50 my-2 ">
+                                <h3 class="flex items-center mb-1 text-xl md:text-2xl font-semibold text-neutral-50 my-2 ">
                                     <span class="fontExpectac before:bg-green-700 ">ETICS</span>
                                 </h3>
-                                <p class="mb-4 text-neutral-50 font-Inter text-xl">
-                                    <span class=" text-green-700 text-xl monserat-bold-600">Ingeniero en Sistemas Computacionales</span><br>
+                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl">
+                                    <span class=" text-green-700 text-lg md:text-xl monserat-bold-600">Ingeniero en Sistemas Computacionales</span><br>
                                     Durante este periodo desempeñé funciones orientadas al soporte, mantenimiento y
                                     administración de infraestructura tecnológica, destacando en las siguientes
                                     actividades:<br>
                                 <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]">
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-green-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-green-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -564,7 +565,7 @@
                                         entre empresas y en la gestión de permisos y accesos.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-green-700 "
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-green-700 "
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -575,7 +576,7 @@
                                         estructurado, dispositivos de red y validación de conectividad.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-green-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-green-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -586,7 +587,7 @@
                                         rendimiento del hardware y reduciendo tiempos de inactividad.
                                     </li>
                                     <li class="flex items-center">
-                                        <svg class="min-w-15  max-w-15 min-h-15 max-h-15 text-green-700"
+                                        <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-green-700"
                                              aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round"
@@ -606,13 +607,14 @@
             </div>
         </div>
         <div class="reveal">
-            <span class=" text-shadow-neutral-50 text-shadow-2xs relative mb-10 fontExpectac before:bg-[rgba(37,49,71,0.55)]" id="myProyectsTitle">Desarrollos</span>
+            <span class=" text-shadow-neutral-50 text-shadow-2xs relative mb-10 fontExpectac before:bg-[rgba(37,49,71,0.55)]"
+                  id="myProyectsTitle">Desarrollos</span>
             <br>
             <br>
             <div class="grid gap-4 myProyects">
                 <!-- Primera fila -->
-                <div class="grid grid-cols-5 gap-4">
-                    <div class="col-span-3 h-140 cardProyect group ">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+                    <div class="col-span-1 lg:col-span-3 h-auto lg:h-140 cardProyect group">
                         <div class="w-full h-full text-neutral-50">
                             <svg class="absolute w-6 h-6 right-8 top-7 text-emerald-400/30 group-hover:text-emerald-400 transition-colors"
                                  aria-hidden="true"
@@ -627,9 +629,9 @@
                                       stroke-width="2"
                                       d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
                             </svg>
-                            <div class="grid grid-cols-[2fr_1fr] grid-rows-[auto_1fr] gap-6 h-full ">
+                            <div class="flex flex-col gap-6 lg:grid lg:grid-cols-[2fr_1fr] lg:grid-rows-[auto_1fr] h-full">
                                 <!-- div1 -->
-                                <div>
+                                <div class="order-1 lg:order-0">
                                     <span class="text-base font-semibold text-emerald-400 ">
                                         Proyecto destacado
                                     </span>
@@ -643,9 +645,10 @@
                                     <span class="text-xs"></span>
                                 </div>
                                 <!-- div3 -->
-                                <div class="row-span-2 flex flex-col gap-8 justify-center text-lg px-4">
-                                    <a class="block py-2 px-2 rounded-full text-center" href="https://github.com/JhonatanXP1/ExcelExport" target="_blanck"
-                                            style="background:rgba(255,255,255,0.06);border:1px solid rgba(148,163,184,0.25); cursor: pointer;">
+                                <div class="order-3 lg:order-0 row-span-2 flex flex-col gap-8 justify-center text-lg px-4">
+                                    <a class="block py-2 px-2 rounded-full text-center"
+                                       href="https://github.com/JhonatanXP1/ExcelExport" target="_blanck"
+                                       style="background:rgba(255,255,255,0.06);border:1px solid rgba(148,163,184,0.25); cursor: pointer;">
                                         <svg class="inline w-6 h-6 " aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              fill="currentColor" viewBox="0 0 24 24">
@@ -665,7 +668,8 @@
                                     <button
                                             class="py-1 px-2 rounded-xl"
                                             style="background:rgb(52,211,153);color:rgb(4,20,13); cursor: pointer;">
-                                        <svg class="inline w-6 h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30">
+                                        <svg class="inline w-6 h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                             viewBox="0 0 30 30">
                                             <path d="M 15 3 A 2 2 0 0 0 14.599609 3.0429688 L 14.597656 3.0410156 L 4.6289062 5.0351562 L 4.6269531 5.0371094 A 2 2 0 0 0 3 7 L 3 23 A 2 2 0 0 0 4.6289062 24.964844 L 14.597656 26.958984 A 2 2 0 0 0 15 27 A 2 2 0 0 0 17 25 L 17 5 A 2 2 0 0 0 15 3 z M 19 5 L 19 8 L 21 8 L 21 10 L 19 10 L 19 12 L 21 12 L 21 14 L 19 14 L 19 16 L 21 16 L 21 18 L 19 18 L 19 20 L 21 20 L 21 22 L 19 22 L 19 25 L 25 25 C 26.105 25 27 24.105 27 23 L 27 7 C 27 5.895 26.105 5 25 5 L 19 5 z M 23 8 L 24 8 C 24.552 8 25 8.448 25 9 C 25 9.552 24.552 10 24 10 L 23 10 L 23 8 z M 6.1855469 10 L 8.5878906 10 L 9.8320312 12.990234 C 9.9330313 13.234234 10.013797 13.516891 10.091797 13.837891 L 10.125 13.837891 C 10.17 13.644891 10.258531 13.351797 10.394531 12.966797 L 11.785156 10 L 13.972656 10 L 11.359375 14.955078 L 14.050781 19.998047 L 11.716797 19.998047 L 10.212891 16.740234 C 10.155891 16.625234 10.089203 16.393266 10.033203 16.072266 L 10.011719 16.072266 C 9.9777187 16.226266 9.9105937 16.458578 9.8085938 16.767578 L 8.2949219 20 L 5.9492188 20 L 8.7324219 14.994141 L 6.1855469 10 z M 23 12 L 24 12 C 24.552 12 25 12.448 25 13 C 25 13.552 24.552 14 24 14 L 23 14 L 23 12 z M 23 16 L 24 16 C 24.552 16 25 16.448 25 17 C 25 17.552 24.552 18 24 18 L 23 18 L 23 16 z M 23 20 L 24 20 C 24.552 20 25 20.448 25 21 C 25 21.552 24.552 22 24 22 L 23 22 L 23 20 z"></path>
                                         </svg>
                                         Generar Excel
@@ -673,10 +677,11 @@
                                 </div>
 
                                 <!-- div2 -->
-                                <div class="text-start">
+                                <div class="order-2 lg:order-0 text-start">
                                     <div class="relative mt-5 mb-2">
-                                        <textarea class="block w-full max-h-10 pr-20 text-base bg-[#282c34] text-[#abb2bf] resize-none overflow-y-hidden"
-                                                  placeholder="Ingresa el promt " id="inputTextPrompt"></textarea>
+                                        <textarea
+                                                class="block w-full max-h-10 pr-20 text-base bg-[#282c34] text-[#abb2bf] resize-none overflow-y-hidden"
+                                                placeholder="Ingresa el promt " id="inputTextPrompt"></textarea>
                                         <div class="absolute flex top-0 right-10 w-10 h-full p-1 justify-center items-center">
                                             <button type="button" id="promptHelp" aria-label="Ver instrucciones"
                                                     class="w-5 h-5 inline-flex items-center justify-center rounded-full border border-[#a1a1aa] text-[#a1a1aa] text-xs leading-none hover:text-emerald-400 hover:border-emerald-400 transition-colors cursor-pointer">
@@ -687,8 +692,12 @@
                                             <button type="button"
                                                     id="inputPrompt"
                                                     class=" relative w-full h-full inline-flex items-center justify-center rounded-xl bg-[#a1a1aa] border border-[#a1a1aa] text-neutral-50 text-xs leading-none hover:bg-transparent hover:text-emerald-400 hover:border-emerald-400 transition-colors cursor-pointer">
-                                                <svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+                                                <svg class="w-6 h-6 " aria-hidden="true"
+                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linecap="round"
+                                                          stroke-linejoin="round" stroke-width="2"
+                                                          d="M12 6v13m0-13 4 4m-4-4-4 4"/>
                                                 </svg>
                                             </button>
                                         </div>
@@ -701,7 +710,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-2  p-4 cardProyect">
+                    <div class="hidden lg:block col-span-2 p-4 cardProyect">
                     </div>
                 </div>
 
