@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
     const inputTextPrompt = document.getElementById('inputTextPrompt');
+    const buttonGenerateXSL = document.getElementById('generateXSL');
     const modal = document.getElementById('jsonModal');
     const btnYes = document.getElementById('jsonModalYes');
     const btnNo = document.getElementById('jsonModalNo');
@@ -40,7 +41,8 @@ window.addEventListener('load', function () {
         closeModal();
     });
 
-    const API_BASE = 'http://localhost:5279';
+    const isDev = ['localhost', '127.0.0.1'].includes(location.hostname);
+    const API_BASE = isDev ? 'http://localhost:5279':'https://goodev.com.mx';
     const btnPrompt = document.getElementById('inputPrompt');
     const btnGenerate = document.getElementById('generateIa');
 
@@ -91,6 +93,8 @@ window.addEventListener('load', function () {
         });
     }
 
+    function t(es, en) { return window.currentLang === 'en' ? en : es; }
+
     async function callApi(path, body) {
         const options = {
             method: 'POST',
@@ -109,8 +113,8 @@ window.addEventListener('load', function () {
             if (res.status === 429) {
                 const retrySecs = parseInt(res.headers.get('Retry-After') || '0', 10);
                 const mins = Math.ceil(retrySecs / 60);
-                const base = data.message || 'Alcanzaste el límite de solicitudes.';
-                throw new Error(mins > 0 ? base + ' Intenta de nuevo en ~' + mins + ' min.' : base);
+                const base = data.message || t('Alcanzaste el límite de solicitudes.', 'You have reached the request limit.');
+                throw new Error(mins > 0 ? base + t(' Intenta de nuevo en ~', ' Try again in ~') + mins + ' min.' : base);
             }
             throw new Error(data.reason || data.message || ('Error ' + res.status));
         }
@@ -127,13 +131,13 @@ window.addEventListener('load', function () {
             try {
                 jsonData = JSON.parse(raw);
             } catch (_) {
-                alert('El contenido del editor JSON no es válido.');
+                alert(t('El contenido del editor JSON no es válido.', 'The JSON editor content is not valid.'));
                 return;
             }
         }
 
         if (promptText === '' && jsonData === null) {
-            alert('Escribe un prompt o agrega datos en el editor JSON.');
+            alert(t('Escribe un prompt o agrega datos en el editor JSON.', 'Write a prompt or add data in the JSON editor.'));
             return;
         }
 
@@ -175,6 +179,52 @@ window.addEventListener('load', function () {
             } finally {
                 setLoading(false);
                 setInputsBlocked(false);
+            }
+        });
+    }
+    if(buttonGenerateXSL){
+        buttonGenerateXSL.addEventListener('click', async function () {
+            if (window.jsonEditor && window.jsonEditor.getValue().trim() !== '') {
+                let dataExcel = JSON.parse(window.jsonEditor.getValue().trim());
+                if(!dataExcel || typeof dataExcel !== 'object') {
+                    throw new Error('dataExcel debe ser un objeto válido');
+                }else{
+                    try{
+                        const response = await fetch(API_BASE+'/export.php',{
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify(dataExcel)
+                        });
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            console.error('Error servidor:', response.status, errorText);
+                            return;
+                        }
+
+                        let fileName = 'reporte.xlsx';
+                        const disposition = response.headers.get('Content-Disposition');
+
+                        if (disposition) {
+                            const match = disposition.match(/filename="?([^"]+)"?/i);
+                            if (match && match[1]) fileName = match[1];
+                        }
+
+                        const blob = await response.blob();
+                        const blobUrl = URL.createObjectURL(blob);
+
+                        const a = document.createElement('a');
+                        a.href = blobUrl;
+                        a.download = fileName;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+
+                        URL.revokeObjectURL(blobUrl);
+
+                    }catch (error){
+                        console.error('Error:', error);
+                    }
+                }
             }
         });
     }

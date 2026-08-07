@@ -24,6 +24,8 @@
     <script src="./tooltips.js" defer></script>
     <script src="./httpClient.js" defer></script>
     <script src="./reveal.js" defer></script>
+    <script src="./carousel.js" defer></script>
+    <script src="./i18n.js" defer></script>
 </head>
 
 <body class="bg-fondo-oscuro">
@@ -84,11 +86,15 @@
 <div id="headerPage" class="w-full px-2.5 lg:px-10 hidden h-[5vh] lg:h-[10vh]">
     <div class="relative py-2 md:py-2.5 lg:py-[30px] text-neutral-50">
         <div class="relative mx-auto px-[3px] lg:w-5xl xl:w-7xl">
-            <div class="grid grid-cols-1 lg:grid-cols-3 animate-showUp">
-                <div>
-                    <div class="object-contain w-0 lg:w-1/2 h-full"></div>
+            <div class="grid grid-cols-[1fr_3fr] lg:grid-cols-3 animate-showUp">
+                <div class="flex items-center justify-center lg:justify-start">
+                    <div role="group" aria-label="Idioma / Language"
+                         class="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.18em] border border-[#a1a1aa] rounded overflow-hidden divide-x divide-[#a1a1aa]">
+                        <button type="button" data-lang-btn="es" class="px-2.5 py-1 cursor-pointer hover:text-emerald-400 transition-colors">ES</button>
+                        <button type="button" data-lang-btn="en" class="px-2.5 py-1 cursor-pointer hover:text-emerald-400 transition-colors">EN</button>
+                    </div>
                 </div>
-                <div class="flex justify-between items-start lg:items-center px-30  lg:px-30">
+                <div class="flex justify-between items-start lg:items-center pl-5 pr-15  lg:px-30">
                     <a class="botonReferencia" href="https://github.com/JhonatanXP1" target="_blanck">
                         <i class="fi fi-brands-github botonReferenciaIcono"></i>
                     </a>
@@ -114,15 +120,15 @@
                 <span class="point-index"></span>
                 Jhonatan Diaz
             </span>
-            <span class="card-data-person mt-2 md:mt-0">
+            <span class="card-data-person mt-2 md:mt-0" data-i18n="role">
                 <span class="point-index"></span> Ingeniero en Software
             </span>
-            <span class="block text-3xl sm:text-5xl lg:text-7xl mt-5 md:mt-10 monserat-bold-600">
+            <span class="block text-3xl sm:text-5xl lg:text-7xl mt-5 md:mt-10 monserat-bold-600" data-i18n="hero.title">
             <span class="monserat-bold-700">Full Stack Developer <br></span>
             <span class="text-[#a8a8a8] ">construyendo el <br> puente entre <span class="text-emerald-400 italic">backend</span> <br>
                 <span class="text-neutral-50">y experiencia de usuarios.</span> </span>
             </span>
-            <span class="block mt-2 md:mt-5 monserat-bold-400 text-sm md:text-lg text-[#a1a1aa] ">
+            <span class="block mt-2 md:mt-5 monserat-bold-400 text-sm md:text-lg text-[#a1a1aa] " data-i18n="hero.desc">
                +3 años construyendo soluciones web que convierten procesos manuales en plataformas escalables, seguras y de alto rendimiento.
                 Actualmente desarrollando sistemas financieros y optimizando arquitecturas para mejorar el rendimiento y la confiabilidad.
             </span>
@@ -133,21 +139,21 @@
                 <span class="left-3 bottom-1">Jhonatan Diaz</span>
                 <span class="right-3 bottom-1">Puebla · 19.1 N</span>
             </div>
-            <span class="flex h-[100px] items-center text-xs text-[#a8a8a8]"> <span
+            <span class="flex h-[100px] items-center text-xs text-[#a8a8a8]" data-i18n="hero.years"> <span
                     class=" text-neutral-100 monserat-bold-400 not-italic! text-5xl block mr-2">+3</span>  Años conenctando <br> ideas.</span>
         </div>
     </div>
     <div class="relative py-16 sm:py-24 lg:py-40 text-center text-4xl text-neutral-50">
         <div class="border-b border-t border-[#ffffff14] mt-5 mb-10 md:mb-20 pt-20 px-5 perfilCard reveal">
             <span class="text-shadow-neutral-50 text-shadow-2xs relative"
-                  id="lineAbout">Perfil Profesional</span><br><br>
+                  id="lineAbout" data-i18n="about.title">Perfil Profesional</span><br><br>
             <div class="flex flex-col lg:flex-row gap-6 lg:gap-0 text-start text-neutral-100 text-sm pb-5 md:pb-20 w-full font-light">
-                <span class="w-full lg:w-1/3 monserat-bold-500 text-2xl sm:text-3xl lg:text-4xl">
+                <span class="w-full lg:w-1/3 monserat-bold-500 text-2xl sm:text-3xl lg:text-4xl" data-i18n="about.heading">
                     Construyo el <span class="text-emerald-400 italic">stack</span> y los flujos que multiplican el impacto del equipo
                 </span>
                 <div class="w-full lg:w-2/3">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-base text-[#a1a1aa]">
-                        <div class="col-span-1 lg:col-span-3 p-4 border-b border-[#ffffff14]">
+                        <div class="col-span-1 lg:col-span-3 p-4 border-b border-[#ffffff14]" data-i18n="about.intro">
                             Desde Puebla, México, colaborando con equipos multidisciplinarios. Construyo y despliego
                             soluciones full-stack integrales — frontend (Angular),
                             backend (.NET) e infraestructura (Linux). Conecto la lógica de negocio con la arquitectura
@@ -155,7 +161,7 @@
                             para acelerar el desarrollo del equipo y asegurar productos escalables y fáciles de
                             mantener.
                         </div>
-                        <div class="p-4 border-b lg:border-b-0 lg:border-r border-[#ffffff14] text-xs">
+                        <div class="p-4 border-b lg:border-b-0 lg:border-r border-[#ffffff14] text-xs" data-i18n="about.card1">
                             <span>01</span><br>
                             <span class="text-base text-neutral-50 font-semibold">Desarrollo colaborativo</span>
                             <br>
@@ -166,7 +172,7 @@
                             técnica
                             y multiplicando la velocidad de entrega del equipo.
                         </div>
-                        <div class="p-4 border-b lg:border-b-0 lg:border-r border-[#ffffff14] text-xs">
+                        <div class="p-4 border-b lg:border-b-0 lg:border-r border-[#ffffff14] text-xs" data-i18n="about.card2">
                             <span>02</span><br>
                             <span class="text-base text-neutral-50 font-semibold">Arquitectura preparada para crecer</span>
                             <br>
@@ -174,7 +180,7 @@
                             No me quedo solo en la capa de código: diseño arquitectura de datos, filtrado
                             de roles con EF Core y despliegues en Docker/Linux. Participo en cada eslabón del sistema.
                         </div>
-                        <div class="p-4 text-xs">
+                        <div class="p-4 text-xs" data-i18n="about.card3">
                             <span>03</span><br>
                             <span class="text-base text-neutral-50 font-semibold">Confianza integrada</span>
                             <br>
@@ -188,7 +194,7 @@
                 </div>
             </div>
         </div>
-        <span class="text-shadow-neutral-50 text-shadow-2xs relative reveal inline-block" id="mySkill">Habilidades Técnicas</span>
+        <span class="text-shadow-neutral-50 text-shadow-2xs relative reveal inline-block" id="mySkill" data-i18n="skills.title">Habilidades Técnicas</span>
         <div class="block lg:flex py-2 md:py-12 lg:py-25 border-b border-[#ffffff14] reveal">
             <div class="text-start text-neutral-100 text-sm sm:text-xl w-full lg:w-7/12 py-8 font-light">
                 <a
@@ -232,7 +238,7 @@
                 </a>
                 <div class="pl-8 py-3 hidden" id="showInfo-2">
                     <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-body"> HTML / CSS avanzado</span>
+                        <span class="text-sm font-medium text-body" data-i18n="skills.htmlcss"> HTML / CSS avanzado</span>
                         <span class="text-sm font-medium text-body">82%</span>
                     </div>
                     <div class="w-full bg-[#364153] rounded-full h-2">
@@ -246,7 +252,7 @@
                         <div class="bg-blue-600 h-2 rounded-full" style="width: 82%"></div>
                     </div>
                     <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-body">Diseño UI custom</span>
+                        <span class="text-sm font-medium text-body" data-i18n="skills.uidesign">Diseño UI custom</span>
                         <span class="text-sm font-medium text-body">62%</span>
                     </div>
                     <div class="w-full bg-[#364153] rounded-full h-2">
@@ -292,7 +298,7 @@
                         <div class="bg-[#00FF00] h-2 rounded-full" style="width: 82%"></div>
                     </div>
                     <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-body">Bash Scripting (Automatización de tareas)</span>
+                        <span class="text-sm font-medium text-body" data-i18n="skills.bash">Bash Scripting (Automatización de tareas)</span>
                         <span class="text-sm font-medium text-body">82%</span>
                     </div>
                     <div class="w-full bg-[#364153] rounded-full h-2">
@@ -316,12 +322,12 @@
                 <a
                         class="relative bg-transparent block  p-6 border border-transparent rounded-base shadow-xs hover:bg-neutral-800"
                         id="showDescrip-4" data-Image=''>
-                    <h5 class=" text-2xl font-semibold tracking-tight text-amber-50 leading-8"><span
+                    <h5 data-i18n="skills.h4" class=" text-2xl font-semibold tracking-tight text-amber-50 leading-8"><span
                             class="text-lg text-[#fc4b08]">04.</span> Integraciones y Procesamiento de Pagos</h5>
                     <i class="absolute right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down"></i>
                     <i class="absolute  rotate-180 right-2 top-1/2 -translate-y-1/2 fi fi-rr-angle-small-down hidden"></i>
                 </a>
-                <div class="pl-8 py-3 hidden" id="showInfo-4">
+                <div class="pl-8 py-3 hidden" id="showInfo-4" data-i18n="skills.payments">
                     →&nbsp;&nbsp;&nbsp;&nbsp;Integración de pasarelas de pago como <b>OpenPay, EVO y Digital
                     FEMSA</b>.<br>
                     →&nbsp;&nbsp;&nbsp;&nbsp;Implementación de algoritmos para generación y validación de
@@ -352,7 +358,7 @@
         <div class="flex relative reveal">
             <div class="w-full font-Inter  py-15 px-5 sm:px-12 ">
                 <div class="text-center text-3xl xl:text-4xl text-neutral-50">
-                        <span class="text-shadow-neutral-50 text-shadow-2xs relative fontExpectac before:bg-[#7d1a1a]">
+                        <span class="text-shadow-neutral-50 text-shadow-2xs relative fontExpectac before:bg-[#7d1a1a]" data-i18n="exp.title">
                 Experiencia
               </span>
                     <div class="w-full text-start">
@@ -367,17 +373,17 @@
                               clip-rule="evenodd"/>
                       </svg>
                     </span>
-                                <time class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+                                <time class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded" data-i18n="exp.t1">
                                     Enero 2024 a Julio 2026
                                 </time>
                                 <h3 class="flex items-center mb-1 text-xl md:text-2xl font-semibold text-neutral-50 my-2 ">
                                     <span class="fontExpectac before:bg-sky-600">EDUCAPP</span>
                                 </h3>
-                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl">
+                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl" data-i18n="exp.p1">
                                     <span class="text-sky-500 text-xl md:text-2xl monserat-bold-600">Desarrollador Full Stack</span><br>
                                     Como parte del equipo de desarrollo, mis responsabilidades principales fueron:
                                     <br>
-                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter  font-light text-base text-[#a1a1aa]">
+                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter  font-light text-base text-[#a1a1aa]" data-i18n="exp.ul1">
                                     <li class="flex items-center">
                                         <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-sky-500"
                                              aria-hidden="true"
@@ -466,18 +472,18 @@
                       </svg>
                     </span>
                                 <time
-                                        class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+                                        class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded" data-i18n="exp.t2">
                                     Marzo 2024 a Agosto 2025
                                 </time>
                                 <h3 class="flex items-center mb-1 text-xl md:text-2xl font-semibold text-neutral-50 my-2 ">
                                     <span class="fontExpectac before:bg-blue-700">Royal Prestige</span>
                                 </h3>
-                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl">
+                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl" data-i18n="exp.p2">
                                     <span class="text-blue-700 text-lg md:text-xl monserat-bold-600">Soporte TI</span><br>
                                     Como Soporte TI externo, participé en la operación, integración y mantenimiento
                                     de sistemas
                                     tecnológicos, desempeñando las siguientes funciones: <br>
-                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]">
+                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]" data-i18n="exp.ul2">
                                     <li class="flex items-center">
                                         <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-blue-700"
                                              aria-hidden="true"
@@ -541,18 +547,18 @@
                               clip-rule="evenodd"/>
                       </svg>
                     </span>
-                                <time class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+                                <time class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded" data-i18n="exp.t3">
                                     Julio 2023 a Enero 2024
                                 </time>
                                 <h3 class="flex items-center mb-1 text-xl md:text-2xl font-semibold text-neutral-50 my-2 ">
                                     <span class="fontExpectac before:bg-green-700 ">ETICS</span>
                                 </h3>
-                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl">
+                                <p class="mb-4 text-neutral-50 font-Inter text-base md:text-xl" data-i18n="exp.p3">
                                     <span class=" text-green-700 text-lg md:text-xl monserat-bold-600">Ingeniero en Sistemas Computacionales</span><br>
                                     Durante este periodo desempeñé funciones orientadas al soporte, mantenimiento y
                                     administración de infraestructura tecnológica, destacando en las siguientes
                                     actividades:<br>
-                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]">
+                                <ul class="max-w-3xl pt-2 pb-5 list-inside font-Inter font-light text-base text-[#a1a1aa]" data-i18n="exp.ul3">
                                     <li class="flex items-center">
                                         <svg class="min-w-8  max-w-8 min-h-8 max-h-8 sm:min-w-15 sm:max-w-15 sm:min-h-15 sm:max-h-15 text-green-700"
                                              aria-hidden="true"
@@ -608,9 +614,18 @@
         </div>
         <div class="reveal">
             <span class=" text-shadow-neutral-50 text-shadow-2xs relative mb-10 fontExpectac before:bg-[rgba(37,49,71,0.55)]"
-                  id="myProyectsTitle">Desarrollos</span>
+                  id="myProyectsTitle" data-i18n="dev.title">Desarrollos</span>
             <br>
             <br>
+            <div class="flex aling-items-start">
+                <div data-i18n="dev.pill" class="inline-flex items-center gap-2 mb-4 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-3 py-1.5 font-mono text-[8px] md:text-[11px] uppercase tracking-[0.18em] text-emerald-300">
+                <span class="relative inline-flex h-1.5 w-1.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                </span>
+                    Demo en vivo · hospedada en mi servidor casero Linux.
+                </div>
+            </div>
             <div class="grid gap-4 myProyects">
                 <!-- Primera fila -->
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
@@ -632,22 +647,23 @@
                             <div class="flex flex-col gap-6 lg:grid lg:grid-cols-[2fr_1fr] lg:grid-rows-[auto_1fr] h-full">
                                 <!-- div1 -->
                                 <div class="order-1 lg:order-0">
-                                    <span class="text-base font-semibold text-emerald-400 ">
+                                    <span class="text-base font-semibold text-emerald-400 " data-i18n="dev.featured">
                                         Proyecto destacado
                                     </span>
-                                    <h3 class="text-2xl leading-12 font-bold">
+                                    <h3 class="text-2xl leading-12 font-bold" data-i18n="dev.excelTitle">
                                         Generador de Excel Simplificado
                                     </h3>
-                                    <p class="text-base text-[#a1a1aa]">
-                                        Pega un JSON, genera el archivo y descárgalo — sin plantillas ni
-                                        configuración manual. Pruébalo abajo.
+                                    <p class="text-base text-[#a1a1aa]" data-i18n="dev.excelDesc">
+                                        Describe el Excel que necesitas. La IA generará automáticamente el JSON compatible con el generador de Excel.
                                     </p>
-                                    <span class="text-xs"></span>
+                                    <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-[#a1a1aa]">
+                                        <span>C#</span><span>ASP.NET</span><span>PHP</span><span>SQL Server</span><span>JS</span>
+                                    </div>
                                 </div>
                                 <!-- div3 -->
                                 <div class="order-3 lg:order-0 row-span-2 flex flex-col gap-8 justify-center text-lg px-4">
                                     <a class="block py-2 px-2 rounded-full text-center"
-                                       href="https://github.com/JhonatanXP1/ExcelExport" target="_blanck"
+                                       href="https://github.com/JhonatanXP1/dynamic-excel-export" target="_blanck"
                                        style="background:rgba(255,255,255,0.06);border:1px solid rgba(148,163,184,0.25); cursor: pointer;">
                                         <svg class="inline w-6 h-6 " aria-hidden="true"
                                              xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -656,32 +672,33 @@
                                                   d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
                                                   clip-rule="evenodd"/>
                                         </svg>
-                                        Documentación
+                                        <span data-i18n="dev.docs">Documentación</span>
                                     </a>
 
                                     <button
                                             id="generateIa"
                                             class="py-1 px-2 rounded-xl"
                                             style="background:rgb(52,211,153);color:rgb(4,20,13);cursor: pointer;">
-                                        Crear ejemplo con IA
+                                        <span data-i18n="dev.btnExample">Crear ejemplo con IA</span>
                                     </button>
                                     <button
+                                            id="generateXSL"
                                             class="py-1 px-2 rounded-xl"
                                             style="background:rgb(52,211,153);color:rgb(4,20,13); cursor: pointer;">
                                         <svg class="inline w-6 h-6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                              viewBox="0 0 30 30">
                                             <path d="M 15 3 A 2 2 0 0 0 14.599609 3.0429688 L 14.597656 3.0410156 L 4.6289062 5.0351562 L 4.6269531 5.0371094 A 2 2 0 0 0 3 7 L 3 23 A 2 2 0 0 0 4.6289062 24.964844 L 14.597656 26.958984 A 2 2 0 0 0 15 27 A 2 2 0 0 0 17 25 L 17 5 A 2 2 0 0 0 15 3 z M 19 5 L 19 8 L 21 8 L 21 10 L 19 10 L 19 12 L 21 12 L 21 14 L 19 14 L 19 16 L 21 16 L 21 18 L 19 18 L 19 20 L 21 20 L 21 22 L 19 22 L 19 25 L 25 25 C 26.105 25 27 24.105 27 23 L 27 7 C 27 5.895 26.105 5 25 5 L 19 5 z M 23 8 L 24 8 C 24.552 8 25 8.448 25 9 C 25 9.552 24.552 10 24 10 L 23 10 L 23 8 z M 6.1855469 10 L 8.5878906 10 L 9.8320312 12.990234 C 9.9330313 13.234234 10.013797 13.516891 10.091797 13.837891 L 10.125 13.837891 C 10.17 13.644891 10.258531 13.351797 10.394531 12.966797 L 11.785156 10 L 13.972656 10 L 11.359375 14.955078 L 14.050781 19.998047 L 11.716797 19.998047 L 10.212891 16.740234 C 10.155891 16.625234 10.089203 16.393266 10.033203 16.072266 L 10.011719 16.072266 C 9.9777187 16.226266 9.9105937 16.458578 9.8085938 16.767578 L 8.2949219 20 L 5.9492188 20 L 8.7324219 14.994141 L 6.1855469 10 z M 23 12 L 24 12 C 24.552 12 25 12.448 25 13 C 25 13.552 24.552 14 24 14 L 23 14 L 23 12 z M 23 16 L 24 16 C 24.552 16 25 16.448 25 17 C 25 17.552 24.552 18 24 18 L 23 18 L 23 16 z M 23 20 L 24 20 C 24.552 20 25 20.448 25 21 C 25 21.552 24.552 22 24 22 L 23 22 L 23 20 z"></path>
                                         </svg>
-                                        Generar Excel
+                                        <span data-i18n="dev.btnGenerate">Generar Excel</span>
                                     </button>
                                 </div>
 
                                 <!-- div2 -->
                                 <div class="order-2 lg:order-0 text-start">
-                                    <div class="relative mt-5 mb-2">
+                                    <div class="relative mt-2 mb-2">
                                         <textarea
                                                 class="block w-full max-h-10 pr-20 text-base bg-[#282c34] text-[#abb2bf] resize-none overflow-y-hidden"
-                                                placeholder="Ingresa el promt " id="inputTextPrompt"></textarea>
+                                                placeholder="Ingresa el promt " data-i18n-ph="dev.promptPh" id="inputTextPrompt"></textarea>
                                         <div class="absolute flex top-0 right-10 w-10 h-full p-1 justify-center items-center">
                                             <button type="button" id="promptHelp" aria-label="Ver instrucciones"
                                                     class="w-5 h-5 inline-flex items-center justify-center rounded-full border border-[#a1a1aa] text-[#a1a1aa] text-xs leading-none hover:text-emerald-400 hover:border-emerald-400 transition-colors cursor-pointer">
@@ -710,15 +727,103 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hidden lg:block col-span-2 p-4 cardProyect">
+                    <div class=" relative col-span-1 lg:col-span-2 h-[440px] lg:h-140 p-0! cardProyect group">
+                        <svg class="absolute z-5 w-6 h-6 right-8 top-7 text-emerald-400/30 group-hover:text-emerald-400 transition-colors"
+                             aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             fill="none"
+                             viewBox="0 0 24 24">
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                        </svg>
+                        <div class="h-3/5">
+                            <div data-carousel class="relative w-full h-full overflow-hidden bg-[#111827]">
+                                <div data-carousel-track class="flex h-full transition-transform duration-500 ease-out">
+                                    <img src="images/sqlServer.png" alt="getFileCommit — selección de commits con fzf" class="w-full h-full  shrink-0">
+                                    <img src="images/getfile.png" alt="duplicidadCodigo — reporte de duplicación" class="w-full h-full object-cover shrink-0">
+                                    <img src="images/getFile2.png" alt="sqlServer — selección de versión con fzf" class="w-full h-full shrink-0">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/JhonatanXP1/dev-tools-script-s" target="_blank">
+                        <div class="h-2/5 flex flex-col py-3 px-5 text-neutral-50">
+                            <span class="text-base font-semibold text-emerald-400">CLI · Bash</span>
+                            <h3 class="text-2xl leading-8 font-bold">Dev Tools Scripts</h3>
+                            <p class="text-sm text-[#a1a1aa] mt-1" data-i18n="dev.devtoolsDesc">
+                                7 herramientas Bash para automatizar Git, archivos y Docker desde la terminal,
+                                con selección fuzzy (fzf) e instalación global por symlink.
+                            </p>
+                            <div class="flex flex-wrap gap-x-3 gap-y-1 mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#a1a1aa]">
+                                <span>Bash</span><span>Git</span><span>Docker</span><span>fzf</span><span>yq</span>
+                            </div>
+                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Segunda fila -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div class="relative h-[440px] lg:h-140 p-0! cardProyect group">
+                        <svg class="absolute w-6 h-6 z-10 right-8 top-7 text-emerald-400/30 group-hover:text-emerald-400 transition-colors"
+                             aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg"
+                             width="24"
+                             height="24"
+                             fill="none"
+                             viewBox="0 0 24 24">
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+                        </svg>
+                        <div class="h-3/5">
+                            <div data-carousel class="relative w-full h-full overflow-hidden bg-[#111827]">
+                                <span class="absolute z-10 top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/50 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-amber-300">
+                                    <span class="relative inline-flex h-1.5 w-1.5">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                                        <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                                    </span>
+                                    <span data-i18n="dev.wip">En desarrollo</span>
+                                </span>
+                                <div data-carousel-track class="flex h-full transition-transform duration-500 ease-out">
+                                    <img src="images/orb.png" alt="Orbita360 — login" class="w-full h-full object-cover shrink-0">
+                                    <img src="images/orb1.png" alt="Orbita360 — dashboard" class="w-full h-full object-cover shrink-0">
+                                    <img src="images/orb2.png" alt="Orbita360 — gestión de usuarios" class="w-full h-full object-cover shrink-0">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://github.com/JhonatanXP1/SystemBase" target="_blank">
+                        <div class="h-2/5 flex flex-col py-3 px-5 text-neutral-50">
+                            <span class="text-base font-semibold text-emerald-400">Web · Angular</span>
+                            <h3 class="text-2xl leading-8 font-bold ">Orbita360</h3>
+                            <p class="text-sm text-[#a1a1aa] mt-1" data-i18n="dev.orbitaDesc">
+                                Gestor de naves empresariales (en construcción): login con JWT, gestión de usuarios,
+                                layout shell (sidebar + header) y tema claro/oscuro.
+                            </p>
+                            <div class="flex flex-wrap gap-x-3 gap-y-1 mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#a1a1aa]">
+                                <span>Angular</span><span>TypeScript</span><span>RxJS</span><span>JWT</span><span>Tailwind</span><span>ASP.NET</span>
+                            </div>
+                        </div>
+                    </a>
                     </div>
-                    <div class="p-4">
+                    <div class="relative h-[440px] lg:h-140 p-0! cardProyect group">
+                        <div class="h-3/5 overflow-hidden bg-[#111827]">
+                            <img src="images/edu.png" alt="EDUCAPP — sistema de gestión educativa" class="w-full h-full object-cover">
+                        </div>
+                        <div class="h-2/5 flex flex-col py-3 px-5 text-neutral-50">
+                            <span class="text-base font-semibold text-emerald-400">Web · Full Stack</span>
+                            <h3 class="text-2xl leading-8 font-bold ">EDUCAPP</h3>
+                            <p class="text-sm text-[#a1a1aa] mt-1" data-i18n="dev.educappDesc">
+                                Sistema integral de gestión educativa: módulos administrativos,
+                                gestión educativa, pagos e integraciones.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -730,17 +835,17 @@
 <!-- Modal: confirmar borrado del editor JSON -->
 <div id="jsonModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm">
     <div class="w-[min(440px,90vw)] rounded-xl border border-[rgba(148,163,184,0.18)] bg-[rgba(13,13,20,0.95)] p-6 text-neutral-200 shadow-[0_20px_60px_rgba(0,0,0,0.55)]">
-        <h3 class="text-lg font-semibold text-neutral-50">¿Conservar el contenido del editor JSON?</h3>
-        <p class="mt-3 text-sm text-[#a1a1aa]">
+        <h3 class="text-lg font-semibold text-neutral-50" data-i18n="modal.title">¿Conservar el contenido del editor JSON?</h3>
+        <p class="mt-3 text-sm text-[#a1a1aa]" data-i18n="modal.body">
             El contenido del editor JSON se enviará como parte del prompt.
             ¿Deseas conservarlo o prefieres borrarlo?
         </p>
         <div class="mt-6 flex justify-end gap-3">
-            <button type="button" id="jsonModalNo"
+            <button type="button" id="jsonModalNo" data-i18n="modal.no"
                     class="px-4 py-1.5 rounded-md border border-[#a1a1aa] text-sm text-[#a1a1aa] hover:text-neutral-50 hover:border-neutral-50 transition-colors cursor-pointer">
                 No, borrar
             </button>
-            <button type="button" id="jsonModalYes"
+            <button type="button" id="jsonModalYes" data-i18n="modal.yes"
                     class="px-4 py-1.5 rounded-md bg-emerald-400 text-sm font-semibold text-[rgb(4,20,13)] hover:bg-emerald-300 transition-colors cursor-pointer">
                 Sí, conservar
             </button>

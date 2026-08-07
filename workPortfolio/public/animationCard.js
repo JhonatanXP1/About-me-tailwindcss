@@ -3,7 +3,7 @@ cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
 
-        const x = e.clientX - rect.left;
+        const x = card.classList.contains('perfilCard') ? e.clientX : e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
         gsap.to(card, {
